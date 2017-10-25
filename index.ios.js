@@ -1,3 +1,5 @@
-import { AppRegistry } from "react-native";
-import App from "./App";
-AppRegistry.registerComponent("ReactNativeSeed", () => App);
+import 'react-devtools'
+import start from './src/App'
+// Debug network calls
+// GLOBAL.XMLHttpRequest = GLOBAL.originalXMLHttpRequest || GLOBAL.XMLHttpRequest
+start()
