@@ -34,10 +34,22 @@ $ npm install
 You've cloned the project and you're wanting to make it your own.  
 With one command, [React Native Rename](https://github.com/JuneDomingo/react-native-rename) will replace all files, directories and references to what ever you'd like.
 
-### Integrate [CodePush](https://github.com/Microsoft/react-native-code-push)
+### Integrate with [CodePush](https://github.com/Microsoft/react-native-code-push)
 
 * Create an app on [ClearSummit's Mobile Center](https://mobile.azure.com/apps) to get deployment keys. We should have a separate app for iOS and Android.
 
 * iOS: [muti-deployment testing doc](https://github.com/Microsoft/react-native-code-push/blob/master/docs/multi-deployment-testing-ios.md) Do step 9.
 
 * Android: [muti-deployment testing doc](https://github.com/Microsoft/react-native-code-push/blob/master/docs/multi-deployment-testing-android.md) Do step 2.
+
+### Integrate to [ClearSummit's Sentry](https://sentry.io/auth/login/ClearSummit/)
+
+* Create a new project in Sentry
+
+* Go to Project Settings -> Client Keys -> Copy and paste the DNS url to `SentryUtil.configure('')` in App.js
+
+### Support multiple environments
+
+* Change `API_URL` string in `.env`, `.env.staging`, `.env.production`
+
+* Android: problems with Proguard? Check this [link](https://github.com/luggit/react-native-config#problems-with-proguard) out.
