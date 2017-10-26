@@ -12,7 +12,6 @@ type StoreState = {
 // Data models
 
 // Network
-
 declare var __DEV__ : string;
 
 // File types
@@ -30,9 +29,6 @@ declare module 'react-navigation' {
   declare module.exports : any;
 }
 declare module 'redux-saga' {
-  declare module.exports : any;
-}
-declare module 'prop-types' {
   declare module.exports : any;
 }
 declare module 'react-redux' {
