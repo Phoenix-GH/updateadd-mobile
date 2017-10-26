@@ -53,5 +53,8 @@ declare module 'redux' {
 declare module 'remote-redux-devtools' {
   declare module.exports : any;
 }
+declare module 'react-native-modalbox' {
+  declare module.exports : any;
+}
 
 // File types

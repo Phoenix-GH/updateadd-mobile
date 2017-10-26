@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/Cellar/yarn/1.1.0/libexec/bin/yarn.js add --dev babel-cli babel-preset-flow
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.1.0/libexec/bin/yarn.js add react-native-modalbox
 
 PATH: 
   /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Users/junosheridan/Library/Android/sdk/tools:/Users/junosheridan/Library/Android/sdk/platform-tools
@@ -19,7 +19,9 @@ npm manifest:
     "version": "1.0.0",
     "private": true,
     "devDependencies": {
+      "babel-cli": "^6.26.0",
       "babel-eslint": "7.2.3",
+      "babel-preset-flow": "^6.23.0",
       "babel-preset-react-native-stage-0": "^1.0.1",
       "eslint": "^4.9.0",
       "eslint-plugin-babel": "^4.1.2",
@@ -29,12 +31,11 @@ npm manifest:
       "eslint-plugin-prettier": "^2.2.0",
       "eslint-plugin-react": "^7.4.0",
       "eslint-plugin-react-native": "3.1.0",
-      "flow-bin": "0.54.0",
+      "flow-bin": "^0.57.3",
       "flow-typed": "2.1.5",
       "husky": "0.14.3",
-      "jest": "20.0.4",
+      "jest": "^21.2.1",
       "prettier": "^1.7.4",
-      "react-devtools": "^2.5.2",
       "react-test-renderer": "16.0.0-alpha.12"
     },
     "scripts": {
@@ -42,7 +43,9 @@ npm manifest:
       "android": "react-native run-android",
       "ios": "react-native run-ios",
       "test": "jest && flow && eslint .",
-      "precommit": "yarn test"
+      "precommit": "yarn test",
+      "build": "babel src/ -d lib/",
+      "prepublish": "yarn run build"
     },
     "jest": {
       "preset": "react-native",
@@ -56,6 +59,7 @@ npm manifest:
       "moment": "2.13.0",
       "prop-types": "^15.6.0",
       "react": "16.0.0-alpha.12",
+      "react-devtools": "^2.5.2",
       "react-native": "0.47.2",
       "react-native-code-push": "^5.1.3-beta",
       "react-native-sentry": "^0.29.0",
@@ -342,6 +346,10 @@ Lockfile:
     version "0.9.14"
     resolved "https://registry.yarnpkg.com/ast-types/-/ast-types-0.9.14.tgz#d34ba5dffb9d15a44351fd2a9d82e4ab2838b5ba"
   
+  async-each@^1.0.0:
+    version "1.0.1"
+    resolved "https://registry.yarnpkg.com/async-each/-/async-each-1.0.1.tgz#19d386a1d9edc6e7c1c85d388aedbcc56d33602d"
+  
   async@2.0.0:
     version "2.0.0"
     resolved "https://registry.yarnpkg.com/async/-/async-2.0.0.tgz#d0900ad385af13804540a109c42166e3ae7b2b9d"
@@ -383,6 +391,27 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/axobject-query/-/axobject-query-0.1.0.tgz#62f59dbc59c9f9242759ca349960e7a2fe3c36c0"
     dependencies:
       ast-types-flow "0.0.7"
+  
+  babel-cli@^6.26.0:
+    version "6.26.0"
+    resolved "https://registry.yarnpkg.com/babel-cli/-/babel-cli-6.26.0.tgz#502ab54874d7db88ad00b887a06383ce03d002f1"
+    dependencies:
+      babel-core "^6.26.0"
+      babel-polyfill "^6.26.0"
+      babel-register "^6.26.0"
+      babel-runtime "^6.26.0"
+      commander "^2.11.0"
+      convert-source-map "^1.5.0"
+      fs-readdir-recursive "^1.0.0"
+      glob "^7.1.2"
+      lodash "^4.17.4"
+      output-file-sync "^1.1.2"
+      path-is-absolute "^1.0.1"
+      slash "^1.0.0"
+      source-map "^0.5.6"
+      v8flags "^2.1.1"
+    optionalDependencies:
+      chokidar "^1.6.1"
   
   babel-code-frame@^6.22.0, babel-code-frame@^6.26.0:
     version "6.26.0"
@@ -837,7 +866,7 @@ Lockfile:
       babel-plugin-syntax-export-extensions "^6.8.0"
       babel-runtime "^6.22.0"
   
-  babel-plugin-transform-flow-strip-types@^6.21.0, babel-plugin-transform-flow-strip-types@^6.5.0, babel-plugin-transform-flow-strip-types@^6.7.0, babel-plugin-transform-flow-strip-types@^6.8.0:
+  babel-plugin-transform-flow-strip-types@^6.21.0, babel-plugin-transform-flow-strip-types@^6.22.0, babel-plugin-transform-flow-strip-types@^6.5.0, babel-plugin-transform-flow-strip-types@^6.7.0, babel-plugin-transform-flow-strip-types@^6.8.0:
     version "6.22.0"
     resolved "https://registry.yarnpkg.com/babel-plugin-transform-flow-strip-types/-/babel-plugin-transform-flow-strip-types-6.22.0.tgz#84cb672935d43714fdc32bce84568d87441cf7cf"
     dependencies:
@@ -898,7 +927,7 @@ Lockfile:
       babel-runtime "^6.22.0"
       babel-types "^6.24.1"
   
-  babel-polyfill@^6.20.0, babel-polyfill@^6.23.0:
+  babel-polyfill@^6.20.0, babel-polyfill@^6.23.0, babel-polyfill@^6.26.0:
     version "6.26.0"
     resolved "https://registry.yarnpkg.com/babel-polyfill/-/babel-polyfill-6.26.0.tgz#379937abc67d7895970adc621f284cd966cf2153"
     dependencies:
@@ -981,6 +1010,12 @@ Lockfile:
       babel-plugin-transform-object-rest-spread "^6.8.0"
       babel-plugin-transform-react-display-name "^6.8.0"
       babel-plugin-transform-react-jsx "^6.8.0"
+  
+  babel-preset-flow@^6.23.0:
+    version "6.23.0"
+    resolved "https://registry.yarnpkg.com/babel-preset-flow/-/babel-preset-flow-6.23.0.tgz#e71218887085ae9a24b5be4169affb599816c49d"
+    dependencies:
+      babel-plugin-transform-flow-strip-types "^6.22.0"
   
   babel-preset-jest@^20.0.3:
     version "20.0.3"
@@ -1182,6 +1217,10 @@ Lockfile:
   big-integer@^1.6.7:
     version "1.6.25"
     resolved "https://registry.yarnpkg.com/big-integer/-/big-integer-1.6.25.tgz#1de45a9f57542ac20121c682f8d642220a34e823"
+  
+  binary-extensions@^1.0.0:
+    version "1.10.0"
+    resolved "https://registry.yarnpkg.com/binary-extensions/-/binary-extensions-1.10.0.tgz#9aeb9a6c5e88638aad171e167f5900abe24835d0"
   
   "binary@>= 0.3.0 < 1":
     version "0.3.0"
@@ -1425,6 +1464,21 @@ Lockfile:
     version "0.0.2"
     resolved "https://registry.yarnpkg.com/charenc/-/charenc-0.0.2.tgz#c0a1d2f3a7092e03774bfa83f14c0fc5790a8667"
   
+  chokidar@^1.6.1:
+    version "1.7.0"
+    resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-1.7.0.tgz#798e689778151c8076b4b360e5edd28cda2bb468"
+    dependencies:
+      anymatch "^1.3.0"
+      async-each "^1.0.0"
+      glob-parent "^2.0.0"
+      inherits "^2.0.1"
+      is-binary-path "^1.0.0"
+      is-glob "^2.0.0"
+      path-is-absolute "^1.0.0"
+      readdirp "^2.0.0"
+    optionalDependencies:
+      fsevents "^1.0.0"
+  
   ci-info@^1.0.0:
     version "1.1.1"
     resolved "https://registry.yarnpkg.com/ci-info/-/ci-info-1.1.1.tgz#47b44df118c48d2597b56d342e7e25791060171a"
@@ -1520,7 +1574,7 @@ Lockfile:
     dependencies:
       delayed-stream "~1.0.0"
   
-  commander@^2.9.0:
+  commander@^2.11.0, commander@^2.9.0:
     version "2.11.0"
     resolved "https://registry.yarnpkg.com/commander/-/commander-2.11.0.tgz#157152fd1e7a6c8d98a5b715cf376df928004563"
   
@@ -2547,9 +2601,9 @@ Lockfile:
     version "0.9.10"
     resolved "https://registry.yarnpkg.com/fleximap/-/fleximap-0.9.10.tgz#1aa50ff6a8fea0037cc378e38ddacc091025ac10"
   
-  flow-bin@0.54.0:
-    version "0.54.0"
-    resolved "https://registry.yarnpkg.com/flow-bin/-/flow-bin-0.54.0.tgz#f2fb0478e9e99702b623c9ed84079a39903bba77"
+  flow-bin@^0.57.3:
+    version "0.57.3"
+    resolved "https://registry.yarnpkg.com/flow-bin/-/flow-bin-0.57.3.tgz#843fb80a821b6d0c5847f7bb3f42365ffe53b27b"
   
   flow-typed@2.1.5:
     version "2.1.5"
@@ -2670,11 +2724,15 @@ Lockfile:
       jsonfile "^4.0.0"
       universalify "^0.1.0"
   
+  fs-readdir-recursive@^1.0.0:
+    version "1.0.0"
+    resolved "https://registry.yarnpkg.com/fs-readdir-recursive/-/fs-readdir-recursive-1.0.0.tgz#8cd1745c8b4f8a29c8caec392476921ba195f560"
+  
   fs.realpath@^1.0.0:
     version "1.0.0"
     resolved "https://registry.yarnpkg.com/fs.realpath/-/fs.realpath-1.0.0.tgz#1504ad2523158caa40db4a2787cb01411994ea4f"
   
-  fsevents@^1.1.1:
+  fsevents@^1.0.0, fsevents@^1.1.1:
     version "1.1.2"
     resolved "https://registry.yarnpkg.com/fsevents/-/fsevents-1.1.2.tgz#3282b713fb3ad80ede0e9fcf4611b5aa6fc033f4"
     dependencies:
@@ -2905,7 +2963,7 @@ Lockfile:
       url-parse-lax "^1.0.0"
       url-to-options "^1.0.1"
   
-  graceful-fs@^4.1.11, graceful-fs@^4.1.2, graceful-fs@^4.1.3, graceful-fs@^4.1.6, graceful-fs@^4.1.9:
+  graceful-fs@^4.1.11, graceful-fs@^4.1.2, graceful-fs@^4.1.3, graceful-fs@^4.1.4, graceful-fs@^4.1.6, graceful-fs@^4.1.9:
     version "4.1.11"
     resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.1.11.tgz#0e8bdfe4d1ddb8854d64e04ea7c00e2a026e5658"
   
@@ -3172,7 +3230,7 @@ Lockfile:
       once "^1.3.0"
       wrappy "1"
   
-  inherits@2, inherits@2.0.3, inherits@^2.0.3, inherits@~2.0.0, inherits@~2.0.1, inherits@~2.0.3:
+  inherits@2, inherits@2.0.3, inherits@^2.0.1, inherits@^2.0.3, inherits@~2.0.0, inherits@~2.0.1, inherits@~2.0.3:
     version "2.0.3"
     resolved "https://registry.yarnpkg.com/inherits/-/inherits-2.0.3.tgz#633c2c83e3da42a502f52466022480f4208261de"
   
@@ -3276,6 +3334,12 @@ Lockfile:
   is-arrayish@^0.2.1:
     version "0.2.1"
     resolved "https://registry.yarnpkg.com/is-arrayish/-/is-arrayish-0.2.1.tgz#77c99840527aa8ecb1a8ba697b80645a7a926a9d"
+  
+  is-binary-path@^1.0.0:
+    version "1.0.1"
+    resolved "https://registry.yarnpkg.com/is-binary-path/-/is-binary-path-1.0.1.tgz#75f16642b480f187a711c814161fd3a4a7655898"
+    dependencies:
+      binary-extensions "^1.0.0"
   
   is-buffer@^1.1.5, is-buffer@~1.1.1:
     version "1.1.5"
@@ -4676,6 +4740,14 @@ Lockfile:
       os-homedir "^1.0.0"
       os-tmpdir "^1.0.0"
   
+  output-file-sync@^1.1.2:
+    version "1.1.2"
+    resolved "https://registry.yarnpkg.com/output-file-sync/-/output-file-sync-1.1.2.tgz#d0a33eefe61a205facb90092e826598d5245ce76"
+    dependencies:
+      graceful-fs "^4.1.4"
+      mkdirp "^0.5.1"
+      object-assign "^4.1.0"
+  
   "over@>= 0.0.5 < 1":
     version "0.0.5"
     resolved "https://registry.yarnpkg.com/over/-/over-0.0.5.tgz#f29852e70fd7e25f360e013a8ec44c82aedb5708"
@@ -5345,7 +5417,7 @@ Lockfile:
       isarray "0.0.1"
       string_decoder "~0.10.x"
   
-  readable-stream@2, readable-stream@^2.0.1, readable-stream@^2.0.6, readable-stream@^2.1.4, readable-stream@^2.1.5, readable-stream@^2.2.2:
+  readable-stream@2, readable-stream@^2.0.1, readable-stream@^2.0.2, readable-stream@^2.0.6, readable-stream@^2.1.4, readable-stream@^2.1.5, readable-stream@^2.2.2:
     version "2.3.3"
     resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-2.3.3.tgz#368f2512d79f9d46fdfc71349ae7878bbc1eb95c"
     dependencies:
@@ -5365,6 +5437,15 @@ Lockfile:
       inherits "~2.0.1"
       isarray "0.0.1"
       string_decoder "~0.10.x"
+  
+  readdirp@^2.0.0:
+    version "2.1.0"
+    resolved "https://registry.yarnpkg.com/readdirp/-/readdirp-2.1.0.tgz#4ed0ad060df3073300c48440373f72d1cc642d78"
+    dependencies:
+      graceful-fs "^4.1.2"
+      minimatch "^3.0.2"
+      readable-stream "^2.0.2"
+      set-immediate-shim "^1.0.1"
   
   rebound@^0.0.13:
     version "0.0.13"
@@ -5947,6 +6028,10 @@ Lockfile:
   set-blocking@^2.0.0, set-blocking@~2.0.0:
     version "2.0.0"
     resolved "https://registry.yarnpkg.com/set-blocking/-/set-blocking-2.0.0.tgz#045f9782d011ae9a6803ddd382b24392b3d890f7"
+  
+  set-immediate-shim@^1.0.1:
+    version "1.0.1"
+    resolved "https://registry.yarnpkg.com/set-immediate-shim/-/set-immediate-shim-1.0.1.tgz#4b2b1b27eb808a9f8dcc481a58e5e56f599f3f61"
   
   "setimmediate@>= 1.0.1 < 2", "setimmediate@>= 1.0.2 < 2", setimmediate@^1.0.5:
     version "1.0.5"
@@ -6624,6 +6709,10 @@ Lockfile:
     version "1.0.1"
     resolved "https://registry.yarnpkg.com/url-to-options/-/url-to-options-1.0.1.tgz#1505a03a289a48cbd7a434efbaeec5055f5633a9"
   
+  user-home@^1.1.1:
+    version "1.1.1"
+    resolved "https://registry.yarnpkg.com/user-home/-/user-home-1.1.1.tgz#2b5be23a32b63a7c9deb8d0f28d485724a3df190"
+  
   util-deprecate@1.0.2, util-deprecate@~1.0.1:
     version "1.0.2"
     resolved "https://registry.yarnpkg.com/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
@@ -6647,6 +6736,12 @@ Lockfile:
   uws@8.14.0:
     version "8.14.0"
     resolved "https://registry.yarnpkg.com/uws/-/uws-8.14.0.tgz#acc1488d13ecb23fe2f942a7eafb06681fa91431"
+  
+  v8flags@^2.1.1:
+    version "2.1.1"
+    resolved "https://registry.yarnpkg.com/v8flags/-/v8flags-2.1.1.tgz#aab1a1fa30d45f88dd321148875ac02c0b55e5b4"
+    dependencies:
+      user-home "^1.1.1"
   
   validate-npm-package-license@^3.0.1:
     version "3.0.1"
@@ -7026,5 +7121,5 @@ Lockfile:
       buffer-crc32 "~0.2.3"
 
 Trace: 
-  Error: EACCES: permission denied, unlink '/Users/junosheridan/Workplace/Repositories/react-native-starter-project/node_modules/.bin/acorn'
+  Error: EACCES: permission denied, mkdir '/Users/junosheridan/Workplace/Repositories/react-native-starter-project/node_modules/handlebars/node_modules/uglify-js'
       at Error (native)
