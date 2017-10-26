@@ -1,7 +1,7 @@
 // @flow
 
 import React from 'react'
-import { AppRegistry, NativeModules, Platform, StyleSheet, View, Text } from 'react-native'
+import { AppRegistry, StyleSheet, View, Text } from 'react-native'
 import Modal from 'react-native-modalbox'
 import { Provider } from 'react-redux'
 import CodePush from 'react-native-code-push'
@@ -15,8 +15,6 @@ import Store from './store'
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    width: null,
-    height: null,
   },
   modal: {
     justifyContent: 'center',
@@ -25,11 +23,6 @@ const styles = StyleSheet.create({
   },
 })
 
-type AppProps = {
-  version : ?string,
-  buildEnv : ?string
-}
-
 type AppState = {
   showDownloadingModal : bool,
   showInstalling : bool,
@@ -37,12 +30,7 @@ type AppState = {
 }
 
 // If environment is not dev setup Sentry and configure with CodePush
-export class App extends React.Component <AppProps, AppState> {
-  static defaultProps = {
-    version: null,
-    buildEnv: null,
-  }
-
+export class App extends React.Component <any, AppState> {
   state = {
     showDownloadingModal: false,
     showInstalling: false,
@@ -59,7 +47,6 @@ export class App extends React.Component <AppProps, AppState> {
         }
       })
       SentryUtil.setExtraContext(this.store)
-      SentryUtil.setTagsContext('buddbuild_version', global.build_version)
     }
   }
 
@@ -98,14 +85,6 @@ export class App extends React.Component <AppProps, AppState> {
   _modal = null
 
   render() {
-    if (Platform.OS === 'ios') {
-      global.buildVersion = this.props.version
-      global.buildEnv = this.props.buildEnv
-    } else {
-      global.buildVersion = NativeModules.RNConfig.buddyBuildNumber
-      global.buildEnv = NativeModules.RNConfig.buildEnv
-    }
-
     if (this.state.showDownloadingModal) {
       return (
         <View style={styles.container}>
