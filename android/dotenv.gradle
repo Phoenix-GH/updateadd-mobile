@@ -1,0 +1,61 @@
+def calculateEnvFile(variant) {
+
+    def envFile = ".env"
+    if (project.hasProperty("defaultEnvFile")) {
+        envFile = project.defaultEnvFile
+    }
+
+    if (System.env['ENVFILE']) {
+        envFile = System.env['ENVFILE'];
+    } else if (variant && project.hasProperty("envConfigFiles")) {
+        def variantName = variant.getName()
+        def possibleFile = project.envConfigFiles.get(variantName)
+        if (!possibleFile) {
+            envFile = possibleFile;
+            def buildType = variant.getBuildType().getName()
+            def indexOfType = variantName.toLowerCase().lastIndexOf(buildType.toLowerCase())
+            def flavor = variantName.take(indexOfType);
+            possibleFile = project.envConfigFiles.get(flavor)
+        }
+        if (possibleFile) {
+            envFile = possibleFile
+        }
+    }
+    return envFile
+}
+
+def readDotEnv(variant) {
+
+    def envFile = calculateEnvFile(variant)
+    def env = [:]
+    println("Reading env from: $envFile")
+    try {
+        new File("$project.rootDir/../$envFile").eachLine { line ->
+            def matcher = (line =~ /^\s*([\w\d\.\-_]+)\s*=\s*(.*)?\s*$/)
+            if (matcher.getCount() == 1 && matcher[0].size() == 3){
+                env.put(matcher[0][1], matcher[0][2])
+            }
+        }
+    } catch (FileNotFoundException ex) {
+        def envName = variant ? "variant $variant.getName()" : "defaultConfig"
+        println("**************************")
+        println("*** Missing $envFile file for $envName ****")
+        println("**************************")
+    }
+    return env;
+}
+
+def addBuildConfigFields(variant, envVars) {
+    envVars.each { k, v ->
+        def escaped = v.replaceAll("%","\\\\u0025")
+        variant.buildConfigField("String", k, "\"$v\"")
+        variant.resValue("string", k, "\"$escaped\"")
+    }
+}
+
+android {
+    applicationVariants.all{variant ->
+        def envVars = readDotEnv(variant)
+        addBuildConfigFields(variant, envVars)
+    }
+}

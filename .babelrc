@@ -1,7 +1,8 @@
 {
   "presets": [
     "babel-preset-react-native-stage-0/decorator-support",
-    "flow"
+    "flow",
+    "react-native",
   ],
   "env": {
     "development": {

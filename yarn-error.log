@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/Cellar/yarn/1.1.0/libexec/bin/yarn.js
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.1.0/libexec/bin/yarn.js add react-native-config
 
 PATH: 
   /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Users/junosheridan/Library/Android/sdk/tools:/Users/junosheridan/Library/Android/sdk/platform-tools
@@ -57,7 +57,6 @@ npm manifest:
       "eslint-config-airbnb": "^16.1.0",
       "lodash": "4.13.1",
       "moment": "2.13.0",
-      "prop-types": "^15.6.0",
       "react": "16.0.0-alpha.12",
       "react-devtools": "^2.5.2",
       "react-native": "0.47.2",
@@ -5054,7 +5053,7 @@ Lockfile:
     dependencies:
       asap "~2.0.3"
   
-  prop-types@^15.5.10, prop-types@^15.5.6, prop-types@^15.5.8, prop-types@^15.5.9, prop-types@^15.6.0:
+  prop-types@^15.5.10, prop-types@^15.5.6, prop-types@^15.5.8, prop-types@^15.5.9:
     version "15.6.0"
     resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.0.tgz#ceaf083022fc46b4a35f69e13ef75aed0d639856"
     dependencies:
