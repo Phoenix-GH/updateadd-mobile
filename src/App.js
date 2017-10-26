@@ -25,18 +25,24 @@ const styles = StyleSheet.create({
   },
 })
 
-export interface Props {
-  version : string,
-  buildEnv : string
+type AppProps = {
+  version : ?string,
+  buildEnv : ?string
 }
-export interface State {
+
+type AppState = {
   showDownloadingModal : bool,
   showInstalling : bool,
   downloadProgress : number
 }
 
 // If environment is not dev setup Sentry and configure with CodePush
-export class App extends React.Component < Props, State > {
+export class App extends React.Component <AppProps, AppState> {
+  static defaultProps = {
+    version: null,
+    buildEnv: null,
+  }
+
   state = {
     showDownloadingModal: false,
     showInstalling: false,

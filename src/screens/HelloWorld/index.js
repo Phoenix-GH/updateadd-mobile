@@ -4,10 +4,7 @@ import React from 'react'
 import { View, Text } from 'react-native'
 import { connect } from 'react-redux'
 
-export interface Props {}
-export interface State {}
-
-class HelloWorldScreen extends React.Component<Props, State> {
+class HelloWorldScreen extends React.Component<any, any> {
   render() {
     return (
       <View style={{ alignItems: 'center' }}>

@@ -1,13 +1,19 @@
 // @flow
 
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import React from 'react'
 import { Platform, ProgressViewIOS, ProgressBarAndroid } from 'react-native'
 
-export interface Props {}
-export interface State {}
+type ProgressBarProps = {
+  progress: ?number,
+  color: ?string
+}
 
-class ProgressBar extends Component<Props, State> {
+class ProgressBar extends React.Component<ProgressBarProps> {
+  static defaultProps = {
+    progress: null,
+    color: null,
+  }
+
   render() {
     if (Platform.OS === 'ios') {
       return (
@@ -29,16 +35,6 @@ class ProgressBar extends Component<Props, State> {
       />
     )
   }
-}
-
-ProgressBar.propTypes = {
-  progress: PropTypes.number,
-  color: PropTypes.string,
-}
-
-ProgressBar.defaultProps = {
-  progress: null,
-  color: null,
 }
 
 export default ProgressBar
