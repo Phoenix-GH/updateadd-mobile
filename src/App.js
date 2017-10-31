@@ -81,7 +81,7 @@ export class App extends React.Component <any, AppState> {
     })
   }
 
-  store = Store()
+  store = Store.configureStore()
   _modal = null
 
   render() {

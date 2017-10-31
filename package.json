@@ -33,9 +33,11 @@
   },
   "jest": {
     "preset": "react-native",
-    "transformIgnorePatterns": [
-      "node_modules/(?!(react-native|lottie-react-native|expo|react-native-maps|react-native-svg|react-native-branch|native-base-shoutem-theme|react-native-easy-grid|react-native-drawer|react-native-vector-icons|react-native-keyboard-aware-scroll-view|react-navigation|native-base|@expo|react-native-scrollable-tab-view)/)"
-    ]
+    "setupFiles": [
+      "<rootDir>/__MOCKS__"
+    ],
+    "transformIgnorePatterns": [],
+    "collectCoverage": true,
   },
   "dependencies": {
     "axios": "^0.17.0",

@@ -6,12 +6,12 @@ import { StackNavigator, addNavigationHelpers } from 'react-navigation'
 import type { NavigationDispatch }
   from 'react-navigation'
 
-import Screens from '../constants'
+import { Roots } from '../constants'
 
 import HelloWorldScreen from './HelloWorld'
 
 export const AppNavigator = StackNavigator({
-  [Screens.HelloWorld]: {
+  [Roots.HelloWorld]: {
     screen: HelloWorldScreen,
   },
 })

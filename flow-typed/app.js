@@ -1,15 +1,30 @@
 // Define type aliases
+type StandardAction = {| type: string; payload: any; error?: boolean; meta?: any |}
+type GeneratorType = Generator<void, void, any>
 
-// Define Store
-type NavStore = Object
 
-type StoreState = {
-  nav: NavStore
+// Store States
+type NavStoreState = Object
+
+type UserType = {
+  name: string
 }
 
-// Enumarated types
+type UserStoreState = {
+  user: ?UserType,
+  pending: boolean,
+}
 
-// Data models
+type StoreState = {
+  user: UserStoreState,
+  nav: NavStoreState,
+}
+
+// General Types
+
+type ErrorType = {
+  message: string,
+}
 
 // Network
 declare var __DEV__ : string;
