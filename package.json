@@ -37,7 +37,7 @@
       "<rootDir>/__MOCKS__"
     ],
     "transformIgnorePatterns": [],
-    "collectCoverage": true,
+    "collectCoverage": true
   },
   "dependencies": {
     "axios": "^0.17.0",
