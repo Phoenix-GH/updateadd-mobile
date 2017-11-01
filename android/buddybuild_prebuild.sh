@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-echo '=== Start to run test before build in Android'
+echo 'Run "jest && flow && eslint ." before build in Android'
 yarn test

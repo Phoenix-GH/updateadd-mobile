@@ -1,3 +1,4 @@
 **/*{.,-}min.js
 flow-typed/**/*.js
 coverage/
+lib/
