@@ -35,9 +35,8 @@ $ npm install
 $ sudo ./support/rename.sh NewAppName
 ```
 
-* If you have previously built the application, please:
-- Run `yarn clean-android` to clean Android's build artifacts.
-- In `ios` folder, delete `ReactNativeSeed.xcodeproj` file and `build` folder (if any) to clean iOS's build artifacts.
+* Run `yarn clean-android` to clean Android's build artifacts.
+* In `ios` folder, delete `ReactNativeSeed.xcodeproj` file and `build` folder (if any) to clean iOS's build artifacts.
 
 ### Integrate with [CodePush](https://github.com/Microsoft/react-native-code-push)
 
