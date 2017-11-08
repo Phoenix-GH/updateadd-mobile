@@ -1,18 +1,18 @@
 ## Get Started
 
-### 1. System Requirements
+### System Requirements
 
 * Globally installed [node](https://nodejs.org/en/)
 
 * Globally installed [react-native CLI](https://facebook.github.io/react-native/docs/getting-started.html)
 
 
-### 2. Installation
+### Installation
 
 On the command prompt run the following commands
 
 ```sh
-$ git clone -b RN https://github.com/clearsummit/react-native-starter-project.git
+$ git clone -b master https://github.com/clearsummit/react-native-starter-project.git
 
 $ cd react-native-starter-project/
 
@@ -31,8 +31,13 @@ $ npm install
 
 ### Renaming the App
 
-You've cloned the project and you're wanting to make it your own.  
-With one command, [React Native Rename](https://github.com/JuneDomingo/react-native-rename) will replace all files, directories and references to what ever you'd like.
+```sh
+$ sudo ./support/rename.sh NewAppName
+```
+
+* If you have previously built the application, please:
+- Run `yarn clean-android` to clean Android's build artifacts.
+- In `ios` folder, delete `ReactNativeSeed.xcodeproj` file and `build` folder (if any) to clean iOS's build artifacts.
 
 ### Integrate with [CodePush](https://github.com/Microsoft/react-native-code-push)
 
