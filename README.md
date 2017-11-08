@@ -4,9 +4,7 @@
 
 * Globally install [react-native CLI](https://facebook.github.io/react-native/docs/getting-started.html)
 
-* Install [Yarn](https://yarnpkg.com/lang/en/docs/install/)
-
-`$ brew install yarn`
+* Install [Yarn](https://yarnpkg.com/lang/en/docs/install/): `$ brew install yarn`
 
 
 ### Installation
@@ -31,7 +29,7 @@ $ yarn
 
 ### Renaming the App
 
-`$ ./support/rename.sh NewAppName`
+* Run `$ ./support/rename.sh NewAppName`
 
 * Run `$ yarn clean-android` to clean Android's build artifacts.
 
