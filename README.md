@@ -2,9 +2,11 @@
 
 ### System Requirements
 
-* Globally installed [node](https://nodejs.org/en/)
+* Globally install [react-native CLI](https://facebook.github.io/react-native/docs/getting-started.html)
 
-* Globally installed [react-native CLI](https://facebook.github.io/react-native/docs/getting-started.html)
+* Install [Yarn](https://yarnpkg.com/lang/en/docs/install/)
+
+`$ brew install yarn`
 
 
 ### Installation
@@ -16,9 +18,7 @@ $ git clone -b master https://github.com/clearsummit/react-native-starter-projec
 
 $ cd react-native-starter-project/
 
-$ npm install
-  or
-  yarn
+$ yarn
 ```
 
 ### Run on iOS
@@ -31,11 +31,10 @@ $ npm install
 
 ### Renaming the App
 
-```sh
-$ sudo ./support/rename.sh NewAppName
-```
+`$ ./support/rename.sh NewAppName`
 
-* Run `yarn clean-android` to clean Android's build artifacts.
+* Run `$ yarn clean-android` to clean Android's build artifacts.
+
 * In `ios` folder, delete `ReactNativeSeed.xcodeproj` file and `build` folder (if any) to clean iOS's build artifacts.
 
 ### Integrate with [CodePush](https://github.com/Microsoft/react-native-code-push)
