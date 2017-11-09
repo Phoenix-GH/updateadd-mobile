@@ -4,7 +4,7 @@
 
 * Globally install [react-native CLI](https://facebook.github.io/react-native/docs/getting-started.html)
 
-* Install [Yarn](https://yarnpkg.com/lang/en/docs/install/): `$ brew install yarn`
+* Install [Yarn](https://yarnpkg.com/lang/en/docs/install/): `brew install yarn`
 
 
 ### Installation
@@ -12,11 +12,11 @@
 On the command prompt run the following commands
 
 ```sh
-$ git clone -b master https://github.com/clearsummit/react-native-starter-project.git
+git clone -b master https://github.com/clearsummit/react-native-starter-project.git
 
-$ cd react-native-starter-project/
+cd react-native-starter-project/
 
-$ yarn
+yarn
 ```
 
 ### Run on iOS
@@ -29,15 +29,19 @@ $ yarn
 
 ### Renaming the App
 
-* Run `$ ./support/rename.sh NewAppName`
+* Run `./support/rename.sh NewAppName`
 
-* Run `$ yarn clean-android` to clean Android's build artifacts.
+* Run `yarn clean-android` to clean Android's build artifacts.
 
 * In `ios` folder, delete `ReactNativeSeed.xcodeproj` file and `build` folder (if any) to clean iOS's build artifacts.
 
 ### Integrate with [CodePush](https://github.com/Microsoft/react-native-code-push)
 
 * Create an app on [ClearSummit's Mobile Center](https://mobile.azure.com/apps) to get deployment keys. We should have a separate app for iOS and Android.
+
+* Generate deployment keys: `code-push deployment add <app_name> "Staging or Production"`
+
+* View deployment keys: `code-push deployment ls <app_name> -k`
 
 * iOS: [muti-deployment testing doc](https://github.com/Microsoft/react-native-code-push/blob/master/docs/multi-deployment-testing-ios.md) Do step 9.
 
