@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/Cellar/yarn/1.1.0/libexec/bin/yarn.js add immutability-helper
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.1.0/libexec/bin/yarn.js
 
 PATH: 
   /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Users/junosheridan/Library/Android/sdk/tools:/Users/junosheridan/Library/Android/sdk/platform-tools
@@ -40,6 +40,7 @@ npm manifest:
     },
     "scripts": {
       "start": "react-native start",
+      "clean-android": "cd android; ./gradlew clean",
       "android": "react-native run-android",
       "ios": "react-native run-ios",
       "test": "jest && flow && eslint .",
@@ -49,20 +50,24 @@ npm manifest:
     },
     "jest": {
       "preset": "react-native",
-      "transformIgnorePatterns": [
-        "node_modules/(?!(react-native|lottie-react-native|expo|react-native-maps|react-native-svg|react-native-branch|native-base-shoutem-theme|react-native-easy-grid|react-native-drawer|react-native-vector-icons|react-native-keyboard-aware-scroll-view|react-navigation|native-base|@expo|react-native-scrollable-tab-view)/)"
-      ]
+      "setupFiles": [
+        "<rootDir>/__MOCKS__"
+      ],
+      "transformIgnorePatterns": [],
+      "collectCoverage": true
     },
     "dependencies": {
+      "axios": "^0.17.0",
+      "bluebird": "^3.5.1",
       "eslint-config-airbnb": "^16.1.0",
-      "lodash": "4.13.1",
+      "immutability-helper": "^2.4.0",
+      "lodash": "^4.17.4",
       "moment": "2.13.0",
       "react": "16.0.0-alpha.12",
       "react-devtools": "^2.5.2",
       "react-native": "0.47.2",
       "react-native-code-push": "^5.1.3-beta",
       "react-native-config": "^0.9.0",
-      "react-native-modalbox": "^1.4.2",
       "react-native-sentry": "^0.29.0",
       "react-native-vector-icons": "^4.4.2",
       "react-navigation": "1.0.0-beta.11",
@@ -390,6 +395,13 @@ Lockfile:
   aws4@^1.2.1, aws4@^1.6.0:
     version "1.6.0"
     resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.6.0.tgz#83ef5ca860b2b32e4a0deedee8c771b9db57471e"
+  
+  axios@^0.17.0:
+    version "0.17.0"
+    resolved "https://registry.yarnpkg.com/axios/-/axios-0.17.0.tgz#7da747916db803f761651d6091d708789b953c6a"
+    dependencies:
+      follow-redirects "^1.2.3"
+      is-buffer "^1.1.5"
   
   axobject-query@^0.1.0:
     version "0.1.0"
@@ -1240,6 +1252,10 @@ Lockfile:
     dependencies:
       inherits "~2.0.0"
   
+  bluebird@^3.5.1:
+    version "3.5.1"
+    resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.5.1.tgz#d9551f9de98f1fcda1e683d17ee91a0602ee2eb9"
+  
   body-parser@1.18.2, body-parser@^1.15.0:
     version "1.18.2"
     resolved "https://registry.yarnpkg.com/body-parser/-/body-parser-1.18.2.tgz#87678a19d84b47d859b83199bd59bce222b10454"
@@ -1850,7 +1866,7 @@ Lockfile:
     version "2.2.0"
     resolved "https://registry.yarnpkg.com/dateformat/-/dateformat-2.2.0.tgz#4065e2013cf9fb916ddfd82efb506ad4c6769062"
   
-  debug@2, debug@2.6.9, debug@^2.1.3, debug@^2.2.0, debug@^2.6.8:
+  debug@2, debug@2.6.9, debug@^2.1.3, debug@^2.2.0, debug@^2.6.8, debug@^2.6.9:
     version "2.6.9"
     resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
     dependencies:
@@ -2649,6 +2665,12 @@ Lockfile:
       debug "^2.2.0"
       stream-consume "^0.1.0"
   
+  follow-redirects@^1.2.3:
+    version "1.2.5"
+    resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.2.5.tgz#ffd3e14cbdd5eaa72f61b6368c1f68516c2a26cc"
+    dependencies:
+      debug "^2.6.9"
+  
   for-in@^1.0.1:
     version "1.0.2"
     resolved "https://registry.yarnpkg.com/for-in/-/for-in-1.0.2.tgz#81068d295a8142ec0ac726c6e2200c30fb6d5e80"
@@ -3225,6 +3247,12 @@ Lockfile:
     version "0.3.5"
     resolved "https://registry.yarnpkg.com/image-size/-/image-size-0.3.5.tgz#83240eab2fb5b00b04aab8c74b0471e9cba7ad8c"
   
+  immutability-helper@^2.4.0:
+    version "2.4.0"
+    resolved "https://registry.yarnpkg.com/immutability-helper/-/immutability-helper-2.4.0.tgz#00d421e2957c17f0f0781475f05ffd837e73458d"
+    dependencies:
+      invariant "^2.2.0"
+  
   import-lazy@^2.1.0:
     version "2.1.0"
     resolved "https://registry.yarnpkg.com/import-lazy/-/import-lazy-2.1.0.tgz#05698e3d45c88e8d7e9d92cb0584e77f096f3e43"
@@ -3329,7 +3357,7 @@ Lockfile:
       strip-ansi "^4.0.0"
       through "^2.3.6"
   
-  invariant@^2.0.0, invariant@^2.2.2:
+  invariant@^2.0.0, invariant@^2.2.0, invariant@^2.2.2:
     version "2.2.2"
     resolved "https://registry.yarnpkg.com/invariant/-/invariant-2.2.2.tgz#9e1f56ac0acdb6bf303306f338be3b204ae60360"
     dependencies:
@@ -4217,10 +4245,6 @@ Lockfile:
     dependencies:
       lodash._reinterpolate "^3.0.0"
       lodash.escape "^3.0.0"
-  
-  lodash@4.13.1:
-    version "4.13.1"
-    resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.13.1.tgz#83e4b10913f48496d4d16fec4a560af2ee744b68"
   
   lodash@^3.5.0:
     version "3.10.1"
@@ -7168,5 +7192,5 @@ Lockfile:
       buffer-crc32 "~0.2.3"
 
 Trace: 
-  Error: EACCES: permission denied, unlink '/Users/junosheridan/Workplace/Repositories/react-native-starter-project/node_modules/.bin/acorn'
+  Error: EPERM: operation not permitted, chmod '/Users/junosheridan/Workplace/Repositories/react-native-starter-project/node_modules/electron/node_modules/.bin/electron-download'
       at Error (native)
