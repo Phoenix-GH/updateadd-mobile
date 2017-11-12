@@ -58,3 +58,7 @@ yarn
 * Change `API_URL` string in `.env`, `.env.staging`, `.env.production`
 
 * Android: problems with Proguard? Check this [link](https://github.com/luggit/react-native-config#problems-with-proguard) out.
+
+### Integrate CodeClimate for test report
+
+* Change `<token here>` in `circle.yml` file with Code Climate's repo token
