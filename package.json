@@ -34,7 +34,7 @@
   "jest": {
     "preset": "react-native",
     "setupFiles": [
-      "<rootDir>/__MOCKS__"
+      "<rootDir>/__mocks__"
     ],
     "transformIgnorePatterns": [],
     "collectCoverage": true
