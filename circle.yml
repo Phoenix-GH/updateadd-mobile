@@ -10,5 +10,5 @@ test:
   override:
     - ./node_modules/.bin/flow --json
     - ./node_modules/.bin/eslint .
-    - yarn jest --runInBand
+    - yarn test --runInBand
     - CODECLIMATE_REPO_TOKEN=<token here> ./node_modules/.bin/codeclimate-test-reporter < coverage/lcov.info
