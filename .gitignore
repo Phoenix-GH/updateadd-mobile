@@ -37,3 +37,6 @@ DerivedData
 *.ipa
 *.xcuserstate
 project.xcworkspace
+
+# React
+lib/
