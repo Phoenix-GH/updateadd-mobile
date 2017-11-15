@@ -1,7 +1,6 @@
 // @flow
 
 import axios from 'axios'
-import { Promise } from 'bluebird'
 import Config from 'react-native-config'
 
 import { modelMapper, ModelResponseTypes } from '../../models'

@@ -29,7 +29,7 @@ export const dispatchStoreUser = (user: UserType) => ({
   payload: user,
 })
 
-export default (state: Object = {}, action: StandardAction) => {
+export default (state: UserStoreState = initialState, action: StandardAction) => {
   switch (action.type) {
     case C.LOGIN_USER_PENDING:
       return {

@@ -8,7 +8,7 @@ export const ModelResponseTypes = {
 
 }
 
-export function modelMapper(modelType: string, data: Object) {
+export function modelMapper(modelType: any, data: any) {
   const modelClass = null
   switch (modelType) {
     default: break

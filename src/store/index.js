@@ -1,14 +1,10 @@
 // @flow
-import thunk from 'redux-thunk'
+
 import devTools from 'remote-redux-devtools'
 import { compose, createStore, combineReducers, applyMiddleware } from 'redux'
 import createSagaMiddleware from 'redux-saga'
-import { reducer as formReducer } from 'redux-form'
 
-/* eslint-disable */
-import user from './user'
-import * as UserActions from './user'
-/* eslint-enable */
+import UserStoreStateReducer, * as UserActions from './user'
 
 import { generators } from '../sagas'
 
@@ -46,8 +42,7 @@ const logAction = store => next => (action) => {
 }
 
 const reducers = combineReducers({
-  user,
-  form: formReducer,
+  user: UserStoreStateReducer,
   nav: navReducer,
 })
 
@@ -58,7 +53,6 @@ export default {
   configureStore: () => {
     const sagaMiddleware = createSagaMiddleware()
     const middlewares = [
-      thunk,
       sagaMiddleware,
       logAction,
     ]
