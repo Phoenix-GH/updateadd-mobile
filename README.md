@@ -17,6 +17,8 @@ git clone -b master https://github.com/clearsummit/react-native-starter-project.
 cd react-native-starter-project/
 
 yarn
+
+react-native link
 ```
 
 ### Run on iOS
@@ -51,6 +53,8 @@ yarn
 
 * Create a new project in Sentry
 
+* Run `react-native link react-native-sentry` and follow instructions. Check out [documents](https://docs.sentry.io/clients/react-native/)
+
 * Go to Project Settings -> Client Keys -> Copy and paste the DNS url to `SentryUtil.configure('')` in App.js
 
 ### Support multiple environments
@@ -62,3 +66,13 @@ yarn
 ### Integrate CodeClimate for test report
 
 * Change `<token here>` in `circle.yml` file with Code Climate's repo token
+
+### Integrate Fabric & Crashlytics for crash reports
+
+* [Crashlytics Usage](https://github.com/corymsmith/react-native-fabric#crashlytics-usage)
+
+* [Answer Usage](https://github.com/corymsmith/react-native-fabric#answers-usage)
+
+* iOS: insert API key in associated `Info.Plist` file. Also add `"${SRCROOT}/Fabric.framework/run" API_KEY API_SECRET` to existing Run Script Phase in Target's Build Phase.
+
+* Android: insert API key in `AndroidManifest.xml` file.
