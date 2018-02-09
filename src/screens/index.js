@@ -1,10 +1,11 @@
 // @flow
+
 /* eslint import/no-named-as-default: 0 */
 import React from 'react'
 import { connect } from 'react-redux'
 import { StackNavigator, addNavigationHelpers } from 'react-navigation'
-import type { NavigationDispatch }
-  from 'react-navigation'
+import { createReactNavigationReduxMiddleware, createReduxBoundAddListener } from 'react-navigation-redux-helpers'
+import type { NavigationDispatch } from 'react-navigation'
 
 import { Roots } from '../constants'
 
@@ -16,10 +17,16 @@ export const AppNavigator = StackNavigator({
   },
 })
 
+const middleware = createReactNavigationReduxMiddleware(
+  "root",
+  state => state.nav,
+)
+const addListener = createReduxBoundAddListener("root");
+
 const _RootContainer = (props : {
   dispatch: Function,
   nav: Object
-}) => (<AppNavigator navigation={addNavigationHelpers({ dispatch: props.dispatch, state: props.nav })} />)
+}) => (<AppNavigator navigation={addNavigationHelpers({ dispatch: props.dispatch, state: props.nav, addListener })} />)
 
 const mapStateToProps = (state : StoreState) => ({ nav: state.nav })
 
