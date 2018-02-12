@@ -66,13 +66,3 @@ react-native link
 ### Integrate CodeClimate for test report
 
 * Change `<token here>` in `circle.yml` file with Code Climate's repo token
-
-### Integrate Fabric & Crashlytics for crash reports
-
-* [Crashlytics Usage](https://github.com/corymsmith/react-native-fabric#crashlytics-usage)
-
-* [Answer Usage](https://github.com/corymsmith/react-native-fabric#answers-usage)
-
-* iOS: insert API key in associated `Info.Plist` file. Also add `"${SRCROOT}/Fabric.framework/run" API_KEY API_SECRET` to existing Run Script Phase in Target's Build Phase.
-
-* Android: insert API key in `AndroidManifest.xml` file.
