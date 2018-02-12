@@ -40,6 +40,9 @@
     "collectCoverage": true
   },
   "dependencies": {
+    "appcenter": "^1.2.0",
+    "appcenter-analytics": "^1.2.0",
+    "appcenter-crashes": "^1.2.0",
     "axios": "^0.17.0",
     "codeclimate-test-reporter": "^0.5.0",
     "eslint-config-airbnb": "^16.1.0",
