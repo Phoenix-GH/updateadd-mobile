@@ -4,8 +4,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { StackNavigator, addNavigationHelpers } from 'react-navigation'
-import { createReactNavigationReduxMiddleware, createReduxBoundAddListener } from 'react-navigation-redux-helpers'
 import type { NavigationDispatch } from 'react-navigation'
+
+import { addListener } from '../store'
 
 import { Roots } from '../constants'
 
@@ -16,12 +17,6 @@ export const AppNavigator = StackNavigator({
     screen: HelloWorldScreen,
   },
 })
-
-const middleware = createReactNavigationReduxMiddleware(
-  "root",
-  state => state.nav,
-)
-const addListener = createReduxBoundAddListener("root");
 
 const _RootContainer = (props : {
   dispatch: Function,

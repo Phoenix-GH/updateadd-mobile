@@ -8,8 +8,9 @@ import CodePush from 'react-native-code-push'
 
 import SentryUtil from './utils'
 
-import { RootContainer } from './screens/index'
 import Store from './store'
+
+import { RootContainer } from './screens/index'
 
 const codePushOptions = {
   checkFrequency: CodePush.CheckFrequency.ON_APP_START,

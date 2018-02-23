@@ -3,6 +3,7 @@
 import devTools from 'remote-redux-devtools'
 import { compose, createStore, combineReducers, applyMiddleware } from 'redux'
 import createSagaMiddleware from 'redux-saga'
+import { createReactNavigationReduxMiddleware, createReduxBoundAddListener } from 'react-navigation-redux-helpers'
 
 import UserStoreStateReducer, * as UserActions from './user'
 
@@ -46,6 +47,12 @@ const reducers = combineReducers({
   nav: navReducer,
 })
 
+const navigationMiddleware = createReactNavigationReduxMiddleware(
+  'root',
+  state => state.nav,
+)
+export const addListener = createReduxBoundAddListener('root')
+
 export default {
   actions: {
     user: UserActions,
@@ -55,6 +62,7 @@ export default {
     const middlewares = [
       sagaMiddleware,
       logAction,
+      navigationMiddleware,
     ]
 
     let middleware = applyMiddleware(...middlewares)
