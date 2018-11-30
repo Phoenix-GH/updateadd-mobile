@@ -870,8 +870,6 @@
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				F09DAA581FCF527000E93BF4 /* Run Script */,
 				71C182E984CE476788CB4C62 /* Upload Debug Symbols to Sentry */,
-				8448CBCC24DB16AB8118C201 /* [CP] Embed Pods Frameworks */,
-				E419EECB5913D7C387C25340 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -892,8 +890,6 @@
 				F007D7541FA219D300B37C2C /* Resources */,
 				F007D7571FA219D300B37C2C /* Bundle React Native code and images */,
 				F09DAAD01FCF55FA00E93BF4 /* ShellScript */,
-				81B267A266AE0AF7485798BB /* [CP] Embed Pods Frameworks */,
-				4F3A66E325808CE8F90CB8B9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -914,8 +910,6 @@
 				F007D7901FA21B0A00B37C2C /* Resources */,
 				F007D7931FA21B0A00B37C2C /* Bundle React Native code and images */,
 				F09DAAD11FCF55FD00E93BF4 /* ShellScript */,
-				7455A1E3C6AF8DAB89D84840 /* [CP] Embed Pods Frameworks */,
-				200C3AB83F0C23717FB05232 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1423,21 +1417,6 @@
 			shellPath = /bin/sh;
 			shellScript = "export SENTRY_PROPERTIES=sentry.properties\nexport NODE_BINARY=node\n../node_modules/@sentry/cli/bin/sentry-cli react-native xcode ../node_modules/react-native/scripts/react-native-xcode.sh";
 		};
-		200C3AB83F0C23717FB05232 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ReactNativeSeed Debug/Pods-ReactNativeSeed Debug-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		2822F22DD66E200F8831DC61 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1456,21 +1435,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4F3A66E325808CE8F90CB8B9 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ReactNativeSeed Staging/Pods-ReactNativeSeed Staging-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		71C182E984CE476788CB4C62 /* Upload Debug Symbols to Sentry */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1484,51 +1448,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "export SENTRY_PROPERTIES=sentry.properties\n../node_modules/@sentry/cli/bin/sentry-cli upload-dsym";
-		};
-		7455A1E3C6AF8DAB89D84840 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ReactNativeSeed Debug/Pods-ReactNativeSeed Debug-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		81B267A266AE0AF7485798BB /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ReactNativeSeed Staging/Pods-ReactNativeSeed Staging-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8448CBCC24DB16AB8118C201 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ReactNativeSeed/Pods-ReactNativeSeed-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 		93016A052B2C8D8FA3EE68D9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1564,21 +1483,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E419EECB5913D7C387C25340 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ReactNativeSeed/Pods-ReactNativeSeed-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F007D7571FA219D300B37C2C /* Bundle React Native code and images */ = {
