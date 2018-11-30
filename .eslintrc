@@ -1,21 +1,27 @@
 {
   "extends": "airbnb",
   "env": {
-    "mocha": true,
     "node": true,
     "jest": true,
-    "jasmine": true
+    "es6": true
   },
   "parser": "babel-eslint",
   "plugins": [
     "react",
+    "react-native",
+    "jest",
     "babel",
     "flowtype",
+    "prettier"
   ],
   "rules": {
-    "react/prefer-stateless-function": "off",
+    "camelcase": "off",
+    "import/no-named-as-default": "off",
     "jsx-a11y/href-no-hash": "off",
-    "jsx-a11y/anchor-is-valid": ["warn", { "aspects": ["invalidHref"] }],
+    "jsx-a11y/anchor-is-valid": [ "error", {
+      "components": [ "Link" ],
+      "specialLink": [ "to" ]
+    }],
     "semi": 0,
     "max-len": [1, 200],
     "flowtype/define-flow-type": 1,
@@ -24,11 +30,40 @@
     "react/jsx-filename-extension": ["off" ],
     "no-underscore-dangle": ["off"],
     "react/no-unescaped-entities": ["off"],
-    "no-unused-vars": 1
+    "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }]
   },
   "globals": {
     "__DEV__": true,
-    "Raven": {},
-    "expect": Object,
+    "__dirname": false,
+    "__fbBatchedBridgeConfig": false,
+    "alert": false,
+    "cancelAnimationFrame": false,
+    "cancelIdleCallback": false,
+    "clearImmediate": true,
+    "clearInterval": false,
+    "clearTimeout": false,
+    "console": false,
+    "document": false,
+    "escape": false,
+    "Event": false,
+    "EventTarget": false,
+    "exports": false,
+    "fetch": false,
+    "FormData": false,
+    "global": false,
+    "Map": true,
+    "module": false,
+    "navigator": false,
+    "process": false,
+    "Promise": true,
+    "requestAnimationFrame": true,
+    "requestIdleCallback": true,
+    "require": false,
+    "Set": true,
+    "setImmediate": true,
+    "setInterval": false,
+    "setTimeout": false,
+    "window": false,
+    "XMLHttpRequest": false
   }
 }
