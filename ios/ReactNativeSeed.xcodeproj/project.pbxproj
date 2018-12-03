@@ -26,6 +26,7 @@
 		23FD60DD2A594EC98B14C07C /* libRNSentry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FDA9AD0946C4F688425587C /* libRNSentry.a */; };
 		28A7463E15F51575BE7CBE12 /* libPods-ReactNativeSeed.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3683A3623CFDADE74168EA5F /* libPods-ReactNativeSeed.a */; };
 		29C9A5FB1C7003DF3D099A6F /* libPods-ReactNativeSeed Staging.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DF28E7422C6EE388B1F9BCC0 /* libPods-ReactNativeSeed Staging.a */; };
+		3A5F0641BD6A49CEA4406C62 /* libRNGestureHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52EEB3FF131D40FBB1324DA2 /* libRNGestureHandler.a */; };
 		405A9EB20684473C9C35DC21 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1B20EB76955D4C429155E649 /* Zocial.ttf */; };
 		4CC138B1E215493492CD71C2 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8EAF838C271940DBAAEC24BC /* EvilIcons.ttf */; };
 		5500ADB978EB251D4AC57241 /* libPods-ReactNativeSeed Debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 06AC654BE38CCD4E523A0CE5 /* libPods-ReactNativeSeed Debug.a */; };
@@ -39,6 +40,8 @@
 		9F0931C97B7A4D92BE5CEC44 /* AppCenter-Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5CAAC05EBA2C47D9A7B58817 /* AppCenter-Config.plist */; };
 		A589F9BA0CE94E23AB572129 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3378D49491DA4851967FE09D /* Octicons.ttf */; };
 		AD5715A6881C447B8EABBE98 /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 17FAA2C1FB174EC68A00F9DB /* libRNVectorIcons.a */; };
+		B88F514121B55DF30059AA99 /* libRNGestureHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B88F514021B55DD70059AA99 /* libRNGestureHandler.a */; };
+		B88F514221B55E010059AA99 /* libRNGestureHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B88F514021B55DD70059AA99 /* libRNGestureHandler.a */; };
 		C0CB8A07B41945A5ADEF53E6 /* libReactNativeConfig.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 44EC38FE41EC4AB583225158 /* libReactNativeConfig.a */; };
 		DB1E50E611964D7D9D6CAEB7 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04889E7C742148C0BB858249 /* Entypo.ttf */; };
 		DD871123015E46168F82409D /* libAppCenterReactNativeCrashes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80171E0ED78B472A9018FA63 /* libAppCenterReactNativeCrashes.a */; };
@@ -287,6 +290,27 @@
 			remoteGlobalIDString = 58B5119B1A9E6C1200147676;
 			remoteInfo = RCTText;
 		};
+		B88F513521B55DD70059AA99 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 002B093C44F54578ABBEB3C2 /* ReactNativeConfig.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3DF7F6AC203AA09B00D0EAB7;
+			remoteInfo = "ReactNativeConfig-tvOS";
+		};
+		B88F513A21B55DD70059AA99 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 87D46D9B7D634BBF8189B4DA /* RNVectorIcons.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A39873CE1EA65EE60051E01A;
+			remoteInfo = "RNVectorIcons-tvOS";
+		};
+		B88F513F21B55DD70059AA99 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B3F48EFA899E43D29BE4BDBE /* RNGestureHandler.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = RNGestureHandler;
+		};
 		F007D73F1FA219BC00B37C2C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 002B093C44F54578ABBEB3C2 /* ReactNativeConfig.xcodeproj */;
@@ -451,6 +475,7 @@
 		44428083CAFE4AEBADEB0990 /* RNSentry.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNSentry.xcodeproj; path = "../node_modules/react-native-sentry/ios/RNSentry.xcodeproj"; sourceTree = "<group>"; };
 		44EC38FE41EC4AB583225158 /* libReactNativeConfig.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libReactNativeConfig.a; sourceTree = "<group>"; };
 		480B3FD726EF40ECA706222A /* AppCenterReactNativeAnalytics.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = AppCenterReactNativeAnalytics.xcodeproj; path = "../node_modules/appcenter-analytics/ios/AppCenterReactNativeAnalytics.xcodeproj"; sourceTree = "<group>"; };
+		52EEB3FF131D40FBB1324DA2 /* libRNGestureHandler.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNGestureHandler.a; sourceTree = "<group>"; };
 		570A87F397CE41FC95F8DBEE /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 		5CAAC05EBA2C47D9A7B58817 /* AppCenter-Config.plist */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.plist.xml; name = "AppCenter-Config.plist"; path = "ReactNativeSeed/AppCenter-Config.plist"; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
@@ -467,6 +492,7 @@
 		8EAF838C271940DBAAEC24BC /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
 		A0156BD4C4D31197F1FB6856 /* Pods-ReactNativeSeed Staging.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeSeed Staging.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReactNativeSeed Staging/Pods-ReactNativeSeed Staging.debug.xcconfig"; sourceTree = "<group>"; };
 		A26EEBA986A5448C9389ECD1 /* libz.tbd */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		B3F48EFA899E43D29BE4BDBE /* RNGestureHandler.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNGestureHandler.xcodeproj; path = "../node_modules/react-native-gesture-handler/ios/RNGestureHandler.xcodeproj"; sourceTree = "<group>"; };
 		BEBCE19E8E3049FF87687BB1 /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 		C3F2A417AFABAE43C0C7F5C5 /* Pods-ReactNativeSeed Staging.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeSeed Staging.staging.xcconfig"; path = "Pods/Target Support Files/Pods-ReactNativeSeed Staging/Pods-ReactNativeSeed Staging.staging.xcconfig"; sourceTree = "<group>"; };
 		DCBF0DE7523F4DF8A5AEBF92 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
@@ -505,6 +531,7 @@
 				E3E1529579F8428BAC4BCED3 /* libAppCenterReactNativeAnalytics.a in Frameworks */,
 				DD871123015E46168F82409D /* libAppCenterReactNativeCrashes.a in Frameworks */,
 				28A7463E15F51575BE7CBE12 /* libPods-ReactNativeSeed.a in Frameworks */,
+				3A5F0641BD6A49CEA4406C62 /* libRNGestureHandler.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,6 +539,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B88F514121B55DF30059AA99 /* libRNGestureHandler.a in Frameworks */,
 				F015119520315F8200E98CDB /* libAppCenterReactNativeCrashes.a in Frameworks */,
 				F015119420315F7C00E98CDB /* libAppCenterReactNativeAnalytics.a in Frameworks */,
 				F015116920315F7500E98CDB /* libAppCenterReactNative.a in Frameworks */,
@@ -537,6 +565,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B88F514221B55E010059AA99 /* libRNGestureHandler.a in Frameworks */,
 				F015119820315F9700E98CDB /* libAppCenterReactNativeCrashes.a in Frameworks */,
 				F015119720315F9100E98CDB /* libAppCenterReactNativeAnalytics.a in Frameworks */,
 				F015119620315F8B00E98CDB /* libAppCenterReactNative.a in Frameworks */,
@@ -718,6 +747,7 @@
 				05BDAC476B0C4EC2B85DE55D /* AppCenterReactNative.xcodeproj */,
 				480B3FD726EF40ECA706222A /* AppCenterReactNativeAnalytics.xcodeproj */,
 				02C1D794529D4BAD8FE848B8 /* AppCenterReactNativeCrashes.xcodeproj */,
+				B3F48EFA899E43D29BE4BDBE /* RNGestureHandler.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -785,10 +815,19 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		B88F513C21B55DD70059AA99 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B88F514021B55DD70059AA99 /* libRNGestureHandler.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		F007D73C1FA219BC00B37C2C /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				F007D7401FA219BC00B37C2C /* libReactNativeConfig.a */,
+				B88F513621B55DD70059AA99 /* libReactNativeConfig-tvOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -829,6 +868,7 @@
 			isa = PBXGroup;
 			children = (
 				F09DAACF1FCF543200E93BF4 /* libRNVectorIcons.a */,
+				B88F513B21B55DD70059AA99 /* libRNVectorIcons-tvOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -843,6 +883,7 @@
 				E1033A6F475C447ABE3D3EB1 /* libAppCenterReactNative.a */,
 				0C7718FA41124E418B52A85C /* libAppCenterReactNativeAnalytics.a */,
 				80171E0ED78B472A9018FA63 /* libAppCenterReactNativeCrashes.a */,
+				52EEB3FF131D40FBB1324DA2 /* libRNGestureHandler.a */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -1015,6 +1056,10 @@
 				{
 					ProductGroup = F007D73C1FA219BC00B37C2C /* Products */;
 					ProjectRef = 002B093C44F54578ABBEB3C2 /* ReactNativeConfig.xcodeproj */;
+				},
+				{
+					ProductGroup = B88F513C21B55DD70059AA99 /* Products */;
+					ProjectRef = B3F48EFA899E43D29BE4BDBE /* RNGestureHandler.xcodeproj */;
 				},
 				{
 					ProductGroup = F09DAA901FCF533500E93BF4 /* Products */;
@@ -1208,6 +1253,27 @@
 			fileType = archive.ar;
 			path = libRCTText.a;
 			remoteRef = 832341B41AAA6A8300B99B32 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B88F513621B55DD70059AA99 /* libReactNativeConfig-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libReactNativeConfig-tvOS.a";
+			remoteRef = B88F513521B55DD70059AA99 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B88F513B21B55DD70059AA99 /* libRNVectorIcons-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libRNVectorIcons-tvOS.a";
+			remoteRef = B88F513A21B55DD70059AA99 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B88F514021B55DD70059AA99 /* libRNGestureHandler.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNGestureHandler.a;
+			remoteRef = B88F513F21B55DD70059AA99 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		F007D7401FA219BC00B37C2C /* libReactNativeConfig.a */ = {
@@ -1620,11 +1686,13 @@
 					"$(SRCROOT)/../node_modules/appcenter/ios/AppCenterReactNative",
 					"$(SRCROOT)/../node_modules/appcenter-analytics/ios/AppCenterReactNativeAnalytics",
 					"$(SRCROOT)/../node_modules/appcenter-crashes/ios/AppCenterReactNativeCrashes",
+					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
 				);
 				INFOPLIST_FILE = ReactNativeSeed/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/ReactNativeSeed\"",
 					"\"$(SRCROOT)/ReactNativeSeed\"",
 					"\"$(SRCROOT)/ReactNativeSeed\"",
 					"\"$(SRCROOT)/ReactNativeSeed\"",
@@ -1660,11 +1728,13 @@
 					"$(SRCROOT)/../node_modules/appcenter/ios/AppCenterReactNative",
 					"$(SRCROOT)/../node_modules/appcenter-analytics/ios/AppCenterReactNativeAnalytics",
 					"$(SRCROOT)/../node_modules/appcenter-crashes/ios/AppCenterReactNativeCrashes",
+					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
 				);
 				INFOPLIST_FILE = ReactNativeSeed/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/ReactNativeSeed\"",
 					"\"$(SRCROOT)/ReactNativeSeed\"",
 					"\"$(SRCROOT)/ReactNativeSeed\"",
 					"\"$(SRCROOT)/ReactNativeSeed\"",
@@ -1785,6 +1855,7 @@
 					"$(SRCROOT)/../node_modules/appcenter/ios/AppCenterReactNative",
 					"$(SRCROOT)/../node_modules/appcenter-analytics/ios/AppCenterReactNativeAnalytics",
 					"$(SRCROOT)/../node_modules/appcenter-crashes/ios/AppCenterReactNativeCrashes",
+					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/ReactNativeSeed/Info-Staging.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1826,6 +1897,7 @@
 					"$(SRCROOT)/../node_modules/appcenter/ios/AppCenterReactNative",
 					"$(SRCROOT)/../node_modules/appcenter-analytics/ios/AppCenterReactNativeAnalytics",
 					"$(SRCROOT)/../node_modules/appcenter-crashes/ios/AppCenterReactNativeCrashes",
+					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/ReactNativeSeed/Info-Staging.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1867,6 +1939,7 @@
 					"$(SRCROOT)/../node_modules/appcenter/ios/AppCenterReactNative",
 					"$(SRCROOT)/../node_modules/appcenter-analytics/ios/AppCenterReactNativeAnalytics",
 					"$(SRCROOT)/../node_modules/appcenter-crashes/ios/AppCenterReactNativeCrashes",
+					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/ReactNativeSeed/Info-Staging.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1909,6 +1982,7 @@
 					"$(SRCROOT)/../node_modules/appcenter/ios/AppCenterReactNative",
 					"$(SRCROOT)/../node_modules/appcenter-analytics/ios/AppCenterReactNativeAnalytics",
 					"$(SRCROOT)/../node_modules/appcenter-crashes/ios/AppCenterReactNativeCrashes",
+					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/ReactNativeSeed/Info-Debug.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1950,6 +2024,7 @@
 					"$(SRCROOT)/../node_modules/appcenter/ios/AppCenterReactNative",
 					"$(SRCROOT)/../node_modules/appcenter-analytics/ios/AppCenterReactNativeAnalytics",
 					"$(SRCROOT)/../node_modules/appcenter-crashes/ios/AppCenterReactNativeCrashes",
+					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/ReactNativeSeed/Info-Debug.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1991,6 +2066,7 @@
 					"$(SRCROOT)/../node_modules/appcenter/ios/AppCenterReactNative",
 					"$(SRCROOT)/../node_modules/appcenter-analytics/ios/AppCenterReactNativeAnalytics",
 					"$(SRCROOT)/../node_modules/appcenter-crashes/ios/AppCenterReactNativeCrashes",
+					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/ReactNativeSeed/Info-Debug.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -2072,11 +2148,13 @@
 					"$(SRCROOT)/../node_modules/appcenter/ios/AppCenterReactNative",
 					"$(SRCROOT)/../node_modules/appcenter-analytics/ios/AppCenterReactNativeAnalytics",
 					"$(SRCROOT)/../node_modules/appcenter-crashes/ios/AppCenterReactNativeCrashes",
+					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
 				);
 				INFOPLIST_FILE = ReactNativeSeed/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/ReactNativeSeed\"",
 					"\"$(SRCROOT)/ReactNativeSeed\"",
 					"\"$(SRCROOT)/ReactNativeSeed\"",
 					"\"$(SRCROOT)/ReactNativeSeed\"",
