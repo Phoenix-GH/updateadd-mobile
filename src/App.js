@@ -3,14 +3,11 @@
 import React from 'react'
 import { AppRegistry } from 'react-native'
 import { Provider } from 'react-redux'
-
 import CodePush from 'react-native-code-push'
 
 import SentryUtil from './utils'
-
+import RootContainer from './screens'
 import Store from './store'
-
-import { RootContainer } from './screens/index'
 
 const codePushOptions = {
   checkFrequency: CodePush.CheckFrequency.ON_APP_START,
@@ -19,6 +16,8 @@ const codePushOptions = {
 
 // If environment is not dev setup Sentry and configure with CodePush
 export class App extends React.Component <any> {
+  store = Store.configureStore()
+
   componentWillMount() {
     // On app load
     if (!__DEV__) {
@@ -31,9 +30,6 @@ export class App extends React.Component <any> {
       SentryUtil.setExtraContext(this.store)
     }
   }
-
-  store = Store.configureStore()
-  _modal = null
 
   render() {
     return (

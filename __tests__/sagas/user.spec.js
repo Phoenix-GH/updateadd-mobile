@@ -3,7 +3,7 @@
 import { put, call } from 'redux-saga/effects'
 
 import { loginUser } from '../../src/sagas/user'
-import ApiService from '../../src/services/api-service'
+import ApiService from '../../src/services/ApiServices'
 import store from '../../src/store'
 
 const stepper = fn => mock => fn.next(mock).value

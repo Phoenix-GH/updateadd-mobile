@@ -5,13 +5,15 @@ import { Sentry, SentrySeverity } from 'react-native-sentry'
 export const replaceNull = (store) => {
   if (store instanceof Array) {
     return store.map(o => replaceNull(o))
-  } else if (store instanceof Object) {
+  }
+  if (store instanceof Object) {
     const result = {}
     Object.keys(store).forEach((key) => {
       result[key] = replaceNull(store[key])
     })
     return result
-  } else if (store === null) {
+  }
+  if (store === null) {
     return 'NULL'
   }
   return store

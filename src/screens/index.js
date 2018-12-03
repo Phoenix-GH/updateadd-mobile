@@ -1,32 +1,44 @@
 // @flow
 
-/* eslint import/no-named-as-default: 0 */
 import React from 'react'
+import { View } from 'react-native'
 import { connect } from 'react-redux'
-import { StackNavigator, addNavigationHelpers } from 'react-navigation'
-import type { NavigationDispatch } from 'react-navigation'
-
-import { addListener } from '../store'
+import { createStackNavigator } from 'react-navigation'
+import type { NavigationDispatch, NavigationState } from 'react-navigation'
+import { reduxifyNavigator, createReactNavigationReduxMiddleware } from 'react-navigation-redux-helpers'
 
 import { Roots } from '../constants'
 
 import HelloWorldScreen from './HelloWorld'
 
-export const AppNavigator = StackNavigator({
+export const AppNavigator = createStackNavigator({
   [Roots.HelloWorld]: {
     screen: HelloWorldScreen,
   },
 })
 
-const _RootContainer = (props : {
-  dispatch: Function,
-  nav: Object
-}) => (<AppNavigator navigation={addNavigationHelpers({ dispatch: props.dispatch, state: props.nav, addListener })} />)
+export const navigationMiddleware = createReactNavigationReduxMiddleware('root', state => state.nav)
+const AppNavigatorWithNavigationState = reduxifyNavigator(AppNavigator, 'root')
 
-const mapStateToProps = (state : StoreState) => ({ nav: state.nav })
+type RootProps = {
+  dispatch: Function,
+  navigation: NavigationState,
+}
+
+const RootContainer = (props: RootProps) => {
+  const { dispatch, navigation } = props
+  return (
+    <View style={{ flex: 1 }}>
+      <AppNavigatorWithNavigationState
+        state={navigation}
+        dispatch={dispatch}
+      />
+    </View>
+  )
+}
+
+const mapStateToProps = (state: StoreState) => ({ navigation: state.nav })
 
 const mapStateToDispatch = (dispatch : NavigationDispatch) => ({ dispatch })
 
-export const RootContainer = connect(mapStateToProps, mapStateToDispatch)(_RootContainer)
-
-export default AppNavigator
+export default connect(mapStateToProps, mapStateToDispatch)(RootContainer)

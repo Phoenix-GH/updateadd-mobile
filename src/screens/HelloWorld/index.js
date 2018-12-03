@@ -4,7 +4,8 @@ import React from 'react'
 import { View, Text } from 'react-native'
 import { connect } from 'react-redux'
 
-class HelloWorldScreen extends React.Component<any, any> {
+/* eslint-disable */
+class HelloWorldScreen extends React.Component<any> {
   render() {
     return (
       <View style={{ alignItems: 'center' }}>
@@ -15,5 +16,6 @@ class HelloWorldScreen extends React.Component<any, any> {
     )
   }
 }
+/* eslint-enable */
 
 export default connect(() : Object => ({}))(HelloWorldScreen)

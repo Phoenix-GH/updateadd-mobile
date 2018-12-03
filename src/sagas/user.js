@@ -1,15 +1,19 @@
 // @flow
-
-import { call, put, takeLatest, fork } from 'redux-saga/effects'
+import type { Saga } from 'redux-saga'
+import {
+  call,
+  put,
+  takeLatest,
+  fork,
+} from 'redux-saga/effects'
 
 import Actions from '../constants'
-import ApiService from '../services/api-service'
+import ApiService from '../services/ApiServices'
 import store from '../store'
 
-function* loginUser(action: { type: string, payload: { email: string, password: string } }): GeneratorType {
+function* loginUser(action: { type: string, payload: { email: string, password: string } }): Saga<*> {
   // Set mode to pending
   yield put(store.actions.user.dispatchPending(true))
-
   try {
     const response: UserType = yield call(ApiService.loginUser, action.payload)
     yield put(store.actions.user.dispatchStoreUser(response))
@@ -19,11 +23,10 @@ function* loginUser(action: { type: string, payload: { email: string, password: 
   yield put(store.actions.user.dispatchPending(false))
 }
 
-function* sagas(): GeneratorType {
+function* sagas(): Saga<*> {
   /* eslint-disable */
   console.log('Auth sagas loaded')
   /* eslint-enable */
-
   yield fork(takeLatest, Actions.LOGIN_USER, loginUser)
 }
 

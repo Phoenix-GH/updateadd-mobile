@@ -3,7 +3,7 @@
 import axios from 'axios'
 import Config from 'react-native-config'
 
-import { modelMapper, ModelResponseTypes } from '../../models'
+import { modelMapper, ModelResponseTypes } from '../models'
 
 const BASE_URL = Config.API_URL
 
@@ -38,19 +38,7 @@ class ApiService {
   // General pagination endpoint
   getNextPage = (url: string, responseType: typeof ModelResponseTypes) => this.axios.get(url, { apiResponseType: responseType })
 
-  loginUser(data: { email: string, password: string }): Promise<UserType> {
-    return new Promise((resolve, reject) => this.axios({
-      method: 'post',
-      url: LOGIN_USER_URL,
-      data,
-    }).then((response) => {
-      // $FlowFixMe
-      const user: UserType = response.data
-      resolve(user)
-    }).catch((err) => {
-      reject(err)
-    }))
-  }
+  loginUser = (data: { email: string, password: string }) => this.axios.post(LOGIN_USER_URL, data)
 }
 
 export default new ApiService()

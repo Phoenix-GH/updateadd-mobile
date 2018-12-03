@@ -1,26 +1,19 @@
 // @flow
 
 import devTools from 'remote-redux-devtools'
-import { compose, createStore, combineReducers, applyMiddleware } from 'redux'
+import {
+  compose,
+  createStore,
+  combineReducers,
+  applyMiddleware,
+} from 'redux'
 import createSagaMiddleware from 'redux-saga'
-import { createReactNavigationReduxMiddleware, createReduxBoundAddListener } from 'react-navigation-redux-helpers'
+import { createNavigationReducer } from 'react-navigation-redux-helpers'
 
 import UserStoreStateReducer, * as UserActions from './user'
 
 import { generators } from '../sagas'
-
-import { AppNavigator } from '../screens'
-
-import { Roots } from '../constants'
-
-// Configure Navigation for Redux
-const initialState = AppNavigator.router.getStateForAction(AppNavigator.router.getActionForPathAndParams(Roots.HelloWorld))
-
-const navReducer = (state = initialState, action) => {
-  const nextState = AppNavigator.router.getStateForAction(action, state)
-  // Simply return the original `state` if `nextState` is null or undefined.
-  return nextState || state
-}
+import { AppNavigator, navigationMiddleware } from '../screens'
 
 // Strange higher-order function to potentially modify the result
 const logAction = store => next => (action) => {
@@ -42,36 +35,28 @@ const logAction = store => next => (action) => {
   return result
 }
 
-const reducers = combineReducers({
-  user: UserStoreStateReducer,
-  nav: navReducer,
-})
-
-const navigationMiddleware = createReactNavigationReduxMiddleware(
-  'root',
-  state => state.nav,
-)
-export const addListener = createReduxBoundAddListener('root')
-
 export default {
   actions: {
     user: UserActions,
   },
   configureStore: () => {
+    const reducers = combineReducers({
+      user: UserStoreStateReducer,
+      nav: createNavigationReducer(AppNavigator),
+    })
+
     const sagaMiddleware = createSagaMiddleware()
     const middlewares = [
       sagaMiddleware,
       logAction,
       navigationMiddleware,
     ]
-
     let middleware = applyMiddleware(...middlewares)
-
     if (process.env.NODE_ENV !== 'production') {
       middleware = compose(middleware, devTools({ name: 'nativestarterkit', realtime: true }))
     }
 
-    const store = createStore(reducers, middleware)
+    const store = createStore<any, any, any>(reducers, {}, middleware)
     generators.map(saga => sagaMiddleware.run(saga))
 
     // $FlowFixMe
