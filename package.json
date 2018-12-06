@@ -55,7 +55,7 @@
     "react-native-gesture-handler": "^1.0.10",
     "react-native-sentry": "^0.39.1",
     "react-native-vector-icons": "^6.1.0",
-    "react-navigation": "^3.0.2",
+    "react-navigation": "^3.0.5",
     "react-navigation-redux-helpers": "^2.0.8",
     "react-redux": "^5.1.1",
     "redux": "^4.0.1",
@@ -64,6 +64,7 @@
     "remote-redux-devtools-on-debugger": "^0.8.3"
   },
   "devDependencies": {
+    "@babel/plugin-transform-flow-strip-types": "^7.2.0",
     "@babel/preset-flow": "^7.0.0",
     "babel-cli": "^6.26.0",
     "babel-preset-react-native": "5.0.2",
@@ -86,7 +87,11 @@
   "jest": {
     "preset": "react-native",
     "setupFiles": [
-      "<rootDir>/__mocks__"
+      "<rootDir>/__mocks__",
+      "<rootDir>/node_modules/appcenter/test/AppCenterMock.js",
+      "<rootDir>/node_modules/appcenter-analytics/test/AppCenterAnalyticsMock.js",
+      "<rootDir>/node_modules/appcenter-crashes/test/AppCenterCrashesMock.js",
+      "<rootDir>/node_modules/appcenter-push/test/AppCenterPushMock.js"
     ],
     "transformIgnorePatterns": [
       "node_modules/(?!(jest-)?react-native|react-navigation|react-navigation-redux-helpers)"
