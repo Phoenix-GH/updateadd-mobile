@@ -5,6 +5,7 @@ import { AppRegistry } from 'react-native'
 import { Provider } from 'react-redux'
 import CodePush from 'react-native-code-push'
 
+import StorybookUI from '../storybook'
 import SentryUtil from './utils'
 import RootContainer from './screens'
 import Store from './store'
@@ -41,7 +42,7 @@ export class App extends React.Component <any> {
 }
 
 const start = () => {
-  AppRegistry.registerComponent('ReactNativeSeed', () => CodePush(codePushOptions)(App))
+  AppRegistry.registerComponent('ReactNativeSeed', () => (__DEV__ ? StorybookUI : CodePush(codePushOptions)(App)))
 }
 
 export default start
