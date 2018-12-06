@@ -1,54 +1,19 @@
 // @flow
 
+import { dispatchReducer, runReducers } from '../helpers/dispatch-and-reduce'
 import C from '../constants'
 
 export const initialState: UserStoreState = {
   user: null,
   pending: false,
+  error: null,
 }
 
-export const dispatchPending = (pending: boolean) => ({
-  type: C.LOGIN_USER_PENDING,
-  payload: pending,
-})
-
-export const dispatchError = (error: ErrorType) => ({
-  type: C.LOGIN_USER_ERROR,
-  payload: error,
-})
-
-export const dispatchLoginUser = (email: string, password: string) => ({
-  type: C.LOGIN_USER,
-  payload: {
-    email, password,
-  },
-})
-
-export const dispatchStoreUser = (user: UserType) => ({
-  type: C.LOGIN_STORE_USER,
-  payload: user,
-})
-
-export default (state: UserStoreState = initialState, action: StandardAction) => {
-  switch (action.type) {
-    case C.LOGIN_USER_PENDING:
-      return {
-        ...state,
-        pending: action.payload,
-      }
-    case C.LOGIN_USER_ERROR:
-      return {
-        ...state,
-        resentCodeSuccess: null,
-        error: action.payload,
-      }
-    case C.LOGIN_STORE_USER:
-      return {
-        ...state,
-        user: action.payload,
-      }
-    default:
-      break
-  }
-  return state
+export const authDispatchers = {
+  setPending: dispatchReducer<UserStoreState, boolean>(C.LOGIN_USER_PENDING, (state, pending): UserStoreState => ({ ...state, pending })),
+  setError: dispatchReducer<UserStoreState, ?ErrorType>(C.LOGIN_USER_ERROR, (state, error): UserStoreState => ({ ...state, error })),
+  loginUser: dispatchReducer<UserStoreState, { email: string, password: string }>(C.LOGIN_USER, (state): UserStoreState => ({ ...state })),
+  storeUser: dispatchReducer<UserStoreState, ?UserType>(C.LOGIN_STORE_USER, (state, user): UserStoreState => ({ ...state, user })),
 }
+
+export const reducer = (state: UserStoreState = { ...initialState }, action: StandardAction): UserStoreState => runReducers(state, authDispatchers, action)

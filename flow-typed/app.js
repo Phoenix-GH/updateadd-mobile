@@ -11,6 +11,7 @@ type UserType = {
 type UserStoreState = {
   user: ?UserType,
   pending: boolean,
+  error: ?ErrorType,
 }
 
 type StoreState = {

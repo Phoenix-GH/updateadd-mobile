@@ -8,19 +8,19 @@ import {
 } from 'redux-saga/effects'
 
 import Actions from '../constants'
-import ApiService from '../services/ApiServices'
-import store from '../store'
+import ApiService from '../helpers/ApiServices'
+import { authDispatchers } from '../store/user'
 
 function* loginUser(action: { type: string, payload: { email: string, password: string } }): Saga<*> {
   // Set mode to pending
-  yield put(store.actions.user.dispatchPending(true))
+  yield put(authDispatchers.setPending.dispatch(true))
   try {
     const response: UserType = yield call(ApiService.loginUser, action.payload)
-    yield put(store.actions.user.dispatchStoreUser(response))
+    yield put(authDispatchers.storeUser.dispatch(response))
   } catch (e) {
-    yield put(store.actions.user.dispatchError(e))
+    yield put(authDispatchers.setError.dispatch(e))
   }
-  yield put(store.actions.user.dispatchPending(false))
+  yield put(authDispatchers.setPending.dispatch(false))
 }
 
 function* sagas(): Saga<*> {
