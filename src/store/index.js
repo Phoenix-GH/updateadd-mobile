@@ -10,7 +10,7 @@ import {
 import createSagaMiddleware from 'redux-saga'
 import { createNavigationReducer } from 'react-navigation-redux-helpers'
 
-import UserStoreStateReducer, * as UserActions from './user'
+import * as user from './user'
 
 import { generators } from '../sagas'
 import { AppNavigator, navigationMiddleware } from '../screens'
@@ -37,11 +37,11 @@ const logAction = store => next => (action) => {
 
 export default {
   actions: {
-    user: UserActions,
+    user,
   },
   configureStore: () => {
     const reducers = combineReducers({
-      user: UserStoreStateReducer,
+      user: user.reducer,
       nav: createNavigationReducer(AppNavigator),
     })
 
