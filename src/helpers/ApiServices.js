@@ -28,7 +28,9 @@ class ApiService {
     }
     this.axios = axios.create(data)
     this.axios.interceptors.response.use((response) => {
+      // $FlowFixMe
       if (response.config.apiResponseType) {
+        // $FlowFixMe
         response.data = modelMapper(response.config.apiResponseType, response.data)
       }
       return response
@@ -36,9 +38,9 @@ class ApiService {
   }
 
   // General pagination endpoint
-  getNextPage = (url: string, responseType: typeof ModelResponseTypes) => this.axios.get(url, { apiResponseType: responseType })
+  getNextPage = (url: string, responseType: typeof ModelResponseTypes) => this.axios.get<string, any>(url, { apiResponseType: responseType })
 
-  loginUser = (data: { email: string, password: string }) => this.axios.post(LOGIN_USER_URL, data)
+  loginUser = (data: { email: string, password: string }) => this.axios.post<string, any>(LOGIN_USER_URL, data)
 }
 
 export default new ApiService()
