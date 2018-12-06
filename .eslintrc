@@ -11,8 +11,7 @@
     "react-native",
     "jest",
     "babel",
-    "flowtype",
-    "prettier"
+    "flowtype"
   ],
   "rules": {
     "camelcase": "off",
