@@ -89,8 +89,7 @@
     "setupFiles": [
       "<rootDir>/__mocks__",
       "<rootDir>/node_modules/appcenter/test/AppCenterMock.js",
-      "<rootDir>/node_modules/appcenter-analytics/test/AppCenterAnalyticsMock.js",
-      "<rootDir>/node_modules/appcenter-crashes/test/AppCenterCrashesMock.js"
+      "<rootDir>/node_modules/appcenter-analytics/test/AppCenterAnalyticsMock.js"
     ],
     "transformIgnorePatterns": [
       "node_modules/(?!(jest-)?react-native|react-navigation|react-navigation-redux-helpers)"
