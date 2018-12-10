@@ -27,6 +27,9 @@ type ErrorType = {
 }
 
 // modules - Because flow contains about these modules and they are not flow-typed
+declare module 'react-native' {
+  declare module.exports: any;
+}
 declare module 'react-redux' {
   declare module.exports: any;
 }

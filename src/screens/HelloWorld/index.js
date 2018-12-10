@@ -18,4 +18,5 @@ class HelloWorldScreen extends React.Component<any> {
 }
 /* eslint-enable */
 
-export default connect(() : Object => ({}))(HelloWorldScreen)
+// $FlowFixMe
+export default connect((): Object => ({}))(HelloWorldScreen)

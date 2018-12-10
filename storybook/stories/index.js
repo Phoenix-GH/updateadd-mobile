@@ -9,7 +9,7 @@ const style = {
   backgroundColor: '#F5FCFF',
 };
 
-const CenteredView = ({ children } : any) => (
+const CenteredView = ({ children }: any) => (
   <View style={style}>
     {children}
   </View>
