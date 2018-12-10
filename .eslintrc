@@ -1,5 +1,8 @@
 {
-  "extends": "airbnb",
+  "extends": [
+    "airbnb",
+    "plugin:flowtype/recommended"
+  ],
   "env": {
     "node": true,
     "jest": true,
@@ -11,7 +14,8 @@
     "react-native",
     "jest",
     "babel",
-    "flowtype"
+    "flowtype",
+    "flowtype-errors"
   ],
   "rules": {
     "camelcase": "off",
@@ -25,44 +29,25 @@
     "max-len": [1, 200],
     "flowtype/define-flow-type": 1,
     "flowtype/use-flow-type": 1,
+    "flowtype/no-types-missing-file-annotation": 0,
     "global-require": 0,
     "react/jsx-filename-extension": ["off" ],
     "no-underscore-dangle": ["off"],
     "react/no-unescaped-entities": ["off"],
-    "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }]
+    "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
+    "flowtype-errors/show-errors": 2,
+    "flowtype-errors/show-warnings": 1
   },
   "globals": {
     "__DEV__": true,
-    "__dirname": false,
-    "__fbBatchedBridgeConfig": false,
-    "alert": false,
-    "cancelAnimationFrame": false,
-    "cancelIdleCallback": false,
-    "clearImmediate": true,
-    "clearInterval": false,
-    "clearTimeout": false,
-    "console": false,
-    "document": false,
-    "escape": false,
-    "Event": false,
-    "EventTarget": false,
-    "exports": false,
-    "fetch": false,
-    "FormData": false,
-    "global": false,
-    "Map": true,
-    "module": false,
-    "navigator": false,
-    "process": false,
-    "Promise": true,
-    "requestAnimationFrame": true,
-    "requestIdleCallback": true,
-    "require": false,
-    "Set": true,
-    "setImmediate": true,
-    "setInterval": false,
-    "setTimeout": false,
-    "window": false,
-    "XMLHttpRequest": false
+    "STORYBOOK": true,
+    "window": true,
+    "expect": true,
+    "Raven": true
+  },
+  "settings": {
+    "flowtype": {
+      "onlyFilesWithFlowAnnotation": true
+    }
   }
 }
