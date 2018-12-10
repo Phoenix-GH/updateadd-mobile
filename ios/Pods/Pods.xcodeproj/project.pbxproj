@@ -18,16 +18,14 @@
 		084DD93155400E3E6BC1A7BE27363937 /* Pods-ReactNativeSeed-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ReactNativeSeed-frameworks.sh"; sourceTree = "<group>"; };
 		1881CFF554AFB5FEB614E9D8A6E7A1CD /* Pods-ReactNativeSeed Staging-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ReactNativeSeed Staging-resources.sh"; sourceTree = "<group>"; };
 		1DAEB4A883629F04B9ED32EEA6D77058 /* Pods-ReactNativeSeed Staging-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ReactNativeSeed Staging-acknowledgements.markdown"; sourceTree = "<group>"; };
-		1FF8CBE3D70C3B5EE02BF7F1402952A2 /* AppCenterCrashes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenterCrashes.framework; path = "AppCenter-SDK-Apple/iOS/AppCenterCrashes.framework"; sourceTree = "<group>"; };
 		2986DB6BC77FB52F8B1D89D2B8C9BE93 /* libPods-ReactNativeSeed Debug.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-ReactNativeSeed Debug.a"; path = "libPods-ReactNativeSeed Debug.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2E280B58529AEBA76B5F11C0705D0856 /* AppCenterReactNativeShared.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenterReactNativeShared.framework; path = AppCenterReactNativeShared/AppCenterReactNativeShared.framework; sourceTree = "<group>"; };
 		3177B0946A09F37CD2FE2D34A582EA69 /* Pods-ReactNativeSeed Staging.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ReactNativeSeed Staging.staging.xcconfig"; sourceTree = "<group>"; };
 		374F63970F4A64AEBE5C030B12033F31 /* Pods-ReactNativeSeed-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ReactNativeSeed-dummy.m"; sourceTree = "<group>"; };
 		52207F7203D0517988E76885D232F9B0 /* Pods-ReactNativeSeed.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ReactNativeSeed.release.xcconfig"; sourceTree = "<group>"; };
 		54A551C4BB7E0945C7F9116D5C490660 /* Pods-ReactNativeSeed Debug-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ReactNativeSeed Debug-frameworks.sh"; sourceTree = "<group>"; };
+		5CE2A7ACDD1D2A7A28D100211C80688F /* AppCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenter.framework; path = "AppCenter-SDK-Apple/iOS/AppCenter.framework"; sourceTree = "<group>"; };
 		60EF3BBF7C5FEAF85CDCE1235862607F /* Pods-ReactNativeSeed-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ReactNativeSeed-acknowledgements.plist"; sourceTree = "<group>"; };
 		67AF02B4A0B5FD9EA1D1244DCF8B9CB0 /* Pods-ReactNativeSeed Debug-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ReactNativeSeed Debug-acknowledgements.plist"; sourceTree = "<group>"; };
-		697057EB6F6A315777E7EA941A2AAF3B /* AppCenterAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenterAnalytics.framework; path = "AppCenter-SDK-Apple/iOS/AppCenterAnalytics.framework"; sourceTree = "<group>"; };
 		7C2A38B8BBD6FA85311D7E1B54946052 /* Pods-ReactNativeSeed Debug.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ReactNativeSeed Debug.debug.xcconfig"; sourceTree = "<group>"; };
 		7C62D4462A151CA008612F7E0F462435 /* Pods-ReactNativeSeed Debug-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ReactNativeSeed Debug-acknowledgements.markdown"; sourceTree = "<group>"; };
 		7FBB4D23D793B0DC5A5BD1889F804E53 /* libPods-ReactNativeSeed Staging.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-ReactNativeSeed Staging.a"; path = "libPods-ReactNativeSeed Staging.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,10 +38,11 @@
 		B4C48E946767337441939ADE920CBD05 /* Pods-ReactNativeSeed Debug-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ReactNativeSeed Debug-resources.sh"; sourceTree = "<group>"; };
 		BF1A6F3D5960B185D19768A434B6EC36 /* Pods-ReactNativeSeed Staging-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ReactNativeSeed Staging-frameworks.sh"; sourceTree = "<group>"; };
 		C1FC3DB3C1CE44BCAF68745230870040 /* Pods-ReactNativeSeed Debug-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ReactNativeSeed Debug-dummy.m"; sourceTree = "<group>"; };
+		CC2B661D3C4841040DB49B63757F5010 /* AppCenterAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenterAnalytics.framework; path = "AppCenter-SDK-Apple/iOS/AppCenterAnalytics.framework"; sourceTree = "<group>"; };
 		D277242A445B5E180986242D801AB088 /* Pods-ReactNativeSeed-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ReactNativeSeed-resources.sh"; sourceTree = "<group>"; };
-		DC65AFFB7964130E42157D207BE3A6DE /* AppCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenter.framework; path = "AppCenter-SDK-Apple/iOS/AppCenter.framework"; sourceTree = "<group>"; };
 		F0ABAD40A7C6AB89E6B9ED9FDECD14F4 /* Pods-ReactNativeSeed Staging-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ReactNativeSeed Staging-dummy.m"; sourceTree = "<group>"; };
 		F5895F01F8C42131262052CBB7785972 /* Pods-ReactNativeSeed.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ReactNativeSeed.staging.xcconfig"; sourceTree = "<group>"; };
+		FB97EB646938F5A10DA9E57862A0C78D /* AppCenterReactNativeShared.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenterReactNativeShared.framework; path = AppCenterReactNativeShared/AppCenterReactNativeShared.framework; sourceTree = "<group>"; };
 		FC3FDB7D0EA3BE93C0C2B2DE6287390D /* Pods-ReactNativeSeed.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ReactNativeSeed.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,14 +71,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0C0416FA3744ECAB6C76E95960896084 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				DC65AFFB7964130E42157D207BE3A6DE /* AppCenter.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		0F8D2E47FE03D3B91B51069F7C273AF4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -87,36 +78,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		2299AF501E253B95F2AE1FAD00A3B182 /* Crashes */ = {
+		1CF58D48F680F2BC003AD44CA6B93FE3 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4789B2888C9F3A64D9BB98A64504484B /* Frameworks */,
+				CEFAE6CABF9C3DB8B6843896B86732B2 /* AppCenter */,
+				A7D0E165AE35923538555E5B329619C1 /* AppCenterReactNativeShared */,
 			);
-			name = Crashes;
-			sourceTree = "<group>";
-		};
-		260E672E181DB8BDAC7A2999772A7AE4 /* Analytics */ = {
-			isa = PBXGroup;
-			children = (
-				8E2C96EA6162ABA11EBE8E8817909062 /* Frameworks */,
-			);
-			name = Analytics;
-			sourceTree = "<group>";
-		};
-		2D20FC01AE47C04E62202F456C8DC21D /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				0C0416FA3744ECAB6C76E95960896084 /* Frameworks */,
-			);
-			name = Core;
-			sourceTree = "<group>";
-		};
-		4789B2888C9F3A64D9BB98A64504484B /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				1FF8CBE3D70C3B5EE02BF7F1402952A2 /* AppCenterCrashes.framework */,
-			);
-			name = Frameworks;
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		5666572A7961A6CDCD66B6EAF8890747 /* Targets Support Files */ = {
@@ -145,12 +113,28 @@
 			path = "Target Support Files/Pods-ReactNativeSeed Debug";
 			sourceTree = "<group>";
 		};
+		64DFCE70E6700B4499D31F673F9E25A8 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				C5A3D4640ACE59E0E5DBBAB1CAF10D17 /* Frameworks */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		66AE5481959109E7F3E86BC0EB6CADF8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CC2B661D3C4841040DB49B63757F5010 /* AppCenterAnalytics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				0F8D2E47FE03D3B91B51069F7C273AF4 /* Frameworks */,
-				B1C0FD4C526B54B6F7B5EA76C32A7B4C /* Pods */,
+				1CF58D48F680F2BC003AD44CA6B93FE3 /* Pods */,
 				BC15ECD4F8DB1B0DBB464A9E1672E0E4 /* Products */,
 				5666572A7961A6CDCD66B6EAF8890747 /* Targets Support Files */,
 			);
@@ -172,21 +156,21 @@
 			path = "Target Support Files/Pods-ReactNativeSeed";
 			sourceTree = "<group>";
 		};
-		8E2C96EA6162ABA11EBE8E8817909062 /* Frameworks */ = {
+		8863B8D55F055AB92F382EB9027C051F /* Analytics */ = {
 			isa = PBXGroup;
 			children = (
-				697057EB6F6A315777E7EA941A2AAF3B /* AppCenterAnalytics.framework */,
+				66AE5481959109E7F3E86BC0EB6CADF8 /* Frameworks */,
 			);
-			name = Frameworks;
+			name = Analytics;
 			sourceTree = "<group>";
 		};
-		B1C0FD4C526B54B6F7B5EA76C32A7B4C /* Pods */ = {
+		A7D0E165AE35923538555E5B329619C1 /* AppCenterReactNativeShared */ = {
 			isa = PBXGroup;
 			children = (
-				D6F4E16E170AFF42D929EF8FFF92078F /* AppCenter */,
-				FDE42022E7C36FE2A980950DD051F732 /* AppCenterReactNativeShared */,
+				D8D23AB4123354FF8E56FF0B37BE869F /* Frameworks */,
 			);
-			name = Pods;
+			name = AppCenterReactNativeShared;
+			path = AppCenterReactNativeShared;
 			sourceTree = "<group>";
 		};
 		BC15ECD4F8DB1B0DBB464A9E1672E0E4 /* Products */ = {
@@ -199,15 +183,30 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D6F4E16E170AFF42D929EF8FFF92078F /* AppCenter */ = {
+		C5A3D4640ACE59E0E5DBBAB1CAF10D17 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				260E672E181DB8BDAC7A2999772A7AE4 /* Analytics */,
-				2D20FC01AE47C04E62202F456C8DC21D /* Core */,
-				2299AF501E253B95F2AE1FAD00A3B182 /* Crashes */,
+				5CE2A7ACDD1D2A7A28D100211C80688F /* AppCenter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CEFAE6CABF9C3DB8B6843896B86732B2 /* AppCenter */ = {
+			isa = PBXGroup;
+			children = (
+				8863B8D55F055AB92F382EB9027C051F /* Analytics */,
+				64DFCE70E6700B4499D31F673F9E25A8 /* Core */,
 			);
 			name = AppCenter;
 			path = AppCenter;
+			sourceTree = "<group>";
+		};
+		D8D23AB4123354FF8E56FF0B37BE869F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FB97EB646938F5A10DA9E57862A0C78D /* AppCenterReactNativeShared.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		E21687DBF74312E32DD7979B9606D496 /* Pods-ReactNativeSeed Staging */ = {
@@ -224,23 +223,6 @@
 			);
 			name = "Pods-ReactNativeSeed Staging";
 			path = "Target Support Files/Pods-ReactNativeSeed Staging";
-			sourceTree = "<group>";
-		};
-		F84ACEF4E4D3666C3A595115D01D3868 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				2E280B58529AEBA76B5F11C0705D0856 /* AppCenterReactNativeShared.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		FDE42022E7C36FE2A980950DD051F732 /* AppCenterReactNativeShared */ = {
-			isa = PBXGroup;
-			children = (
-				F84ACEF4E4D3666C3A595115D01D3868 /* Frameworks */,
-			);
-			name = AppCenterReactNativeShared;
-			path = AppCenterReactNativeShared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
