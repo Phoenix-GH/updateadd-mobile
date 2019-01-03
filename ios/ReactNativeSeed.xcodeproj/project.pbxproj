@@ -375,13 +375,6 @@
 			remoteGlobalIDString = 548694001D8384E600E6685A;
 			remoteInfo = AppCenterReactNativeAnalytics;
 		};
-		F015113C20315EA100E98CDB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 02C1D794529D4BAD8FE848B8 /* AppCenterReactNativeCrashes.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 5419C2701D824AA700DDF3A1;
-			remoteInfo = AppCenterReactNativeCrashes;
-		};
 		F09DAA931FCF533500E93BF4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 44428083CAFE4AEBADEB0990 /* RNSentry.xcodeproj */;
@@ -448,7 +441,6 @@
 		00C302BB1ABCB91800DB3ED1 /* RCTImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTImage.xcodeproj; path = "../node_modules/react-native/Libraries/Image/RCTImage.xcodeproj"; sourceTree = "<group>"; };
 		00C302D31ABCB9D200DB3ED1 /* RCTNetwork.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTNetwork.xcodeproj; path = "../node_modules/react-native/Libraries/Network/RCTNetwork.xcodeproj"; sourceTree = "<group>"; };
 		00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTVibration.xcodeproj; path = "../node_modules/react-native/Libraries/Vibration/RCTVibration.xcodeproj"; sourceTree = "<group>"; };
-		02C1D794529D4BAD8FE848B8 /* AppCenterReactNativeCrashes.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = AppCenterReactNativeCrashes.xcodeproj; path = "../node_modules/appcenter-crashes/ios/AppCenterReactNativeCrashes.xcodeproj"; sourceTree = "<group>"; };
 		03EBE631B61F4FD686343A64 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
 		04889E7C742148C0BB858249 /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
 		05BDAC476B0C4EC2B85DE55D /* AppCenterReactNative.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = AppCenterReactNative.xcodeproj; path = ../node_modules/appcenter/ios/AppCenterReactNative.xcodeproj; sourceTree = "<group>"; };
@@ -748,7 +740,6 @@
 				87D46D9B7D634BBF8189B4DA /* RNVectorIcons.xcodeproj */,
 				05BDAC476B0C4EC2B85DE55D /* AppCenterReactNative.xcodeproj */,
 				480B3FD726EF40ECA706222A /* AppCenterReactNativeAnalytics.xcodeproj */,
-				02C1D794529D4BAD8FE848B8 /* AppCenterReactNativeCrashes.xcodeproj */,
 				B3F48EFA899E43D29BE4BDBE /* RNGestureHandler.xcodeproj */,
 			);
 			name = Libraries;
@@ -850,14 +841,6 @@
 			isa = PBXGroup;
 			children = (
 				F015113A20315EA100E98CDB /* libAppCenterReactNativeAnalytics.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		F015113320315EA100E98CDB /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				F015113D20315EA100E98CDB /* libAppCenterReactNativeCrashes.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1006,10 +989,6 @@
 				{
 					ProductGroup = F015113120315EA100E98CDB /* Products */;
 					ProjectRef = 480B3FD726EF40ECA706222A /* AppCenterReactNativeAnalytics.xcodeproj */;
-				},
-				{
-					ProductGroup = F015113320315EA100E98CDB /* Products */;
-					ProjectRef = 02C1D794529D4BAD8FE848B8 /* AppCenterReactNativeCrashes.xcodeproj */;
 				},
 				{
 					ProductGroup = F0A1F0151F9FE1F600943675 /* Products */;
@@ -1343,13 +1322,6 @@
 			fileType = archive.ar;
 			path = libAppCenterReactNativeAnalytics.a;
 			remoteRef = F015113920315EA100E98CDB /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		F015113D20315EA100E98CDB /* libAppCenterReactNativeCrashes.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libAppCenterReactNativeCrashes.a;
-			remoteRef = F015113C20315EA100E98CDB /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		F09DAA941FCF533500E93BF4 /* libRNSentry.a */ = {
