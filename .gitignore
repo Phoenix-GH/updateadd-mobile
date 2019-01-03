@@ -4,6 +4,7 @@ node_modules/
 .expo/
 npm-debug.*
 coverage/
+.nyc_output/
 
 # OSX
 #
