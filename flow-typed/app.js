@@ -1,5 +1,11 @@
+import type { NavigationScreenProp } from 'react-navigation'
+
 // Define type aliases
 type StandardAction = {| type: string; payload: any; error?: boolean; meta?: any |}
+
+type NavigationPropType = {
+  navigation: NavigationScreenProp,
+}
 
 // Store States
 type NavStoreState = Object
