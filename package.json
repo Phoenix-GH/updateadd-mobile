@@ -16,7 +16,17 @@
     "test:watch": "NODE_ENV=development yarn test --watch",
     "build": "flow-typed install",
     "prepublish": "yarn run build",
-    "storybook": "storybook start"
+    "storybook": "storybook start",
+    "prestorybook": "rnstl"
+  },
+  "config": {
+    "react-native-storybook-loader": {
+      "searchDir": [
+        "./storybook/stories"
+      ],
+      "pattern": "**/*.js",
+      "outputFile": "./storybook/storyLoader.js"
+    }
   },
   "dependencies": {
     "@babel/core": "^7.1.2",
@@ -51,6 +61,7 @@
     "react-native-config": "^0.11.7",
     "react-native-gesture-handler": "^1.0.10",
     "react-native-sentry": "^0.39.1",
+    "react-native-storybook-loader": "^1.8.0",
     "react-native-vector-icons": "^6.1.0",
     "react-navigation": "^3.0.5",
     "react-navigation-redux-helpers": "^2.0.8",
