@@ -41,6 +41,8 @@ react-native link
 
 * Create an app on [ClearSummit's Mobile Center](https://mobile.azure.com/apps) to get deployment keys. We should have a separate app for iOS and Android.
 
+> Below steps can be done through App Center's Dashboard
+
 * Generate deployment keys: `code-push deployment add <app_name> "Staging or Production"`
 
 * View deployment keys: `code-push deployment ls <app_name> -k`
@@ -62,3 +64,7 @@ react-native link
 * Change `API_URL` string in `.env`, `.env.staging`, `.env.production`
 
 * Android: problems with Proguard? Check this [link](https://github.com/luggit/react-native-config#problems-with-proguard) out.
+
+### Integrate CodeClimate for test report
+
+* Change `<token here>` in `.circleci/config.yml` file with Code Climate's repo token
