@@ -7,7 +7,28 @@ jobs:
   build:
     <<: *defaults
     steps:
+      - attach_workspace:
+          at: /tmp
+
+      - run:
+          name: Download cc-test-reporter
+          command: |
+            mkdir -p tmp/
+            curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > /tmp/cc-test-reporter
+            chmod +x /tmp/cc-test-reporter
+
+      - persist_to_workspace:
+          root: /tmp
+          paths:
+            - cc-test-reporter
+
+  test:
+    <<: *defaults
+    steps:
       - checkout
+
+      - attach_workspace:
+          at: /tmp
 
       - restore_cache:
           key: yarn-v1-{{ checksum "yarn.lock" }}-{{ arch }}
@@ -15,7 +36,10 @@ jobs:
       - restore_cache:
           key: node-v1-{{ checksum "package.json" }}-{{ arch }}
 
-      - run: yarn install
+      - run:
+          name: Install dependencies
+          command: |
+            yarn install
 
       - save_cache:
           key: yarn-v1-{{ checksum "yarn.lock" }}-{{ arch }}
@@ -27,17 +51,49 @@ jobs:
           paths:
             - node_modules
 
-      # Run eslint
-      - run: yarn lint
+      - run:
+          name: Run lint
+          command: |
+            yarn lint
 
-      # Run flow
-      - run: yarn flow
+      - run:
+          name: Run flow
+          command: |
+            yarn flow
 
-      # Run coverage
-      - run: yarn coverage --runInBand
+      - run:
+          name: Run coverage
+          command: |
+            yarn coverage --runInBand
+            /tmp/cc-test-reporter format-coverage coverage/lcov.info -t lcov -o /tmp/coverage.json
+
+      - persist_to_workspace:
+          root: /tmp/
+          paths:
+            - coverage.json
+
+  upload-coverage:
+      <<: *defaults
+      environment:
+        - CC_TEST_REPORTER_ID: ""
+
+      steps:
+        - attach_workspace:
+            at: /tmp
+
+        - run:
+            name: Upload coverage results to Code Climate
+            command: |
+              /tmp/cc-test-reporter upload-coverage -i /tmp/coverage.json
 
 workflows:
   version: 2
-  eslint-flow-converage:
+  commit:
     jobs:
       - build
+      - test:
+          requires:
+            - build
+      - upload-coverage:
+          requires:
+            - test
