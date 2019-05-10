@@ -22,8 +22,8 @@ allprojects {
         mavenLocal()
         jcenter()
         maven {
-            // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
-            url "$rootDir/../node_modules/react-native/android"
+           // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
+           url "$rootDir/../node_modules/react-native/android"
         }
         maven {
             url 'https://maven.google.com/'
@@ -38,4 +38,9 @@ ext {
     compileSdkVersion = 28
     targetSdkVersion = 25
     supportLibVersion = "28.+"
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '4.7'
+    distributionUrl = distributionUrl.replace("bin", "all")
 }
