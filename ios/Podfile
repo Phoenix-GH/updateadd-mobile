@@ -2,8 +2,8 @@ platform :ios, '9.0'
 
 def shared_pods
   # Pods for AppCenter
-  pod 'AppCenter/Analytics', '~> 1.11.0'
-  pod 'AppCenterReactNativeShared', '~> 1.10.0'
+  pod 'AppCenterReactNativeShared', '~> 2.0.0'
+  pod 'AppCenter/Analytics', '~> 2.0.1'
 end
 
 target 'ReactNativeSeed' do
