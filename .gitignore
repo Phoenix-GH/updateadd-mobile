@@ -41,3 +41,6 @@ project.xcworkspace
 
 # React
 lib/
+
+# Snapshots
+.loki

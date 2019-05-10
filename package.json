@@ -13,12 +13,15 @@
     "lint": "./node_modules/.bin/eslint .",
     "lint:fix": "./node_modules/.bin/eslint . --fix",
     "flow": "./node_modules/.bin/flow",
-    "coverage": "NODE_ENV=development node_modules/.bin/nyc --report-dir coverage --reporter=lcov jest",
+    "coverage": "jest coverage",
     "test:watch": "NODE_ENV=development yarn test --watch",
     "build": "flow-typed install",
     "prepublish": "yarn run build",
-    "storybook": "storybook start",
-    "prestorybook": "rnstl"
+    "storybook": "start-storybook | react-native start --projectRoot storybook",
+    "prestorybook": "rnstl",
+    "loki": "loki --reactNativePort 7007",
+    "loki:update": "loki update --reactNativePort 7007",
+    "regression": "reg-suit run"
   },
   "config": {
     "react-native-storybook-loader": {
@@ -37,7 +40,11 @@
     "@babel/plugin-transform-runtime": "^7.1.0",
     "@storybook/addon-ondevice-knobs": "^4.1.13",
     "@storybook/addon-ondevice-notes": "^4.1.13",
-    "@storybook/react-native": "^4.1.13",
+    "@storybook/addon-storyshots": "^5.0.10",
+    "@storybook/addons": "^5.0.10",
+    "@storybook/react": "^5.0.10",
+    "@storybook/react-native": "^5.1.0-alpha.11",
+    "@storybook/react-native-server": "^5.1.0-alpha.7",
     "appcenter": "^1.3.0",
     "appcenter-analytics": "^1.3.0",
     "axios": "^0.18.0",
@@ -54,6 +61,7 @@
     "immutability-helper": "^2.6.5",
     "jsc-android": "^236355.1.1",
     "lodash": "^4.17.11",
+    "loki": "^0.14.2",
     "moment": "2.22.2",
     "react": "^16.6.1",
     "react-devtools": "^3.1.0",
@@ -70,6 +78,10 @@
     "react-redux": "^5.1.1",
     "redux": "^4.0.1",
     "redux-saga": "^0.16.2",
+    "reg-keygen-git-hash-plugin": "^0.7.16",
+    "reg-notify-github-plugin": "^0.7.21",
+    "reg-publish-s3-plugin": "^0.7.18",
+    "reg-suit": "^0.7.17",
     "remote-redux-devtools": "^0.5.13",
     "remote-redux-devtools-on-debugger": "^0.8.3",
     "styled-components": "^4.1.2"
@@ -91,11 +103,10 @@
     "eslint-plugin-jsx-a11y": "6.1.2",
     "eslint-plugin-react": "^7.7.0",
     "eslint-plugin-react-native": "3.5.0",
-    "flow-bin": "^0.87.0",
+    "flow-bin": "0.97.0",
     "flow-typed": "^2.5.1",
     "husky": "^1.2.0",
     "jest": "^23.6.0",
-    "nyc": "^13.1.0",
     "react-test-renderer": "^16.6.3"
   },
   "jest": {
@@ -113,6 +124,13 @@
   "husky": {
     "hooks": {
       "pre-push": "yarn lint && yarn flow && yarn test -u"
+    }
+  },
+  "loki": {
+    "configurations": {
+      "ios": {
+        "target": "ios.simulator"
+      }
     }
   }
 }
