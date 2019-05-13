@@ -17,10 +17,8 @@
     "test:watch": "NODE_ENV=development yarn test --watch",
     "build": "flow-typed install",
     "prepublish": "yarn run build",
-    "storybook": "start-storybook | react-native start --projectRoot storybook",
+    "storybook": "start-storybook & react-native start --projectRoot storybook",
     "prestorybook": "rnstl",
-    "loki": "loki --reactNativePort 7007",
-    "loki:update": "loki update --reactNativePort 7007",
     "regression": "reg-suit run"
   },
   "config": {
@@ -61,7 +59,6 @@
     "immutability-helper": "^2.6.5",
     "jsc-android": "^236355.1.1",
     "lodash": "^4.17.11",
-    "loki": "^0.14.2",
     "metro-react-native-babel-preset": "^0.54.0",
     "moment": "2.22.2",
     "react": "^16.8.6",
@@ -108,6 +105,7 @@
     "flow-typed": "^2.5.1",
     "husky": "^1.2.0",
     "jest": "^23.6.0",
+    "loki": "^0.15.0",
     "react-test-renderer": "^16.6.3"
   },
   "jest": {
