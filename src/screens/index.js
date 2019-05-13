@@ -5,7 +5,7 @@ import { View } from 'react-native'
 import { connect } from 'react-redux'
 import { createStackNavigator } from 'react-navigation'
 import type { NavigationDispatch, NavigationState } from 'react-navigation'
-import { reduxifyNavigator, createReactNavigationReduxMiddleware } from 'react-navigation-redux-helpers'
+import { createReduxContainer, createReactNavigationReduxMiddleware } from 'react-navigation-redux-helpers'
 
 import { Roots } from '../constants'
 
@@ -18,7 +18,7 @@ export const AppNavigator = createStackNavigator({
 })
 
 export const navigationMiddleware = createReactNavigationReduxMiddleware('root', state => state.nav)
-const AppNavigatorWithNavigationState = reduxifyNavigator(AppNavigator, 'root')
+const AppNavigatorWithNavigationState = createReduxContainer(AppNavigator, 'root')
 
 type RootProps = {
   dispatch: Function,

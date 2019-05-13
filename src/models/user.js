@@ -1,6 +1,6 @@
 // @flow
 
-import { BaseModel } from '.'
+import BaseModel from './base'
 
 type UserDataType = {
   id: ?string,

@@ -16,7 +16,7 @@ jest.mock('react-navigation', () => ({
 
 jest.mock('react-navigation-redux-helpers', () => ({
   createReactNavigationReduxMiddleware: jest.fn(),
-  reduxifyNavigator: jest.fn(),
+  createReduxContainer: jest.fn(),
   createNavigationReducer: jest.fn(),
 }))
 
