@@ -12,10 +12,6 @@
 On the command prompt run the following commands
 
 ```sh
-git clone -b master https://github.com/clearsummit/react-native-starter-project.git
-
-cd react-native-starter-project/
-
 yarn
 
 react-native link
@@ -28,14 +24,6 @@ react-native link
 ### Run on Android
 
 *	Run `react-native run-android` or `yarn android` in your terminal
-
-### Renaming the App
-
-* Run `./support/rename.sh NewAppName`
-
-* Run `yarn clean-android` to clean Android's build artifacts.
-
-* In `ios` folder, delete `UpdateAdd.xcodeproj` file and `build` folder (if any) to clean iOS's build artifacts.
 
 ### Integrate with [CodePush](https://github.com/Microsoft/react-native-code-push)
 
