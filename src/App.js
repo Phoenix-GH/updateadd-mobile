@@ -40,6 +40,6 @@ export class App extends React.Component <any> {
   }
 }
 
-const start = () => AppRegistry.registerComponent('ReactNativeSeed', () => CodePush(codePushOptions)(App))
+const start = () => AppRegistry.registerComponent('UpdateAdd', () => CodePush(codePushOptions)(App))
 
 export default start

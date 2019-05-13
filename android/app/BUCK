@@ -35,12 +35,12 @@ android_library(
 
 android_build_config(
     name = "build_config",
-    package = "com.reactnativeseed",
+    package = "com.updateadd",
 )
 
 android_resource(
     name = "res",
-    package = "com.reactnativeseed",
+    package = "com.updateadd",
     res = "src/main/res",
 )
 

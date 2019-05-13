@@ -6,14 +6,14 @@ def shared_pods
   pod 'AppCenter/Analytics', '~> 2.0.1'
 end
 
-target 'ReactNativeSeed' do
+target 'UpdateAdd' do
   shared_pods
 end
 
-target 'ReactNativeSeed Debug' do
+target 'UpdateAdd Debug' do
   shared_pods
 end
 
-target 'ReactNativeSeed Staging' do
+target 'UpdateAdd Staging' do
   shared_pods
 end

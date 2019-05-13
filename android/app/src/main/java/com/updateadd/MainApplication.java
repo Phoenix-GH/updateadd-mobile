@@ -1,4 +1,4 @@
-package com.reactnativeseed;
+package com.updateadd;
 
 import android.app.Application;
 

@@ -19,6 +19,6 @@ const StorybookUIRoot = getStorybookUI()
 
 // If you are using React Native vanilla write your app name here.
 // If you use Expo you can safely remove this line.
-AppRegistry.registerComponent('ReactNativeSeed', () => StorybookUIRoot)
+AppRegistry.registerComponent('UpdateAdd', () => StorybookUIRoot)
 
 export default StorybookUIRoot

@@ -35,7 +35,7 @@ react-native link
 
 * Run `yarn clean-android` to clean Android's build artifacts.
 
-* In `ios` folder, delete `ReactNativeSeed.xcodeproj` file and `build` folder (if any) to clean iOS's build artifacts.
+* In `ios` folder, delete `UpdateAdd.xcodeproj` file and `build` folder (if any) to clean iOS's build artifacts.
 
 ### Integrate with [CodePush](https://github.com/Microsoft/react-native-code-push)
 

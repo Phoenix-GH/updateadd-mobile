@@ -37,7 +37,7 @@
 #endif
   
   RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation
-                                                      moduleName:@"ReactNativeSeed"
+                                                      moduleName:@"UpdateAdd"
                                                initialProperties:nil
                                                    launchOptions:launchOptions];
   // Configure Sentry

@@ -69,4 +69,4 @@
 -dontwarn org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement
 -dontwarn okio.**
 
--keep class com.reactnativeseed.BuildConfig { *; }
+-keep class com.updateadd.BuildConfig { *; }
