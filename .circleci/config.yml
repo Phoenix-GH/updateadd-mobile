@@ -75,7 +75,7 @@ jobs:
   upload-coverage:
       <<: *defaults
       environment:
-        - CC_TEST_REPORTER_ID: "<token here>"
+        - CC_TEST_REPORTER_ID: "a2d0f094cd2be61ee2e53acc3c2da7415833f3956983932572e67c93bdd1a867"
 
       steps:
         - attach_workspace:
