@@ -21,7 +21,7 @@ export class App extends React.Component <any> {
   componentWillMount() {
     // On app load
     if (!__DEV__) {
-      SentryUtil.configure('')
+      SentryUtil.configure('https://13745d212a3a4046b2dea62a9c499bda@sentry.io/1459348')
       CodePush.getUpdateMetadata().then((update) => {
         if (update) {
           SentryUtil.setVersion(`codepush:${update.label}`)
