@@ -1,0 +1,36 @@
+---
+engines:
+  duplication:
+    enabled: true
+    config:
+      languages:
+      - javascript
+  eslint:
+    enabled: true
+    checks:
+      comma-dangle:
+        enabled: false
+  fixme:
+    enabled: true
+ratings:
+  paths:
+  - "**.js"
+  - "**.jsx"
+exclude_paths:
+  - android/
+  - assets/
+  - flow-typed/
+  - images/
+  - ios/
+  - node_modules/
+  - __tests__
+  - src/strings/
+  - csv_script.packed.js
+  - __uitests__
+  - __mocks__
+  - data
+  - appcenter
+  - .vscode
+  - .circleci
+  - flow-typed
+  - tools
