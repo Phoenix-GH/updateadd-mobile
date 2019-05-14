@@ -126,14 +126,14 @@ android {
             resValue "string", "app_name", "Debug"
         }
         releaseStaging {
-            buildConfigField "String", "CODEPUSH_KEY", '"<INSERT_STAGING_KEY>"'
+            buildConfigField "String", "CODEPUSH_KEY", '"865G-eVYxBINwO9Md47kG_Ae4ip_rJpFrvOn4"'
             resValue "string", "app_name", "Staging"
             matchingFallbacks = ['debug', 'qa', 'release']
         }
         release {
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
-            buildConfigField "String", "CODEPUSH_KEY", '"<INSERT_PRODUCTION_KEY>"'
+            buildConfigField "String", "CODEPUSH_KEY", '"E1xQdbU7Y5XrnOSroSfkaUOIZeQCS1pFHP_h4"'
             resValue "string", "app_name", "UpdateAdd"
         }
     }
