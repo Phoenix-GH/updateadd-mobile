@@ -1,10 +1,38 @@
-version: 2
+aliases:
+  - &yarn-install |
+    yarn install
+
+  - &restore-node-cache
+    keys:
+      - node-{{ .Branch }}-{{ checksum "package.json" }}
+      - node-{{ .Branch }}
+      - node-
+
+  - &restore-yarn-cache
+    keys:
+      - yarn-{{ .Branch }}-{{ checksum "yarn.lock" }}
+      - yarn-{{ .Branch }}
+      - yarn-
+
+  - &save-yarn-cache
+    paths:
+      - ~/.cache/yarn
+    key: yarn-{{ .Branch }}-{{ checksum "yarn.lock" }}
+
+  - &save-node-cache
+    paths:
+      - node_modules
+    key: node-{{ .Branch }}-{{ checksum "package.json" }}
+
+version: 2.1
 defaults: &defaults
   working_directory: ~/repo
+  # macos:
+  #   xcode: "10.2.0"
   docker:
     - image: circleci/node:10.10.0
 jobs:
-  build:
+  install:
     <<: *defaults
     steps:
       - attach_workspace:
@@ -13,8 +41,9 @@ jobs:
       - run:
           name: Download cc-test-reporter
           command: |
-            mkdir -p tmp/
+            mkdir -p /tmp/
             curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > /tmp/cc-test-reporter
+            # curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-darwin-amd64 > /tmp/cc-test-reporter
             chmod +x /tmp/cc-test-reporter
 
       - persist_to_workspace:
@@ -30,26 +59,13 @@ jobs:
       - attach_workspace:
           at: /tmp
 
-      - restore_cache:
-          key: yarn-v1-{{ checksum "yarn.lock" }}-{{ arch }}
-
-      - restore_cache:
-          key: node-v1-{{ checksum "package.json" }}-{{ arch }}
-
+      - restore_cache: *restore-yarn-cache
+      - restore_cache: *restore-node-cache
       - run:
           name: Install dependencies
-          command: |
-            yarn install
-
-      - save_cache:
-          key: yarn-v1-{{ checksum "yarn.lock" }}-{{ arch }}
-          paths:
-            - ~/.cache/yarn
-
-      - save_cache:
-          key: node-v1-{{ checksum "package.json" }}-{{ arch }}
-          paths:
-            - node_modules
+          command: *yarn-install
+      - save_cache: *save-yarn-cache
+      - save_cache: *save-node-cache
 
       - run:
           name: Run lint
@@ -86,14 +102,54 @@ jobs:
             command: |
               /tmp/cc-test-reporter upload-coverage -i /tmp/coverage.json
 
+  visual-regression-test:
+    <<: *defaults
+    steps:
+      - checkout
+
+      - restore_cache: *restore-yarn-cache
+      - restore_cache: *restore-node-cache
+      - run:
+          name: Install dependencies
+          command: *yarn-install
+      - save_cache: *save-yarn-cache
+      - save_cache: *save-node-cache
+
+      - run:
+          name: Pre-start iPhone Xs Max simulator
+          command: |
+            xcrun instruments -w "iPhone Xs Max (12.2) [" -t "Blank" || true
+
+      - run:
+          name: Install Google Chrome
+          command: |
+            brew update
+            brew cask install google-chrome
+
+      - run: 
+          name: Install react-native command line tools
+          command: |
+            sudo npm install -g react-native-cli
+
+      - run:
+          name: Run Storybook server, install app to simulator, Loki snapshotting, visual regression test
+          command: |
+            sudo chown -R $USER:$GROUP ~/.config
+            yarn storybook & react-native run-ios --simulator "iPhone Xs Max"
+            sleep 300
+            yarn loki update
+            yarn regression
+          no_output_timeout: 2h
+
 workflows:
   version: 2
   commit:
     jobs:
-      - build
+      - install
       - test:
           requires:
-            - build
+            - install
       - upload-coverage:
           requires:
             - test
+      # - visual-regression-test

@@ -13,7 +13,6 @@
 		00C302E91ABCBA2D00DB3ED1 /* libRCTNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302DC1ABCB9D200DB3ED1 /* libRCTNetwork.a */; };
 		00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302E41ABCB9EE00DB3ED1 /* libRCTVibration.a */; };
 		023C426B04F248F48473C480 /* FontAwesome5_Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 193C8CF70551431DABB51262 /* FontAwesome5_Solid.ttf */; };
-		04F894EE9A3239B51E8D15DD /* libPods-UpdateAdd Staging.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA0F227B23BD381AA3BB2725 /* libPods-UpdateAdd Staging.a */; };
 		0DF6E700139D404F9F5F0490 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A26EEBA986A5448C9389ECD1 /* libz.tbd */; };
 		0F48E224F21B44E7BF06F51F /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F14472EDC40F4EA5B42A0A64 /* Ionicons.ttf */; };
 		127C567852F5463DBC67402C /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03EBE631B61F4FD686343A64 /* Feather.ttf */; };
@@ -28,7 +27,6 @@
 		18056D10AE124A87B31C3D98 /* FontAwesome5_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3C34A83C4C99493980DA99B8 /* FontAwesome5_Regular.ttf */; };
 		1B4D87C7CDD840988EA7EA4D /* FontAwesome5_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A3BF452A471643808F8F255E /* FontAwesome5_Brands.ttf */; };
 		23FD60DD2A594EC98B14C07C /* libRNSentry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FDA9AD0946C4F688425587C /* libRNSentry.a */; };
-		245687D1215CDB8047370C3D /* libPods-UpdateAdd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C69A5A1C68CA18DE11F75B /* libPods-UpdateAdd.a */; };
 		2A9DEC36531B411FAC0F2EEA /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5E06117D33D5410EB249A020 /* AntDesign.ttf */; };
 		3A5F0641BD6A49CEA4406C62 /* libRNGestureHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52EEB3FF131D40FBB1324DA2 /* libRNGestureHandler.a */; };
 		405A9EB20684473C9C35DC21 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1B20EB76955D4C429155E649 /* Zocial.ttf */; };
@@ -36,10 +34,12 @@
 		56B3789C7AF749D3BB530582 /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 570A87F397CE41FC95F8DBEE /* Foundation.ttf */; };
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		6C76E00AAA9D4CCBB1EA1EC3 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BEBCE19E8E3049FF87687BB1 /* MaterialIcons.ttf */; };
+		73EC561A0636B0FA5A526CBC /* libPods-UpdateAdd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EB6444620D5F545C33AD81A /* libPods-UpdateAdd.a */; };
 		76D53F7751064BECB4E474A3 /* libCodePush.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C728639C1B646EDAF4B5626 /* libCodePush.a */; };
-		793920785A052EC31794FD88 /* libPods-UpdateAdd Debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BC66684E2320FA95C0FF9C0 /* libPods-UpdateAdd Debug.a */; };
+		7A2836A434919A7AE045BD02 /* libPods-UpdateAdd Staging.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 874A3DC09ADB472154E01B6B /* libPods-UpdateAdd Staging.a */; };
 		7A3E03DD80BF4560894A5158 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DCBF0DE7523F4DF8A5AEBF92 /* FontAwesome.ttf */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
+		90ACD6F642531AD260109E0D /* libPods-UpdateAdd Debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D1906A50C9DF7B803365DC /* libPods-UpdateAdd Debug.a */; };
 		99FE3B4897D44D2CBE93244B /* libAppCenterReactNative.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E1033A6F475C447ABE3D3EB1 /* libAppCenterReactNative.a */; };
 		9F0931C97B7A4D92BE5CEC44 /* AppCenter-Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5CAAC05EBA2C47D9A7B58817 /* AppCenter-Config.plist */; };
 		A589F9BA0CE94E23AB572129 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3378D49491DA4851967FE09D /* Octicons.ttf */; };
@@ -469,50 +469,50 @@
 		17FAA2C1FB174EC68A00F9DB /* libRNVectorIcons.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNVectorIcons.a; sourceTree = "<group>"; };
 		193C8CF70551431DABB51262 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
 		1B20EB76955D4C429155E649 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
-		1D92696F49019B98A83D2E57 /* Pods-UpdateAdd Staging.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UpdateAdd Staging.release.xcconfig"; path = "Pods/Target Support Files/Pods-UpdateAdd Staging/Pods-UpdateAdd Staging.release.xcconfig"; sourceTree = "<group>"; };
-		30294032A08C9B43F9A52F77 /* Pods-UpdateAdd Staging.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UpdateAdd Staging.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UpdateAdd Staging/Pods-UpdateAdd Staging.debug.xcconfig"; sourceTree = "<group>"; };
+		1EB6444620D5F545C33AD81A /* libPods-UpdateAdd.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UpdateAdd.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		278E8A86D8F99C3434DA4E3B /* Pods-UpdateAdd Staging.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UpdateAdd Staging.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UpdateAdd Staging/Pods-UpdateAdd Staging.debug.xcconfig"; sourceTree = "<group>"; };
 		3378D49491DA4851967FE09D /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 		3C34A83C4C99493980DA99B8 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
+		43D1906A50C9DF7B803365DC /* libPods-UpdateAdd Debug.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UpdateAdd Debug.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		44428083CAFE4AEBADEB0990 /* RNSentry.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNSentry.xcodeproj; path = "../node_modules/react-native-sentry/ios/RNSentry.xcodeproj"; sourceTree = "<group>"; };
 		44EC38FE41EC4AB583225158 /* libReactNativeConfig.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libReactNativeConfig.a; sourceTree = "<group>"; };
-		46C69A5A1C68CA18DE11F75B /* libPods-UpdateAdd.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UpdateAdd.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AAA29961215064A4985A2E1 /* Pods-UpdateAdd Debug.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UpdateAdd Debug.staging.xcconfig"; path = "Pods/Target Support Files/Pods-UpdateAdd Debug/Pods-UpdateAdd Debug.staging.xcconfig"; sourceTree = "<group>"; };
 		52EEB3FF131D40FBB1324DA2 /* libRNGestureHandler.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNGestureHandler.a; sourceTree = "<group>"; };
 		570A87F397CE41FC95F8DBEE /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
-		5BC66684E2320FA95C0FF9C0 /* libPods-UpdateAdd Debug.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UpdateAdd Debug.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CAAC05EBA2C47D9A7B58817 /* AppCenter-Config.plist */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.plist.xml; name = "AppCenter-Config.plist"; path = "UpdateAdd/AppCenter-Config.plist"; sourceTree = "<group>"; };
 		5E06117D33D5410EB249A020 /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		5FDA9AD0946C4F688425587C /* libRNSentry.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNSentry.a; sourceTree = "<group>"; };
+		64D27A1E2DC9AFCB1189DC36 /* Pods-UpdateAdd.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UpdateAdd.release.xcconfig"; path = "Pods/Target Support Files/Pods-UpdateAdd/Pods-UpdateAdd.release.xcconfig"; sourceTree = "<group>"; };
 		6C67A0040116405DBA480640 /* CodePush.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = CodePush.xcodeproj; path = "../node_modules/react-native-code-push/ios/CodePush.xcodeproj"; sourceTree = "<group>"; };
-		71A1A443D16BF70E885D1EB5 /* Pods-UpdateAdd.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UpdateAdd.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UpdateAdd/Pods-UpdateAdd.debug.xcconfig"; sourceTree = "<group>"; };
-		73A8B9DA0FCC09AFA5F5DDE9 /* Pods-UpdateAdd.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UpdateAdd.staging.xcconfig"; path = "Pods/Target Support Files/Pods-UpdateAdd/Pods-UpdateAdd.staging.xcconfig"; sourceTree = "<group>"; };
-		7604EEED86FD8AB833B0E6A9 /* Pods-UpdateAdd Debug.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UpdateAdd Debug.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UpdateAdd Debug/Pods-UpdateAdd Debug.debug.xcconfig"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		80171E0ED78B472A9018FA63 /* libAppCenterReactNativeCrashes.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libAppCenterReactNativeCrashes.a; sourceTree = "<group>"; };
+		81C75DB35444CBA841C8A112 /* Pods-UpdateAdd.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UpdateAdd.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UpdateAdd/Pods-UpdateAdd.debug.xcconfig"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
-		868B0A264AB488A88C9067D3 /* Pods-UpdateAdd Debug.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UpdateAdd Debug.staging.xcconfig"; path = "Pods/Target Support Files/Pods-UpdateAdd Debug/Pods-UpdateAdd Debug.staging.xcconfig"; sourceTree = "<group>"; };
+		874A3DC09ADB472154E01B6B /* libPods-UpdateAdd Staging.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UpdateAdd Staging.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		87D46D9B7D634BBF8189B4DA /* RNVectorIcons.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNVectorIcons.xcodeproj; path = "../node_modules/react-native-vector-icons/RNVectorIcons.xcodeproj"; sourceTree = "<group>"; };
 		8C728639C1B646EDAF4B5626 /* libCodePush.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libCodePush.a; sourceTree = "<group>"; };
 		8EAF838C271940DBAAEC24BC /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
-		9ECF39017013BF1C01C273F7 /* Pods-UpdateAdd Debug.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UpdateAdd Debug.release.xcconfig"; path = "Pods/Target Support Files/Pods-UpdateAdd Debug/Pods-UpdateAdd Debug.release.xcconfig"; sourceTree = "<group>"; };
 		A26EEBA986A5448C9389ECD1 /* libz.tbd */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		A3BF452A471643808F8F255E /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
 		B3F48EFA899E43D29BE4BDBE /* RNGestureHandler.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNGestureHandler.xcodeproj; path = "../node_modules/react-native-gesture-handler/ios/RNGestureHandler.xcodeproj"; sourceTree = "<group>"; };
+		BB7E623ADDDCE14099A80E5B /* Pods-UpdateAdd Staging.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UpdateAdd Staging.staging.xcconfig"; path = "Pods/Target Support Files/Pods-UpdateAdd Staging/Pods-UpdateAdd Staging.staging.xcconfig"; sourceTree = "<group>"; };
 		BEBCE19E8E3049FF87687BB1 /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
-		C1B07DCB1627F42E637F66ED /* Pods-UpdateAdd.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UpdateAdd.release.xcconfig"; path = "Pods/Target Support Files/Pods-UpdateAdd/Pods-UpdateAdd.release.xcconfig"; sourceTree = "<group>"; };
+		CE033282F2AF41EC2995906A /* Pods-UpdateAdd Staging.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UpdateAdd Staging.release.xcconfig"; path = "Pods/Target Support Files/Pods-UpdateAdd Staging/Pods-UpdateAdd Staging.release.xcconfig"; sourceTree = "<group>"; };
+		D37C21B14796A1775CD5495E /* Pods-UpdateAdd Debug.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UpdateAdd Debug.release.xcconfig"; path = "Pods/Target Support Files/Pods-UpdateAdd Debug/Pods-UpdateAdd Debug.release.xcconfig"; sourceTree = "<group>"; };
 		DCBF0DE7523F4DF8A5AEBF92 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
 		DEC64E5E6E0646D58931F5E5 /* AppCenterReactNative.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = AppCenterReactNative.xcodeproj; path = ../node_modules/appcenter/ios/AppCenterReactNative.xcodeproj; sourceTree = "<group>"; };
 		E1033A6F475C447ABE3D3EB1 /* libAppCenterReactNative.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libAppCenterReactNative.a; sourceTree = "<group>"; };
-		EA0F227B23BD381AA3BB2725 /* libPods-UpdateAdd Staging.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UpdateAdd Staging.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E29D96A2C647371ECFF7A2F3 /* Pods-UpdateAdd Debug.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UpdateAdd Debug.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UpdateAdd Debug/Pods-UpdateAdd Debug.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
-		ED9AF83E00DAD4C58B3EB5E2 /* Pods-UpdateAdd Staging.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UpdateAdd Staging.staging.xcconfig"; path = "Pods/Target Support Files/Pods-UpdateAdd Staging/Pods-UpdateAdd Staging.staging.xcconfig"; sourceTree = "<group>"; };
 		F007D75C1FA219D300B37C2C /* UpdateAdd Staging.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UpdateAdd Staging.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F007D75E1FA21A0200B37C2C /* Info-Staging.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info-Staging.plist"; path = "UpdateAdd/Info-Staging.plist"; sourceTree = "<group>"; };
 		F007D7981FA21B0A00B37C2C /* UpdateAdd Debug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UpdateAdd Debug.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F007D79A1FA21B3100B37C2C /* Info-Debug.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info-Debug.plist"; path = "UpdateAdd/Info-Debug.plist"; sourceTree = "<group>"; };
 		F14472EDC40F4EA5B42A0A64 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		F4DD77A008B047F7959D09B9 /* AppCenterReactNativeAnalytics.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = AppCenterReactNativeAnalytics.xcodeproj; path = "../node_modules/appcenter-analytics/ios/AppCenterReactNativeAnalytics.xcodeproj"; sourceTree = "<group>"; };
+		FD751443094275753EE6DA32 /* Pods-UpdateAdd.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UpdateAdd.staging.xcconfig"; path = "Pods/Target Support Files/Pods-UpdateAdd/Pods-UpdateAdd.staging.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -540,7 +540,7 @@
 				99FE3B4897D44D2CBE93244B /* libAppCenterReactNative.a in Frameworks */,
 				E3E1529579F8428BAC4BCED3 /* libAppCenterReactNativeAnalytics.a in Frameworks */,
 				3A5F0641BD6A49CEA4406C62 /* libRNGestureHandler.a in Frameworks */,
-				245687D1215CDB8047370C3D /* libPods-UpdateAdd.a in Frameworks */,
+				73EC561A0636B0FA5A526CBC /* libPods-UpdateAdd.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -562,7 +562,7 @@
 				F007D7521FA219D300B37C2C /* libz.tbd in Frameworks */,
 				F007D7531FA219D300B37C2C /* libReactNativeConfig.a in Frameworks */,
 				ED2971652150620600B7C4FE /* JavaScriptCore.framework in Frameworks */,
-				04F894EE9A3239B51E8D15DD /* libPods-UpdateAdd Staging.a in Frameworks */,
+				7A2836A434919A7AE045BD02 /* libPods-UpdateAdd Staging.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -585,7 +585,7 @@
 				F007D78D1FA21B0A00B37C2C /* libCodePush.a in Frameworks */,
 				F007D78E1FA21B0A00B37C2C /* libz.tbd in Frameworks */,
 				F007D78F1FA21B0A00B37C2C /* libReactNativeConfig.a in Frameworks */,
-				793920785A052EC31794FD88 /* libPods-UpdateAdd Debug.a in Frameworks */,
+				90ACD6F642531AD260109E0D /* libPods-UpdateAdd Debug.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -699,15 +699,15 @@
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
-				71A1A443D16BF70E885D1EB5 /* Pods-UpdateAdd.debug.xcconfig */,
-				C1B07DCB1627F42E637F66ED /* Pods-UpdateAdd.release.xcconfig */,
-				73A8B9DA0FCC09AFA5F5DDE9 /* Pods-UpdateAdd.staging.xcconfig */,
-				7604EEED86FD8AB833B0E6A9 /* Pods-UpdateAdd Debug.debug.xcconfig */,
-				9ECF39017013BF1C01C273F7 /* Pods-UpdateAdd Debug.release.xcconfig */,
-				868B0A264AB488A88C9067D3 /* Pods-UpdateAdd Debug.staging.xcconfig */,
-				30294032A08C9B43F9A52F77 /* Pods-UpdateAdd Staging.debug.xcconfig */,
-				1D92696F49019B98A83D2E57 /* Pods-UpdateAdd Staging.release.xcconfig */,
-				ED9AF83E00DAD4C58B3EB5E2 /* Pods-UpdateAdd Staging.staging.xcconfig */,
+				81C75DB35444CBA841C8A112 /* Pods-UpdateAdd.debug.xcconfig */,
+				64D27A1E2DC9AFCB1189DC36 /* Pods-UpdateAdd.release.xcconfig */,
+				FD751443094275753EE6DA32 /* Pods-UpdateAdd.staging.xcconfig */,
+				E29D96A2C647371ECFF7A2F3 /* Pods-UpdateAdd Debug.debug.xcconfig */,
+				D37C21B14796A1775CD5495E /* Pods-UpdateAdd Debug.release.xcconfig */,
+				4AAA29961215064A4985A2E1 /* Pods-UpdateAdd Debug.staging.xcconfig */,
+				278E8A86D8F99C3434DA4E3B /* Pods-UpdateAdd Staging.debug.xcconfig */,
+				CE033282F2AF41EC2995906A /* Pods-UpdateAdd Staging.release.xcconfig */,
+				BB7E623ADDDCE14099A80E5B /* Pods-UpdateAdd Staging.staging.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -793,9 +793,9 @@
 			isa = PBXGroup;
 			children = (
 				A26EEBA986A5448C9389ECD1 /* libz.tbd */,
-				46C69A5A1C68CA18DE11F75B /* libPods-UpdateAdd.a */,
-				5BC66684E2320FA95C0FF9C0 /* libPods-UpdateAdd Debug.a */,
-				EA0F227B23BD381AA3BB2725 /* libPods-UpdateAdd Staging.a */,
+				1EB6444620D5F545C33AD81A /* libPods-UpdateAdd.a */,
+				43D1906A50C9DF7B803365DC /* libPods-UpdateAdd Debug.a */,
+				874A3DC09ADB472154E01B6B /* libPods-UpdateAdd Staging.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -905,7 +905,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "UpdateAdd" */;
 			buildPhases = (
-				8412CA82309BF7C1E1B3DDB8 /* [CP] Check Pods Manifest.lock */,
+				AB3EE48C64E3451D3D42F952 /* [CP] Check Pods Manifest.lock */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
@@ -926,7 +926,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F007D7581FA219D300B37C2C /* Build configuration list for PBXNativeTarget "UpdateAdd Staging" */;
 			buildPhases = (
-				A986E9E0F865E1BC52E51A61 /* [CP] Check Pods Manifest.lock */,
+				DDDE47336057B9A7E875FD0D /* [CP] Check Pods Manifest.lock */,
 				F007D7421FA219D300B37C2C /* Sources */,
 				F007D7451FA219D300B37C2C /* Frameworks */,
 				F007D7541FA219D300B37C2C /* Resources */,
@@ -946,7 +946,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F007D7941FA21B0A00B37C2C /* Build configuration list for PBXNativeTarget "UpdateAdd Debug" */;
 			buildPhases = (
-				0DCC4A5FCB5B219FE04C3D6B /* [CP] Check Pods Manifest.lock */,
+				67BCA61611EC8C090F8828D6 /* [CP] Check Pods Manifest.lock */,
 				F007D77E1FA21B0A00B37C2C /* Sources */,
 				F007D7811FA21B0A00B37C2C /* Frameworks */,
 				F007D7901FA21B0A00B37C2C /* Resources */,
@@ -1492,7 +1492,7 @@
 			shellPath = /bin/sh;
 			shellScript = "export SENTRY_PROPERTIES=sentry.properties\nexport NODE_BINARY=node\n../node_modules/@sentry/cli/bin/sentry-cli react-native xcode ../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
-		0DCC4A5FCB5B219FE04C3D6B /* [CP] Check Pods Manifest.lock */ = {
+		67BCA61611EC8C090F8828D6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1528,7 +1528,7 @@
 			shellPath = /bin/sh;
 			shellScript = "export SENTRY_PROPERTIES=sentry.properties\n../node_modules/@sentry/cli/bin/sentry-cli upload-dsym\n";
 		};
-		8412CA82309BF7C1E1B3DDB8 /* [CP] Check Pods Manifest.lock */ = {
+		AB3EE48C64E3451D3D42F952 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1550,7 +1550,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A986E9E0F865E1BC52E51A61 /* [CP] Check Pods Manifest.lock */ = {
+		DDDE47336057B9A7E875FD0D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1687,7 +1687,7 @@
 /* Begin XCBuildConfiguration section */
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 71A1A443D16BF70E885D1EB5 /* Pods-UpdateAdd.debug.xcconfig */;
+			baseConfigurationReference = 81C75DB35444CBA841C8A112 /* Pods-UpdateAdd.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1732,7 +1732,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C1B07DCB1627F42E637F66ED /* Pods-UpdateAdd.release.xcconfig */;
+			baseConfigurationReference = 64D27A1E2DC9AFCB1189DC36 /* Pods-UpdateAdd.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1860,7 +1860,7 @@
 		};
 		F007D7591FA219D300B37C2C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 30294032A08C9B43F9A52F77 /* Pods-UpdateAdd Staging.debug.xcconfig */;
+			baseConfigurationReference = 278E8A86D8F99C3434DA4E3B /* Pods-UpdateAdd Staging.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1905,7 +1905,7 @@
 		};
 		F007D75A1FA219D300B37C2C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1D92696F49019B98A83D2E57 /* Pods-UpdateAdd Staging.release.xcconfig */;
+			baseConfigurationReference = CE033282F2AF41EC2995906A /* Pods-UpdateAdd Staging.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1949,7 +1949,7 @@
 		};
 		F007D75B1FA219D300B37C2C /* Staging */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ED9AF83E00DAD4C58B3EB5E2 /* Pods-UpdateAdd Staging.staging.xcconfig */;
+			baseConfigurationReference = BB7E623ADDDCE14099A80E5B /* Pods-UpdateAdd Staging.staging.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1993,7 +1993,7 @@
 		};
 		F007D7951FA21B0A00B37C2C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7604EEED86FD8AB833B0E6A9 /* Pods-UpdateAdd Debug.debug.xcconfig */;
+			baseConfigurationReference = E29D96A2C647371ECFF7A2F3 /* Pods-UpdateAdd Debug.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
@@ -2038,7 +2038,7 @@
 		};
 		F007D7961FA21B0A00B37C2C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9ECF39017013BF1C01C273F7 /* Pods-UpdateAdd Debug.release.xcconfig */;
+			baseConfigurationReference = D37C21B14796A1775CD5495E /* Pods-UpdateAdd Debug.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
@@ -2082,7 +2082,7 @@
 		};
 		F007D7971FA21B0A00B37C2C /* Staging */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 868B0A264AB488A88C9067D3 /* Pods-UpdateAdd Debug.staging.xcconfig */;
+			baseConfigurationReference = 4AAA29961215064A4985A2E1 /* Pods-UpdateAdd Debug.staging.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
@@ -2166,7 +2166,7 @@
 		};
 		F0A1F01E1F9FE53B00943675 /* Staging */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 73A8B9DA0FCC09AFA5F5DDE9 /* Pods-UpdateAdd.staging.xcconfig */;
+			baseConfigurationReference = FD751443094275753EE6DA32 /* Pods-UpdateAdd.staging.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;

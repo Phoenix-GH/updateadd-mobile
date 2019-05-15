@@ -56,3 +56,17 @@ react-native link
 ### Integrate CodeClimate for test report
 
 * Change `<token here>` in `.circleci/config.yml` file with Code Climate's repo token
+
+### Support visual regression test on CI
+
+* Make sure circleci is running with macOS plan
+
+* Modify `.circleci/config.yml` by uncommenting the commented lines and removing these:
+```sh
+docker:
+    - image: circleci/node:10.10.0
+
+curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > /tmp/cc-test-reporter
+```
+
+* Run `reg-suit init --use-yarn` to re-install and re-configure reg-suit and plugins into our project. Check out [documents](https://github.com/reg-viz/reg-suit)

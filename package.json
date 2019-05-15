@@ -13,7 +13,7 @@
     "lint": "./node_modules/.bin/eslint .",
     "lint:fix": "./node_modules/.bin/eslint . --fix",
     "flow": "./node_modules/.bin/flow",
-    "coverage": "jest coverage",
+    "coverage": "jest coverage --passWithNoTests",
     "test:watch": "NODE_ENV=development yarn test --watch",
     "build": "flow-typed install",
     "prepublish": "yarn run build",
