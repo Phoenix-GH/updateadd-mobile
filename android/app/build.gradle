@@ -96,11 +96,15 @@ def enableSeparateBuildPerCPUArchitecture = false
 /**
  * Run Proguard to shrink the Java bytecode in release builds.
  */
-def enableProguardInReleaseBuilds = false
+def enableProguardInReleaseBuilds = true
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
+
+    def keystorePropertiesFile = rootProject.file("keystores/release.keystore.properties")
+    def keystoreProperties = new Properties()
+    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 
     defaultConfig {
         applicationId "com.updateadd"
@@ -120,6 +124,14 @@ android {
             include "armeabi-v7a", "x86", "arm64-v8a"
         }
     }
+    signingConfigs {
+        release {
+            keyAlias keystoreProperties['key.alias']
+            keyPassword keystoreProperties['key.alias.password']
+            storeFile file(rootDir.getCanonicalPath() + '/keystores/' + keystoreProperties['key.store'])
+            storePassword keystoreProperties['key.store.password']
+        }
+    }
     buildTypes {
         debug {
             buildConfigField "String", "CODEPUSH_KEY", '""'
@@ -135,6 +147,7 @@ android {
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
             buildConfigField "String", "CODEPUSH_KEY", '"E1xQdbU7Y5XrnOSroSfkaUOIZeQCS1pFHP_h4"'
             resValue "string", "app_name", "UpdateAdd"
+            signingConfig signingConfigs.release
         }
     }
     // applicationVariants are e.g. debug, release
