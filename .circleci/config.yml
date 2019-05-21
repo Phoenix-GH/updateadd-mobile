@@ -131,18 +131,36 @@ jobs:
           command: |
             sudo npm install -g react-native-cli
 
-      - run:
-          name: Run Storybook server, install app to simulator, Loki snapshotting, visual regression test
+      - run: 
+          name: Run storybook server
           command: |
             sudo chown -R $USER:$GROUP ~/.config
-            yarn storybook & react-native run-ios --simulator "iPhone Xs Max"
-            sleep 300
+            yarn storybook
+          background: true
+          no_output_timeout: 3h
+
+      - run: 
+          name: Install app to simulator
+          command: |
+            react-native run-ios --simulator "iPhone Xs Max"
+
+      - run: 
+          name: Run Loki snapshotting
+          command: |
+            sudo chown -R $USER:$GROUP ~/.config
+            # wait for 4 mins before snapshotting
+            sleep 240
             yarn loki update
+          no_output_timeout: 3h
+
+      - run: 
+          name: Run visual regression test
+          command: |
+            sudo chown -R $USER:$GROUP ~/.config
             yarn regression
-          no_output_timeout: 2h
 
 workflows:
-  version: 2
+  version: 2.1
   commit:
     jobs:
       - install
