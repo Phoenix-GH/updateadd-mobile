@@ -9,8 +9,8 @@
  */
 
 #import "AppDelegate.h"
-#import <AppCenterReactNativeAnalytics/AppCenterReactNativeAnalytics.h>
 #import <AppCenterReactNative/AppCenterReactNative.h>
+#import <AppCenterReactNativeAnalytics/AppCenterReactNativeAnalytics.h>
 #import <CodePush/CodePush.h>
 
 #import <React/RCTBundleURLProvider.h>

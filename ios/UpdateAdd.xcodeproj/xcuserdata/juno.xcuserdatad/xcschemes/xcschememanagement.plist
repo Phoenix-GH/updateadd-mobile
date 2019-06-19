@@ -4,29 +4,28 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>UpdateAdd Debug.xcscheme_^#shared#^_</key>
+		<key>UADD (Production).xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>58</integer>
+			<integer>6</integer>
 		</dict>
-		<key>UpdateAdd Staging.xcscheme_^#shared#^_</key>
+		<key>UADD (Staging).xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>57</integer>
+			<integer>7</integer>
 		</dict>
-		<key>UpdateAdd-tvOS.xcscheme</key>
+		<key>UADD.xcscheme_^#shared#^_</key>
 		<dict>
-			<key>isShown</key>
-			<false/>
 			<key>orderHint</key>
 			<integer>5</integer>
 		</dict>
-		<key>UpdateAdd.xcscheme_^#shared#^_</key>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>13B07F861A680F5B00A75B9A</key>
 		<dict>
-			<key>isShown</key>
+			<key>primary</key>
 			<true/>
-			<key>orderHint</key>
-			<integer>4</integer>
 		</dict>
 	</dict>
 </dict>

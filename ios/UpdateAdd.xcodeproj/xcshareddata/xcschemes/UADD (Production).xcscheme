@@ -10,7 +10,7 @@
             ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
             <ActionContent
                title = "Run Script"
-               scriptText = "echo &quot;.env.production&quot; &gt; /tmp/envfile">
+               scriptText = "echo &quot;.env.production&quot; &gt; /tmp/envfile&#10;">
             </ActionContent>
          </ExecutionAction>
       </PreActions>
@@ -38,8 +38,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "UpdateAdd.app"
-               BlueprintName = "UpdateAdd"
+               BuildableName = "UADD.app"
+               BlueprintName = "UADD"
                ReferencedContainer = "container:UpdateAdd.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -56,8 +56,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "UpdateAdd.app"
-            BlueprintName = "UpdateAdd"
+            BuildableName = "UADD.app"
+            BlueprintName = "UADD"
             ReferencedContainer = "container:UpdateAdd.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -79,8 +79,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "UpdateAdd.app"
-            BlueprintName = "UpdateAdd"
+            BuildableName = "UADD.app"
+            BlueprintName = "UADD"
             ReferencedContainer = "container:UpdateAdd.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -98,8 +98,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "UpdateAdd.app"
-            BlueprintName = "UpdateAdd"
+            BuildableName = "UADD.app"
+            BlueprintName = "UADD"
             ReferencedContainer = "container:UpdateAdd.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
