@@ -32,15 +32,34 @@ const ButtonText= styled(Text)`
 `;
 
 class Onboarding extends React.Component<any> {
+  state = {
+    page: 0,
+  }
+
 	static navigationOptions = {
 		header: null,
 	}	
 
+  onPressNext = () => {
+    const { page } = this.state;
+    if(page <3) {
+      this.setState({ page: page + 1 });
+    }
+  }
+
   render() {
+    const { page } = this.state;
+    let buttonTitle = 'Next';
+    if(page === 3) {
+      buttonTitle = 'Select Your country';
+    }
     return (
       <Container>
-      	<OnboardingCarousel />
-        <OnboardingButton>
+      	<OnboardingCarousel
+          activeIndex={page}
+          setIndex={(index) => this.setState({ page: index })}
+        />
+        <OnboardingButton onPress={this.onPressNext}>
           <ButtonText>Next</ButtonText>
         </OnboardingButton>
       </Container>

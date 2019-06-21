@@ -47,10 +47,6 @@ const Description = styled(Text)`
 `;
 
 class OnboardingCarousel extends React.Component {
-  state = {
-    activeIndex: 0,
-  };
-
   renderItem = ({ index }) => {
     switch (index) {
       case 0:
@@ -125,7 +121,7 @@ class OnboardingCarousel extends React.Component {
   };
 
   render() {
-    const { activeIndex } = this.state;
+    const { activeIndex } = this.props;
     return (
       <View style={{ flex: 1 }}>
         <Carousel
@@ -134,7 +130,7 @@ class OnboardingCarousel extends React.Component {
           data={['one', 'two', 'three', 'four']}
           slideStyle={{ width }}
           renderItem={this.renderItem}
-          onSnapToItem={index => this.setState({ activeIndex: index })}
+          onSnapToItem={index => this.props.setIndex(index)}
         />
         <Pagination
           dotsLength={4}
