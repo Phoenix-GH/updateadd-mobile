@@ -57,7 +57,7 @@ class OnboardingCarousel extends React.Component {
       this._carousel.snapToItem(activeIndex)
     }
   }
-  
+
   renderItem = ({ index }) => {
     switch (index) {
       case 0:
@@ -118,7 +118,7 @@ class OnboardingCarousel extends React.Component {
               source={select_country}
               resizeMode="contain"
             />
-            <Title>Select your country</Title>
+            <Title>Select your Country</Title>
             <DescriptionBox>
               <Description>
                 This will ensure phone numbers & other settings are formatted correctly.
