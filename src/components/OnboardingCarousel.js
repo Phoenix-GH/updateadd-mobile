@@ -14,22 +14,24 @@ const ThemeImage = styled(Image)`
   height: 257px;
   top: 17.72%;
   position: absolute;
-`;
+`
 
 const CarouselCard = styled(View)`
   width: ${width};
   flex: 1;
   align-items: center;
   justify-content: center;
-`;
+`
 
 const Title = styled(Text)`
   font-size: 24px;
   line-height: 27px;
+  font-weight: 700;
   text-align: center;
   text-transform: uppercase;
   margin-top: 387px;
   color: ${props => props.theme.darkGray};
+  font-family: Gotham;
 `
 
 const DescriptionBox = styled(View)`
@@ -38,15 +40,24 @@ const DescriptionBox = styled(View)`
   height: 17.46%;
   display: flex;
   justify-content: space-between;
-`;
+`
 
 const Description = styled(Text)`
   font-size: 16px;
   color: ${props => props.theme.lightGray};
   text-align: center;
-`;
+  font-family: Gotham;
+  line-height: 22px;
+`
 
 class OnboardingCarousel extends React.Component {
+  componentDidUpdate () {
+    const { activeIndex } = this.props
+    if(this._carousel) {
+      this._carousel.snapToItem(activeIndex)
+    }
+  }
+  
   renderItem = ({ index }) => {
     switch (index) {
       case 0:
@@ -117,13 +128,6 @@ class OnboardingCarousel extends React.Component {
         );
       default:
         return null
-    }
-  };
-
-  componentDidUpdate () {
-    const { activeIndex } = this.props
-    if(this._carousel) {
-      this._carousel.snapToItem(activeIndex)
     }
   }
 

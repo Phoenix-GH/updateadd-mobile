@@ -1,11 +1,12 @@
 // @flow
 
 import React from 'react'
-import { View, TouchableOpacity, Text } from 'react-native'
+import { View, TouchableOpacity, Text, Image } from 'react-native'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
 import { OnboardingCarousel } from '../../components'
 
+import gradient from '../../images/gradient.png'
 /* eslint-disable */
 
 const Container = styled(View)`
@@ -15,9 +16,9 @@ const Container = styled(View)`
 `
 
 const OnboardingButton = styled(TouchableOpacity)`
-  margin: 30px 17px 20px 17px;
+  margin: 0px 17px 20px 17px;
   border-radius: 4px;
-  background-color: blue;
+  background-color: transparent;
   width: 100%;
   height: 52px;
   display: flex;
@@ -29,7 +30,13 @@ const ButtonText= styled(Text)`
   color: white;
   font-size: 16px;
   line-height: 19px;
-`;
+  font-family: Gotham;
+`
+
+const Gradient = styled(Image)`
+  flex: 1;
+  position: absolute;
+`
 
 class Onboarding extends React.Component<any> {
   state = {
@@ -60,6 +67,7 @@ class Onboarding extends React.Component<any> {
           setIndex={(index) => this.setState({ page: index })}
         />
         <OnboardingButton onPress={this.onPressNext}>
+          <Gradient source={gradient} />
           <ButtonText>{buttonTitle}</ButtonText>
         </OnboardingButton>
       </Container>
