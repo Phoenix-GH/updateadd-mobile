@@ -3,12 +3,16 @@ import { Text, View, Dimensions, Image } from 'react-native';
 import Carousel, { Pagination } from 'react-native-snap-carousel';
 import styled from 'styled-components';
 import logo from '../images/logo.png'
+import improve_contacts from '../images/improve_contacts.png'
+import select_country from '../images/select_country.png'
 
 const { width } = Dimensions.get('window');
 
 const ThemeImage = styled(Image)`
   width: 257px;
-  margin-top: 17.72%;
+  height: 257px;
+  top: 17.72%;
+  position: absolute;
 `;
 
 const CarouselCard = styled(View)`
@@ -23,7 +27,7 @@ const Title = styled(Text)`
   line-height: 27px;
   text-align: center;
   text-transform: uppercase;
-  margin-top: 111.67px;
+  margin-top: 387px;
   color: ${props => props.theme.darkGray};
 `
 
@@ -51,7 +55,10 @@ class OnboardingCarousel extends React.Component {
       case 0:
         return (
           <CarouselCard>
-            <ThemeImage source={logo} />
+            <ThemeImage
+              source={logo}
+              resizeMode="center"
+            />
             <Title>Welcome to UADD</Title>
             <DescriptionBox>
               <Description>
@@ -66,18 +73,10 @@ class OnboardingCarousel extends React.Component {
       case 1:
         return (
           <CarouselCard>
-            <Title>Tell us what you like</Title>
-            <DescriptionBox>
-              <Description>
-                From industries and work type to work schedule and salary,
-                we&apos;ll match you with jobs that fit you.
-              </Description>
-            </DescriptionBox>
-          </CarouselCard>
-        );
-      case 2:
-        return (
-          <CarouselCard>
+            <ThemeImage
+              source={improve_contacts}
+              resizeMode="contain"
+            />
             <Title>Import Contacts</Title>
             <DescriptionBox>
               <Description>
@@ -86,9 +85,13 @@ class OnboardingCarousel extends React.Component {
             </DescriptionBox>
           </CarouselCard>
         );
-      case 3:
+      case 2:
         return (
           <CarouselCard>
+            <ThemeImage
+              source={improve_contacts}
+              resizeMode="contain"
+            />
             <Title>Improve your contacts</Title>
             <DescriptionBox>
               <Description>
@@ -100,9 +103,13 @@ class OnboardingCarousel extends React.Component {
             </DescriptionBox>
           </CarouselCard>
         );
-      case 4:
+      case 3:
         return (
           <CarouselCard>
+            <ThemeImage
+              source={select_country}
+              resizeMode="contain"
+            />
             <Title>Select your country</Title>
             <DescriptionBox>
               <Description>
