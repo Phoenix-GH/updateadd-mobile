@@ -1,12 +1,14 @@
 import React from 'react';
-import { Text, View, Dimensions } from 'react-native';
+import { Text, View, Dimensions, Image } from 'react-native';
 import Carousel, { Pagination } from 'react-native-snap-carousel';
 import styled from 'styled-components';
+import logo from '../images/logo.png'
 
 const { width } = Dimensions.get('window');
 
-import logo from '../images/logo.png'
-
+const ThemeImage = styled(Image)`
+  width: 257px;
+`;
 const CarouselCard = styled(View)`
   width: ${width};
   flex: 1;
@@ -33,7 +35,6 @@ const Description = styled(Text)`
   text-align: center;
 `;
 
-
 class OnboardingCarousel extends React.Component {
   state = {
     activeIndex: 0,
@@ -44,6 +45,7 @@ class OnboardingCarousel extends React.Component {
       case 0:
         return (
           <CarouselCard>
+            <ThemeImage source={logo} />
             <Title>Welcome to UADD</Title>
             <DescriptionBox>
               <Description>
@@ -109,6 +111,7 @@ class OnboardingCarousel extends React.Component {
   };
 
   render() {
+    const { activeIndex } = this.state;
     return (
       <View style={{ flex: 1 }}>
         <Carousel
@@ -121,7 +124,7 @@ class OnboardingCarousel extends React.Component {
         />
         <Pagination
           dotsLength={4}
-          activeDotIndex={this.state.activeIndex}
+          activeDotIndex={activeIndex}
           containerStyle={{ backgroundColor: '#fff' }}
           dotStyle={{
             width: 10,
@@ -132,7 +135,6 @@ class OnboardingCarousel extends React.Component {
           }}
           inactiveDotStyle={
             {
-              
             }
           }
           inactiveDotOpacity={0.4}

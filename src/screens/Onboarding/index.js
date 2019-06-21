@@ -1,7 +1,7 @@
 // @flow
 
 import React from 'react'
-import { View, Text, Image } from 'react-native'
+import { View } from 'react-native'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
 import { OnboardingCarousel } from '../../components'
@@ -23,7 +23,6 @@ class Onboarding extends React.Component<any> {
     return (
       <Container>
       	<OnboardingCarousel />
-
       </Container>
     )
   }
