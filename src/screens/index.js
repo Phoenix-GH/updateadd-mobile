@@ -9,32 +9,15 @@ import { createReduxContainer, createReactNavigationReduxMiddleware } from 'reac
 
 import { Roots } from '../constants'
 
-import Login from './Login'
-import SignUp from './SignUp'
-import DebugContacts from './DebugContacts'
+import OnboardingScreen from './Onboarding'
 
 export const AppNavigator = createStackNavigator({
-  [Roots.Login]: {
-    screen: Login,
-    navigationOptions: {
-      header: null,
-    },
-  },
-  [Roots.SignUp]: {
-    screen: SignUp,
-    navigationOptions: {
-      header: null,
-    },
-  },
-  [Roots.DebugContacts]: {
-    screen: DebugContacts,
-    navigationOptions: {
-      header: null,
-    },
-  },
-})
+  [Roots.Onboarding]: {
+    screen: OnboardingScreen,
+  }
+});
 
-export const navigationMiddleware = createReactNavigationReduxMiddleware(state => state.nav)
+export const navigationMiddleware = createReactNavigationReduxMiddleware('root', state => state.nav)
 const AppNavigatorWithNavigationState = createReduxContainer(AppNavigator, 'root')
 
 type RootProps = {
@@ -58,4 +41,5 @@ const mapStateToProps = (state: StoreState) => ({ navigation: state.nav })
 
 const mapStateToDispatch = (dispatch: NavigationDispatch) => ({ dispatch })
 
+// $FlowFixMe
 export default connect(mapStateToProps, mapStateToDispatch)(RootContainer)
