@@ -8,7 +8,9 @@ const { width } = Dimensions.get('window');
 
 const ThemeImage = styled(Image)`
   width: 257px;
+  margin-top: 17.72%;
 `;
+
 const CarouselCard = styled(View)`
   width: ${width};
   flex: 1;
@@ -21,17 +23,21 @@ const Title = styled(Text)`
   line-height: 27px;
   text-align: center;
   text-transform: uppercase;
+  margin-top: 111.67px;
+  color: ${props => props.theme.darkGray};
 `
 
 const DescriptionBox = styled(View)`
-  padding-top: 20;
-  padding-left: 30;
-  padding-right: 30;
+  margin-top: 41px;
+  margin: 41px 31px 0 32px;
+  height: 17.46%;
+  display: flex;
+  justify-content: space-between;
 `;
 
 const Description = styled(Text)`
-  font-size: 15;
-  color: ${props => props.theme.slateGray};
+  font-size: 16px;
+  color: ${props => props.theme.lightGray};
   text-align: center;
 `;
 
@@ -127,18 +133,18 @@ class OnboardingCarousel extends React.Component {
           activeDotIndex={activeIndex}
           containerStyle={{ backgroundColor: '#fff' }}
           dotStyle={{
-            width: 10,
-            height: 10,
-            borderRadius: 5,
+            width: 7,
+            height: 7,
+            borderRadius: 3.5,
             marginHorizontal: 0,
-            backgroundColor: 'rgba(0, 0, 0, 0.6)',
+            backgroundColor: 'rgba(0, 0, 0, 1)',
           }}
           inactiveDotStyle={
             {
             }
           }
-          inactiveDotOpacity={0.4}
-          inactiveDotScale={0.6}
+          inactiveDotOpacity={0.32}
+          inactiveDotScale={1}
         />
       </View>
     );

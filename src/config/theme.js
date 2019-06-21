@@ -3,8 +3,8 @@ const theme = {
 	black: '#000000',
 	white: '#ffffff',
 	blue: '#1caaff',
-	lightgray: '#eef2f6',
-	darkGray: '#222222',
+	lightGray: '#7b7b7b',
+	darkGray: '#272727',
 	whitesmoke: '#f8f9fd',
 
 	/* secondary colors */

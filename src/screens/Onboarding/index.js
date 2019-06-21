@@ -1,7 +1,7 @@
 // @flow
 
 import React from 'react'
-import { View } from 'react-native'
+import { View, TouchableOpacity, Text } from 'react-native'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
 import { OnboardingCarousel } from '../../components'
@@ -14,6 +14,23 @@ const Container = styled(View)`
 	flex: 1;
 `
 
+const OnboardingButton = styled(TouchableOpacity)`
+  margin: 30px 17px 20px 17px;
+  border-radius: 4px;
+  background-color: blue;
+  width: 100%;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
+
+const ButtonText= styled(Text)`
+  color: white;
+  font-size: 16px;
+  line-height: 19px;
+`;
+
 class Onboarding extends React.Component<any> {
 	static navigationOptions = {
 		header: null,
@@ -23,6 +40,9 @@ class Onboarding extends React.Component<any> {
     return (
       <Container>
       	<OnboardingCarousel />
+        <OnboardingButton>
+          <ButtonText>Next</ButtonText>
+        </OnboardingButton>
       </Container>
     )
   }
