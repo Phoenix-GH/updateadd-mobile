@@ -74,6 +74,7 @@
     "react-native-gesture-handler": "^1.0.10",
     "react-native-linear-gradient": "^2.5.4",
     "react-native-sentry": "^0.42.0",
+    "react-native-snap-carousel": "^3.8.0",
     "react-native-storybook-loader": "^1.8.0",
     "react-native-vector-icons": "^6.1.0",
     "react-navigation": "^3.0.5",
