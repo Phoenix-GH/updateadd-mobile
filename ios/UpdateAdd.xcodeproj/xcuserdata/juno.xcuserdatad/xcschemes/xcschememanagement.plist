@@ -4,17 +4,17 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>UADD (Production).xcscheme_^#shared#^_</key>
+		<key>UpdateAdd-Production.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>6</integer>
 		</dict>
-		<key>UADD (Staging).xcscheme_^#shared#^_</key>
+		<key>UpdateAdd-Staging.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>7</integer>
 		</dict>
-		<key>UADD.xcscheme_^#shared#^_</key>
+		<key>UpdateAdd.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>5</integer>

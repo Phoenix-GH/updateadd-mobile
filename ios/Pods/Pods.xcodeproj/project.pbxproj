@@ -2456,29 +2456,6 @@
 			};
 			name = Debug;
 		};
-		1860BBBF048CF2FB2E7D2077D9CD7528 /* Staging */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 954F5D965CA997C7469885654A80DC46 /* Folly.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/Folly/Folly-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = folly;
-				PRODUCT_NAME = Folly;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Staging;
-		};
 		2549603D94B65C40FE4857541607ED44 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C1CA250D6901F481E053C47296F34E13 /* AppCenterReactNativeShared.xcconfig */;
@@ -2506,7 +2483,7 @@
 			};
 			name = Debug;
 		};
-		2B7EDE85A5E1E0690D49029EF6897AED /* Staging */ = {
+		293159AA67B11716A7129A34F5F9BF7F /* Staging */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C23C7963FCC15EE852579E9AEBF164CE /* AppCenter.xcconfig */;
 			buildSettings = {
@@ -2516,29 +2493,21 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Staging;
 		};
-		3BDBE7541EF9F0349CF0F43C1B2CDB93 /* Staging */ = {
+		2C5C317B33BC60F36B1809CC81F43091 /* Staging */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4C5684F02DFE808D3CEB056A05AD8855 /* DoubleConversion.xcconfig */;
+			baseConfigurationReference = C1CA250D6901F481E053C47296F34E13 /* AppCenterReactNativeShared.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/DoubleConversion/DoubleConversion-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = DoubleConversion;
-				PRODUCT_NAME = DoubleConversion;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Staging;
 		};
@@ -2565,16 +2534,27 @@
 			};
 			name = Debug;
 		};
-		46140D6B5F8678628A53EF8B6490D75D /* Staging */ = {
+		50FC5F403569BEBCB9784A9C30800DA2 /* Staging */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 52407BAC4E2C80770D9B47032537242B /* boost-for-react-native.xcconfig */;
+			baseConfigurationReference = 4C5684F02DFE808D3CEB056A05AD8855 /* DoubleConversion.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/DoubleConversion/DoubleConversion-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = DoubleConversion;
+				PRODUCT_NAME = DoubleConversion;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
 				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Staging;
 		};
@@ -2590,6 +2570,30 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
+		};
+		54D828E9558FF5B1F7FCDF6BB4C507FB /* Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9DB54C49E4E0C543DEECF1D970213AEA /* glog.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/glog/glog-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = glog;
+				PRODUCT_NAME = glog;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Staging;
 		};
 		5BAFE87D77E2D5DF90A9447320873DE0 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -2614,6 +2618,20 @@
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
+		};
+		5DFF72DE122EF50C534435CF97D64D9F /* Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8DD4716C2F5F966D7AF3B6D77CDDB469 /* yoga.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Staging;
 		};
 		61E0FD671B6BF6D9A09DC9E357E1D8C9 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -2674,6 +2692,20 @@
 			};
 			name = Debug;
 		};
+		772734F85905FC5BC59D3C914D71499E /* Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 52407BAC4E2C80770D9B47032537242B /* boost-for-react-native.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Staging;
+		};
 		7BCE8025B0F552913335BBFE24D4FB03 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BDD21D257DEA8EA8896D9619380D1D94 /* Pods-UADD.release.xcconfig */;
@@ -2695,19 +2727,6 @@
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
-		};
-		8175C27A2A0117A85351674561C7BA6D /* Staging */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8DD4716C2F5F966D7AF3B6D77CDDB469 /* yoga.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Staging;
 		};
 		8BD77974852CA9C36A2A7CE8C24EC10D /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -2747,24 +2766,27 @@
 			};
 			name = Release;
 		};
-		950A46228E076D74E4BC8E7C3E7F275A /* Staging */ = {
+		9156B4650BD003960B5DFBA3A56D4C67 /* Staging */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E391CAD260DC4F6AB861ED0CAA2BB548 /* Pods-UADD.staging.xcconfig */;
+			baseConfigurationReference = 954F5D965CA997C7469885654A80DC46 /* Folly.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/Folly/Folly-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MACH_O_TYPE = staticlib;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = folly;
+				PRODUCT_NAME = Folly;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Staging;
 		};
@@ -2915,16 +2937,25 @@
 			};
 			name = Debug;
 		};
-		D11F7A8BF9CA952EE04945D2F8D55636 /* Staging */ = {
+		DF5CA0C5DCC5B8837A90669B180F3404 /* Staging */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C1CA250D6901F481E053C47296F34E13 /* AppCenterReactNativeShared.xcconfig */;
+			baseConfigurationReference = E391CAD260DC4F6AB861ED0CAA2BB548 /* Pods-UADD.staging.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
 				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Staging;
 		};
@@ -2951,29 +2982,6 @@
 			};
 			name = Debug;
 		};
-		EF4A93ACDFB8DD33DE4D21A117D181A1 /* Staging */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9DB54C49E4E0C543DEECF1D970213AEA /* glog.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/glog/glog-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = glog;
-				PRODUCT_NAME = glog;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Staging;
-		};
 		F665D97AD7073A5264825750C7DCB1E8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C23C7963FCC15EE852579E9AEBF164CE /* AppCenter.xcconfig */;
@@ -2995,7 +3003,7 @@
 			buildConfigurations = (
 				2572E6452BA7990474A3FA317325AEC8 /* Debug */,
 				8BD77974852CA9C36A2A7CE8C24EC10D /* Release */,
-				46140D6B5F8678628A53EF8B6490D75D /* Staging */,
+				772734F85905FC5BC59D3C914D71499E /* Staging */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3005,7 +3013,7 @@
 			buildConfigurations = (
 				541D208A88D2C8A3F332775986E22A66 /* Debug */,
 				2549603D94B65C40FE4857541607ED44 /* Release */,
-				D11F7A8BF9CA952EE04945D2F8D55636 /* Staging */,
+				2C5C317B33BC60F36B1809CC81F43091 /* Staging */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3025,7 +3033,7 @@
 			buildConfigurations = (
 				CAD0AFC2969CC6723C8A507903037030 /* Debug */,
 				9BCB0874279FD3B539D4DB58868FB49A /* Release */,
-				8175C27A2A0117A85351674561C7BA6D /* Staging */,
+				5DFF72DE122EF50C534435CF97D64D9F /* Staging */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3035,7 +3043,7 @@
 			buildConfigurations = (
 				E67D69DE773FE2A7F29E3EA39E30FA25 /* Debug */,
 				5BAFE87D77E2D5DF90A9447320873DE0 /* Release */,
-				EF4A93ACDFB8DD33DE4D21A117D181A1 /* Staging */,
+				54D828E9558FF5B1F7FCDF6BB4C507FB /* Staging */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3045,7 +3053,7 @@
 			buildConfigurations = (
 				422BE358885E1BA30E0C48DC7751AD9F /* Debug */,
 				61E0FD671B6BF6D9A09DC9E357E1D8C9 /* Release */,
-				3BDBE7541EF9F0349CF0F43C1B2CDB93 /* Staging */,
+				50FC5F403569BEBCB9784A9C30800DA2 /* Staging */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3055,7 +3063,7 @@
 			buildConfigurations = (
 				74CF72C0E0E8DC025BED4D72BECD6A1C /* Debug */,
 				7BCE8025B0F552913335BBFE24D4FB03 /* Release */,
-				950A46228E076D74E4BC8E7C3E7F275A /* Staging */,
+				DF5CA0C5DCC5B8837A90669B180F3404 /* Staging */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3065,7 +3073,7 @@
 			buildConfigurations = (
 				F665D97AD7073A5264825750C7DCB1E8 /* Debug */,
 				7286AE74E3196835E935BE1E866ED9B0 /* Release */,
-				2B7EDE85A5E1E0690D49029EF6897AED /* Staging */,
+				293159AA67B11716A7129A34F5F9BF7F /* Staging */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3075,7 +3083,7 @@
 			buildConfigurations = (
 				16FAEA74BDE531F9307207A896980928 /* Debug */,
 				8C2EF1EB9D493243C429BB1AD4A35410 /* Release */,
-				1860BBBF048CF2FB2E7D2077D9CD7528 /* Staging */,
+				9156B4650BD003960B5DFBA3A56D4C67 /* Staging */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
