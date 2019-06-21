@@ -42,16 +42,16 @@ class Onboarding extends React.Component<any> {
 
   onPressNext = () => {
     const { page } = this.state;
-    if(page <3) {
-      this.setState({ page: page + 1 });
+    if(page < 3) {
+      this.setState({ page: page + 1 })
     }
   }
 
   render() {
-    const { page } = this.state;
-    let buttonTitle = 'Next';
+    const { page } = this.state
+    let buttonTitle = 'Next'
     if(page === 3) {
-      buttonTitle = 'Select Your country';
+      buttonTitle = 'Select Your country'
     }
     return (
       <Container>
@@ -60,7 +60,7 @@ class Onboarding extends React.Component<any> {
           setIndex={(index) => this.setState({ page: index })}
         />
         <OnboardingButton onPress={this.onPressNext}>
-          <ButtonText>Next</ButtonText>
+          <ButtonText>{buttonTitle}</ButtonText>
         </OnboardingButton>
       </Container>
     )

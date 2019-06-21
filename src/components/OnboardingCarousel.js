@@ -116,15 +116,24 @@ class OnboardingCarousel extends React.Component {
           </CarouselCard>
         );
       default:
-        return null;
+        return null
     }
   };
 
+  componentDidUpdate () {
+    const { activeIndex } = this.props
+    if(this._carousel) {
+      this._carousel.snapToItem(activeIndex)
+    }
+  }
+
   render() {
-    const { activeIndex } = this.props;
+    const { activeIndex } = this.props
+    
     return (
       <View style={{ flex: 1 }}>
         <Carousel
+          ref={(c) => { this._carousel = c; }}
           sliderWidth={width}
           itemWidth={width}
           data={['one', 'two', 'three', 'four']}
