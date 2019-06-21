@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import logo from '../images/logo.png'
 import improve_contacts from '../images/improve_contacts.png'
 import select_country from '../images/select_country.png'
+import import_contact from '../images/import_contact.png'
 
 const { width } = Dimensions.get('window');
 
@@ -74,7 +75,7 @@ class OnboardingCarousel extends React.Component {
         return (
           <CarouselCard>
             <ThemeImage
-              source={improve_contacts}
+              source={import_contact}
               resizeMode="contain"
             />
             <Title>Import Contacts</Title>
