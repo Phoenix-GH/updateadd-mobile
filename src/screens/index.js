@@ -14,7 +14,7 @@ import OnboardingScreen from './Onboarding'
 export const AppNavigator = createStackNavigator({
   [Roots.Onboarding]: {
     screen: OnboardingScreen,
-  }
+  },
 });
 
 export const navigationMiddleware = createReactNavigationReduxMiddleware('root', state => state.nav)

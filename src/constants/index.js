@@ -40,6 +40,7 @@ const Roots = {
   DebugContacts: 'DebugContacts',
   Login: 'Login',
   SignUp: 'SignUp',
+  Onboarding: 'Onboarding',
 }
 
 const Images = {
