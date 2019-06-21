@@ -3,10 +3,12 @@
 import React from 'react'
 import { AppRegistry } from 'react-native'
 import { Provider } from 'react-redux'
+import { ThemeProvider } from 'styled-components';
 import CodePush from 'react-native-code-push'
 
 import SentryUtil from './utils'
 import RootContainer from './screens'
+import theme from './config/theme'
 import Store from './store'
 import { dispatchers as ContactDispatchers } from './store/contacts'
 
@@ -36,7 +38,9 @@ export class App extends React.Component <any> {
   render() {
     return (
       <Provider store={this.store}>
-        <RootContainer />
+        <ThemeProvider theme={theme}>
+          <RootContainer />
+        </ThemeProvider>
       </Provider>
     )
   }
