@@ -11,10 +11,6 @@ PODS:
     - DoubleConversion
     - glog
   - glog (0.3.5)
-  - React (0.59.8):
-    - React/Core (= 0.59.8)
-  - react-native-contacts (4.0.2):
-    - React
   - React/ART (0.59.8):
     - React/Core
   - React/Core (0.59.8):
@@ -70,8 +66,6 @@ PODS:
     - React/Core
     - React/fishhook
     - React/RCTBlob
-  - RNDeviceInfo (2.1.2):
-    - React
   - yoga (0.59.8.React)
 
 DEPENDENCIES:
@@ -80,7 +74,6 @@ DEPENDENCIES:
   - DoubleConversion (from `../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
   - Folly (from `../node_modules/react-native/third-party-podspecs/Folly.podspec`)
   - glog (from `../node_modules/react-native/third-party-podspecs/glog.podspec`)
-  - react-native-contacts (from `../node_modules/react-native-contacts`)
   - React/ART (from `../node_modules/react-native`)
   - React/Core (from `../node_modules/react-native`)
   - React/CxxBridge (from `../node_modules/react-native`)
@@ -95,7 +88,6 @@ DEPENDENCIES:
   - React/RCTText (from `../node_modules/react-native`)
   - React/RCTVibration (from `../node_modules/react-native`)
   - React/RCTWebSocket (from `../node_modules/react-native`)
-  - RNDeviceInfo (from `../node_modules/react-native-device-info`)
   - yoga (from `../node_modules/react-native/ReactCommon/yoga/yoga.podspec`)
 
 SPEC REPOS:
@@ -113,10 +105,6 @@ EXTERNAL SOURCES:
     :podspec: "../node_modules/react-native/third-party-podspecs/glog.podspec"
   React:
     :path: "../node_modules/react-native"
-  react-native-contacts:
-    :path: "../node_modules/react-native-contacts"
-  RNDeviceInfo:
-    :path: "../node_modules/react-native-device-info"
   yoga:
     :podspec: "../node_modules/react-native/ReactCommon/yoga/yoga.podspec"
 
@@ -128,13 +116,8 @@ SPEC CHECKSUMS:
   Folly: de497beb10f102453a1afa9edbf8cf8a251890de
   glog: aefd1eb5dda2ab95ba0938556f34b98e2da3a60d
   React: 76e6aa2b87d05eb6cccb6926d72685c9a07df152
-<<<<<<< HEAD
-  react-native-contacts: 348958bb7da4399040b1eb45bfb7f6af08e61412
-  RNDeviceInfo: 75dac2d7cd6b638b512cc9266ce48a39661fed0e
-=======
->>>>>>> #UADD-7 upgraded pod version #time 20m
   yoga: 92b2102c3d373d1a790db4ab761d2b0ffc634f64
 
-PODFILE CHECKSUM: 6dcd06db9959c5fedad66e2ebcb3150dadbe7a8c
+PODFILE CHECKSUM: a73882084b3b5e45d4e813d23426a48d2e5a1659
 
 COCOAPODS: 1.7.2
