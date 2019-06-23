@@ -9,9 +9,7 @@ import {
 } from 'react-native'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
-import CountryPicker, {
-  getAllCountries
-} from 'react-native-country-picker-modal'
+
 import SafeAreaView from 'react-native-safe-area-view'
 import { OnboardingCarousel } from '../../components'
 import gradient from '../../images/gradient.png'

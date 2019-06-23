@@ -1,7 +1,12 @@
 import React from 'react';
-import { Text, View, Dimensions, Image } from 'react-native';
-import Carousel, { Pagination } from 'react-native-snap-carousel';
-import styled from 'styled-components';
+import {
+  Text,
+  View,
+  Dimensions,
+  Image,
+} from 'react-native'
+import Carousel, { Pagination } from 'react-native-snap-carousel'
+import styled from 'styled-components'
 import logo from '../images/logo.png'
 import improve_contacts from '../images/improve_contacts.png'
 import select_country from '../images/select_country.png'
@@ -51,9 +56,9 @@ const Description = styled(Text)`
 `
 
 class OnboardingCarousel extends React.Component {
-  componentDidUpdate () {
+  componentDidUpdate() {
     const { activeIndex } = this.props
-    if(this._carousel) {
+    if (this._carousel) {
       this._carousel.snapToItem(activeIndex)
     }
   }
