@@ -71,6 +71,7 @@
     "react-native-contacts": "^4.0.2",
     "react-native-device-info": "^2.1.0",
     "react-native-elements": "^1.1.0",
+    "react-native-country-picker-modal": "^0.7.1",
     "react-native-gesture-handler": "^1.0.10",
     "react-native-linear-gradient": "^2.5.4",
     "react-native-sentry": "^0.42.0",
