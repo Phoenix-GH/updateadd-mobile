@@ -14,7 +14,7 @@ import { SafeAreaView } from 'react-navigation'
 import OnboardingCarousel from '../../components/OnboardingCarousel'
 import gradient from '../../images/gradient.png'
 /* eslint-disable */
-/*flow-disable*/
+
 const Container = styled(View)`
   padding: 20px;
   align-items: center;
@@ -50,7 +50,8 @@ const ModalView = styled(View)`
   left: -60;
 `
 
-class Onboarding extends React.Component<any> {
+class Onboarding extends React.Component<any, any> {
+  picker = null
   constructor(props) {
     super(props)
     this.state = {
@@ -117,5 +118,5 @@ const listTheme = StyleSheet.create({
 });
 /* eslint-enable */
 
-// $FlowFixMe
+
 export default connect((): Object => ({}))(Onboarding)

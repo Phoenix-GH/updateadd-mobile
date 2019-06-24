@@ -41,5 +41,5 @@ const mapStateToProps = (state: StoreState) => ({ navigation: state.nav })
 
 const mapStateToDispatch = (dispatch: NavigationDispatch) => ({ dispatch })
 
-// $FlowFixMe
+
 export default connect(mapStateToProps, mapStateToDispatch)(RootContainer)
