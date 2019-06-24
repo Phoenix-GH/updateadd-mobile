@@ -10,8 +10,8 @@ import {
 import { connect } from 'react-redux'
 import styled from 'styled-components'
 import CountryPicker from 'react-native-country-picker-modal'
-import SafeAreaView from 'react-native-safe-area-view'
-import { OnboardingCarousel } from '../../components'
+import { SafeAreaView } from 'react-navigation'
+import OnboardingCarousel from '../../components/OnboardingCarousel'
 import gradient from '../../images/gradient.png'
 /* eslint-disable */
 

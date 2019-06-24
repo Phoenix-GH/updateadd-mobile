@@ -5,6 +5,7 @@ import {
   Dimensions,
   Image,
 } from 'react-native'
+import PropTypes from 'prop-types'
 import Carousel, { Pagination } from 'react-native-snap-carousel'
 import styled from 'styled-components'
 import logo from '../images/logo.png'
@@ -55,7 +56,19 @@ const Description = styled(Text)`
   line-height: 22px;
 `
 
-class OnboardingCarousel extends React.Component {
+
+class OnboardingCarousel extends React.Component<any> {
+  _carousel = null
+
+  static propTypes = {
+    activeIndex: PropTypes.number,
+    setIndex: PropTypes.func.isRequired,
+  }
+
+  static defaultProps = {
+    activeIndex: 0,
+  }
+
   componentDidUpdate() {
     const { activeIndex } = this.props
     if (this._carousel) {
@@ -137,8 +150,8 @@ class OnboardingCarousel extends React.Component {
   }
 
   render() {
-    const { activeIndex } = this.props
-    
+    const { activeIndex, setIndex } = this.props
+
     return (
       <View style={{ flex: 1 }}>
         <Carousel
@@ -148,7 +161,7 @@ class OnboardingCarousel extends React.Component {
           data={['one', 'two', 'three', 'four']}
           slideStyle={{ width }}
           renderItem={this.renderItem}
-          onSnapToItem={index => this.props.setIndex(index)}
+          onSnapToItem={index => setIndex(index)}
         />
         <Pagination
           dotsLength={4}
