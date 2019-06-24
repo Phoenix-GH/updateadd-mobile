@@ -14,7 +14,7 @@ import { SafeAreaView } from 'react-navigation'
 import OnboardingCarousel from '../../components/OnboardingCarousel'
 import gradient from '../../images/gradient.png'
 /* eslint-disable */
-
+/*flow-disable*/
 const Container = styled(View)`
   padding: 20px;
   align-items: center;
