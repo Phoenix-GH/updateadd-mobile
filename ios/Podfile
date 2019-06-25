@@ -5,7 +5,7 @@ def shared_pods
   # use_frameworks!
   rn_path = '../node_modules/react-native'
   
-  # Pods for phyn
+  pod 'yoga', :podspec => "#{rn_path}/ReactCommon/yoga/yoga.podspec"
   pod 'React', :path => "#{rn_path}", subspecs: [
   'ART',
   'Core',
@@ -23,8 +23,6 @@ def shared_pods
   'RCTWebSocket',
   ]
   
-  pod 'yoga', :podspec => "#{rn_path}/ReactCommon/yoga/yoga.podspec"
-  
   # Third party deps podspec link
   pod 'DoubleConversion', :podspec => "#{rn_path}/third-party-podspecs/DoubleConversion.podspec"
   pod 'glog', :podspec => "#{rn_path}/third-party-podspecs/glog.podspec"
@@ -32,6 +30,8 @@ def shared_pods
   
   pod 'AppCenterReactNativeShared', '~> 2.0.0'
   pod 'AppCenter/Analytics', '~> 2.0.1'
+  pod 'react-native-contacts', :path => '../node_modules/react-native-contacts'
+  pod 'RNDeviceInfo', :path => '../node_modules/react-native-device-info'
 end
 
 target 'UADD' do
@@ -40,8 +40,18 @@ end
 
 post_install do |installer|
   installer.pods_project.targets.each do |target|
-    if target.name == "React"
+    
+    # The following is needed to ensure the "archive" step works in XCode.
+    # It removes React & Yoga from the Pods project, as it is already included in the main project.
+    # Without this, you'd see errors when you archive like:
+    # "Multiple commands produce ... libReact.a"
+    # "Multiple commands produce ... libyoga.a"
+    
+    targets_to_ignore = %w(React yoga)
+    
+    if targets_to_ignore.include? target.name
       target.remove_from_project
     end
+    
   end
 end

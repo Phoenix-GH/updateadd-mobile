@@ -36,6 +36,7 @@
     "@babel/plugin-proposal-json-strings": "^7.0.0",
     "@babel/plugin-syntax-optional-chaining": "^7.0.0",
     "@babel/plugin-transform-runtime": "^7.1.0",
+    "@kevinwolf/formal-native": "^0.1.1",
     "@storybook/addon-ondevice-knobs": "^4.1.13",
     "@storybook/addon-ondevice-notes": "^4.1.13",
     "@storybook/addon-storyshots": "^5.0.10",
@@ -67,7 +68,11 @@
     "react-native": "^0.59.8",
     "react-native-code-push": "^5.5.2",
     "react-native-config": "^0.11.7",
+    "react-native-contacts": "^4.0.2",
+    "react-native-device-info": "^2.1.0",
+    "react-native-elements": "^1.1.0",
     "react-native-gesture-handler": "^1.0.10",
+    "react-native-linear-gradient": "^2.5.4",
     "react-native-sentry": "^0.42.0",
     "react-native-storybook-loader": "^1.8.0",
     "react-native-vector-icons": "^6.1.0",
@@ -82,7 +87,9 @@
     "reg-suit": "^0.7.17",
     "remote-redux-devtools": "^0.5.13",
     "remote-redux-devtools-on-debugger": "^0.8.3",
-    "styled-components": "^4.1.2"
+    "styled-components": "^4.1.2",
+    "uuid": "^3.3.2",
+    "yup": "^0.27.0"
   },
   "devDependencies": {
     "@babel/plugin-transform-flow-strip-types": "^7.2.0",
@@ -111,9 +118,7 @@
   "jest": {
     "preset": "react-native",
     "setupFiles": [
-      "<rootDir>/__mocks__",
-      "<rootDir>/node_modules/appcenter/test/AppCenterMock.js",
-      "<rootDir>/node_modules/appcenter-analytics/test/AppCenterAnalyticsMock.js"
+      "<rootDir>/__mocks__"
     ],
     "transformIgnorePatterns": [
       "node_modules/(?!(jest-)?react-native|react-navigation|react-navigation-redux-helpers|loki)"
@@ -137,5 +142,10 @@
         "target": "ios.simulator"
       }
     }
+  },
+  "rnpm": {
+    "assets": [
+      "assets/fonts/"
+    ]
   }
 }

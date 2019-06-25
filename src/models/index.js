@@ -4,10 +4,14 @@ import _ from 'lodash'
 
 import BaseModel from './base'
 import User from './user'
+import DeviceContact from './device-contact' // eslint-disable-line
+import UADDContact from './updateadd-contact' // eslint-disable-line
 
 export {
   BaseModel,
   User,
+  DeviceContact,
+  UADDContact,
 }
 
 export const ModelResponseTypes = {

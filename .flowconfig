@@ -3,12 +3,16 @@
 .*/node_modules/.*
 .*/coverage/.*
 <PROJECT_ROOT>/.flow-typed/npm/.*
+*/flow-typed/.*
 
 [include]
+flow-typed/app.js
 src
 
 [libs]
 flow-typed
+flow-typed/*.js
+flow-typed/app.js
 
 [options]
 all=true

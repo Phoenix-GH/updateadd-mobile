@@ -1,23 +1,48 @@
 // @flow
+import Strings from './strings'
 
 const actions = {
   SET_ROOT: 'SET_ROOT',
+
+  START_UP: 'START_UP',
 
   // Auth
   LOGIN_USER: 'LOGIN_USER',
   LOGIN_USER_PENDING: 'LOGIN_USER_PENDING',
   LOGIN_USER_ERROR: 'LOGIN_USER_ERROR',
   LOGIN_STORE_USER: 'LOGIN_STORE_USER',
+
+  // Contacts
+  FETCH_SYSTEM_CONTACTS: 'FETCH_SYSTEM_CONTACTS',
+  STORE_SYSTEM_CONTACTS: 'STORE_SYSTEM_CONTACTS',
+  SET_SYSTEM_CONTACTS_SYNC_STATUS: 'SET_SYSTEM_CONTACTS_SYNC_STATUS',
+
+  FETCH_CLOUD_CONTACTS: 'FETCH_CLOUD_CONTACTS',
+  STORE_CLOUD_CONTACTS: 'STORE_CLOUD_CONTACTS',
+
+  MERGE_CONTACTS: 'MERGE_CONTACTS',
+
+  STORE_UPDATEADD_CONTACTS: 'STORE_UPDATEADD_CONTACTS',
+  STORE_UPDATEADD_CONTACT_BY_ID: 'STORE_UPDATEADD_CONTACT_BY_ID',
+  STORE_LOAD_DEBUG_CONTACTS: 'STORE_LOAD_DEBUG_CONTACTS',
 }
 
 // Routes
 const Roots = {
   // Generic
-  HelloWorld: 'HelloWorld',
+  DebugContacts: 'DebugContacts',
+  Login: 'Login',
+  SignUp: 'SignUp',
+}
+
+const Images = {
+  close: require('../../images/close.png'),
 }
 
 export {
   Roots,
+  Images,
+  Strings,
 }
 
 export default actions

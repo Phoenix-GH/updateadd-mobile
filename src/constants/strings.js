@@ -1,0 +1,21 @@
+export default {
+  signUp: 'Sign Up',
+  login: 'Log In',
+  email: 'Email',
+  emailAddress: 'Email Address',
+  phoneNumber: 'Phone Number',
+  password: 'Password',
+  confirmPassword: 'Confirm Password',
+  forgotPassword: 'Forgot Password?',
+  signUpPrompt: 'Don\'t have an account? Sign up',
+  loginPrompt: 'Already have an account? Log in',
+  consent: 'I am 13 years of age or older and I have read the Terms of Service',
+  disclaimer: 'By tapping Sign Up, you understand and agree to UADD\'s Terms of Service and Privacy Policy.',
+  errors: {
+    email: 'Please enter a valid email address',
+    phoneNumber: 'Please enter a valid phone number',
+    password: 'Password must contain at least 8 characters',
+    passwordValid: 'Password enter a valid password',
+    confirmPassword: 'Passwords do not match',
+  },
+}

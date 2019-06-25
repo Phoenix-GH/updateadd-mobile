@@ -42,6 +42,7 @@ DerivedData
 *.xcuserstate
 project.xcworkspace
 Pods/
+xcuserdata/
 
 # React
 lib/

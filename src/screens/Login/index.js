@@ -1,0 +1,41 @@
+// @flow
+
+import * as React from 'react'
+import { View, Text } from 'react-native'
+
+import Anchor from '../../components/anchor'
+import LoginForm from '../../components/forms/login'
+
+import { Strings, Roots } from '../../constants'
+
+import styles from '../styles'
+
+export default class LoginScreen extends React.Component<*> {
+  handleForgotPassword = () => {
+    // TODO: UADD-87
+    console.log('Forgot Password')
+  }
+
+  handleSignUp = () => {
+    const { navigation } = this.props
+    navigation.navigate(Roots.SignUp)
+  }
+
+  onSubmit = () => {
+    const { navigation } = this.props
+    navigation.navigate(Roots.DebugContacts)
+  }
+
+  render() {
+    return (
+      <View style={styles.screenWrapper}>
+        <Text style={styles.screenTitle}>{Strings.login}</Text>
+        <LoginForm onSubmit={this.onSubmit} />
+        <Anchor label={Strings.forgotPassword} onPress={this.handleForgotPassword} />
+        <View style={styles.fixToBottom}>
+          <Anchor label={Strings.signUpPrompt} onPress={this.handleSignUp} />
+        </View>
+      </View>
+    )
+  }
+}

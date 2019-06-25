@@ -4,7 +4,6 @@ import {
   call,
   put,
   takeLatest,
-  fork,
 } from 'redux-saga/effects'
 
 import Actions from '../constants'
@@ -27,7 +26,7 @@ function* sagas(): Saga<*> {
   /* eslint-disable */
   console.log('Auth sagas loaded')
   /* eslint-enable */
-  yield fork(takeLatest, Actions.LOGIN_USER, loginUser)
+  yield takeLatest(Actions.LOGIN_USER, loginUser)
 }
 
 export {

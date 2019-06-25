@@ -70,3 +70,9 @@ curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-lin
 ```
 
 * Run `reg-suit init --use-yarn` to re-install and re-configure reg-suit and plugins into our project. Check out [documents](https://github.com/reg-viz/reg-suit)
+
+
+## Writing contacts
+
+### Load contacts
+- [DANGER] Method removes information.  We have a debug sample of contacts which can be loaded onto the device, through the debug menu.  This will *clear* your contacts and load in our contacts.  Only use on test devices

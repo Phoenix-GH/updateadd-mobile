@@ -8,6 +8,7 @@ import CodePush from 'react-native-code-push'
 import SentryUtil from './utils'
 import RootContainer from './screens'
 import Store from './store'
+import { dispatchers as ContactDispatchers } from './store/contacts'
 
 const codePushOptions = {
   checkFrequency: CodePush.CheckFrequency.ON_APP_START,
@@ -29,6 +30,7 @@ export class App extends React.Component <any> {
       })
       SentryUtil.setExtraContext(this.store)
     }
+    this.store.dispatch(ContactDispatchers.startUp.dispatch(null))
   }
 
   render() {
