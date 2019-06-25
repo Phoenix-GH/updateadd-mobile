@@ -17,17 +17,14 @@ import import_contact from '../images/import_contact.png'
 const { width } = Dimensions.get('window');
 
 const ThemeImage = styled(Image)`
-  width: 257px;
-  height: 257px;
-  top: 17.72%;
-  position: absolute;
+  flex: 1;
+  margin: 10.32% 59px 52px 59px;
 `
 
 const CarouselCard = styled(View)`
   width: ${width};
   flex: 1;
   align-items: center;
-  justify-content: center;
 `
 
 const Title = styled(Text)`
@@ -36,15 +33,12 @@ const Title = styled(Text)`
   font-weight: 700;
   text-align: center;
   text-transform: uppercase;
-  margin-top: 387px;
   color: ${props => props.theme.darkGray};
   font-family: Gotham;
 `
 
 const DescriptionBox = styled(View)`
-  margin-top: 41px;
-  margin: 41px 31px 0 32px;
-  height: 17.46%;
+  margin: 21px 31px 0 22px;
   display: flex;
   justify-content: space-between;
 `
