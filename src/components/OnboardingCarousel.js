@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import {
   Text,
@@ -55,7 +56,6 @@ const Description = styled(Text)`
   font-family: Gotham;
   line-height: 22px;
 `
-
 
 class OnboardingCarousel extends React.Component<any> {
   _carousel = null
