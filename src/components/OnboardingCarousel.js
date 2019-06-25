@@ -76,7 +76,7 @@ class OnboardingCarousel extends React.Component<any> {
     }
   }
 
-  renderItem = ({ index } : { index: number }) => {
+  renderItem = ({ index }: {index: number }) => {
     switch (index) {
       case 0:
         return (
