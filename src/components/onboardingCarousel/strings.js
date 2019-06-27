@@ -9,8 +9,14 @@ const carouselData = [
     image: logo,
     title: 'Welcome to UADD',
     descriptions: [
-      'Create & share personalized business cards with anyone.',
-      'Our technology pushes updates to anyone with your card.',
+      {
+        id: 0,
+        text: 'Create & share personalized business cards with anyone.',
+      },
+      {
+        id: 1,
+        text: 'Our technology pushes updates to anyone with your card.',
+      },
     ],
   },
   {
@@ -18,7 +24,10 @@ const carouselData = [
     image: import_contact,
     title: 'Import Contacts',
     descriptions: [
-      'Keep all of your contacts safely synced and updated in the cloud.',
+      {
+        id: 0,
+        text: 'Keep all of your contacts safely synced and updated in the cloud.',
+      },
     ],
   },
   {
@@ -26,8 +35,14 @@ const carouselData = [
     image: improve_contacts,
     title: 'Improve your contacts',
     descriptions: [
-      'Clean up your contacts by merging duplicates.',
-      'Stay updated with your network\'s latest business and contact info.',
+      {
+        id: 0,
+        text: 'Clean up your contacts by merging duplicates.',
+      },
+      {
+        id: 1,
+        text: 'Stay updated with your network\'s latest business and contact info.',
+      },
     ],
   },
   {
@@ -35,7 +50,10 @@ const carouselData = [
     image: select_country,
     title: 'Select your Country',
     descriptions: [
-      'This will ensure phone numbers & other settings are formatted correctly.',
+      {
+        id: 0,
+        text: 'This will ensure phone numbers & other settings are formatted correctly.',
+      },
     ],
   },
 ]

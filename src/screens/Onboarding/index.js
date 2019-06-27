@@ -2,53 +2,15 @@
 import React from 'react'
 import {
   View,
-  TouchableOpacity,
-  Text,
-  Image,
   StyleSheet,
   Alert,
 } from 'react-native'
 import { connect } from 'react-redux'
-import styled from 'styled-components'
+import { css } from '@emotion/native'
 import CountryPicker from 'react-native-country-picker-modal'
 import { SafeAreaView } from 'react-navigation'
 import OnboardingCarousel from '../../components/onboardingCarousel'
-import gradient from '../../images/gradient.png'
-
-const Container = styled(View)`
-  padding: 20px;
-  align-items: center;
-  flex: 1;
-`
-
-const OnboardingButton = styled(TouchableOpacity)`
-  margin: 0px 17px 20px 17px;
-  border-radius: 4px;
-  background-color: transparent;
-  width: 100%;
-  height: 52px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`
-
-const ButtonText = styled(Text)`
-  color: white;
-  font-size: 16px;
-  line-height: 19px;
-  font-family: Gotham;
-`
-
-const Gradient = styled(Image)`
-  flex: 1;
-  position: absolute;
-`
-
-const ModalButton = styled(View)`
-  position: absolute;
-  top: -60;
-  left: -60;
-`
+import SubmitButton from '../../components/buttons/submit'
 
 const listTheme = StyleSheet.create({
   letterText: {
@@ -56,6 +18,16 @@ const listTheme = StyleSheet.create({
   },
 })
 
+const containerStyle = css`
+            padding: 20px;
+            align-items: center;
+            flex: 1;
+          `
+const modalButtonStyle = css`
+              position: absolute;
+              top: -60;
+              left: -60;
+              `
 class Onboarding extends React.Component<any, any> {
   static navigationOptions = {
     header: null,
@@ -107,16 +79,13 @@ class Onboarding extends React.Component<any, any> {
 
     return (
       <SafeAreaView style={{ flex: 1 }}>
-        <Container>
+        <View style={containerStyle}>
           <OnboardingCarousel
             activeIndex={page}
             setIndex={index => this.setState({ page: index })}
           />
-          <OnboardingButton onPress={this.onPressNext}>
-            <Gradient source={gradient} />
-            <ButtonText>{buttonTitle}</ButtonText>
-          </OnboardingButton>
-          <ModalButton>
+          <SubmitButton label={buttonTitle} />
+          <View style={modalButtonStyle}>
             <CountryPicker
               ref={(picker) => { this.picker = picker }}
               onChange={(value) => {
@@ -130,8 +99,8 @@ class Onboarding extends React.Component<any, any> {
               closeable
               style={listTheme}
             />
-          </ModalButton>
-        </Container>
+          </View>
+        </View>
       </SafeAreaView>
     )
   }

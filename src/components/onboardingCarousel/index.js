@@ -8,42 +8,41 @@ import {
 } from 'react-native'
 import PropTypes from 'prop-types'
 import Carousel, { Pagination } from 'react-native-snap-carousel'
-import styled from 'styled-components'
-
+import { css } from '@emotion/native'
 import carouselData from './strings'
 
 const { width } = Dimensions.get('window');
 
-const ThemeImage = styled(Image)`
+const themeImageStyle = css`
   flex: 1;
   margin: 10.32% 59px 52px 59px;
 `
 
-const CarouselCard = styled(View)`
+const carouselCardStyle = css`
   width: ${width};
   flex: 1;
   align-items: center;
 `
 
-const Title = styled(Text)`
+const titleStyle = css`
   font-size: 24px;
   line-height: 27px;
   font-weight: 700;
   text-align: center;
   text-transform: uppercase;
-  color: ${props => props.theme.darkGray};
+  color: #272727;
   font-family: Gotham;
 `
 
-const DescriptionBox = styled(View)`
+const descriptionBoxStyle = css`
   margin: 21px 31px 0 22px;
   display: flex;
   justify-content: space-between;
 `
 
-const Description = styled(Text)`
+const descriptionStyle = css`
   font-size: 16px;
-  color: ${props => props.theme.lightGray};
+  color: #7b7b7b;
   text-align: center;
   font-family: Gotham;
   line-height: 22px;
@@ -69,22 +68,23 @@ class OnboardingCarousel extends React.Component<any> {
   }
 
   renderItem = ({ index }: {index: number }) => (
-    <CarouselCard>
-      <ThemeImage
+    <View style={carouselCardStyle}>
+      <Image
+        style={themeImageStyle}
         source={carouselData[index].image}
         resizeMode="center"
       />
-      <Title>{carouselData[index].title}</Title>
-      <DescriptionBox>
+      <Text style={titleStyle}>{carouselData[index].title}</Text>
+      <View style={descriptionBoxStyle}>
         {
         carouselData[index].descriptions.map(item => (
-          <Description>
-            {item}
-          </Description>
+          <Text key={item.id} style={descriptionStyle}>
+            {item.text}
+          </Text>
         ))
         }
-      </DescriptionBox>
-    </CarouselCard>
+      </View>
+    </View>
   )
 
   render() {
