@@ -28,7 +28,20 @@ const modalButtonStyle = css`
               top: -60;
               left: -60;
               `
-class Onboarding extends React.Component<any, any> {
+type CCA2Type = {
+  cca2: string,
+}
+
+type StateType = {
+  cca2: string,
+  page: number,
+}
+
+type OnboardingProps = {
+
+}
+
+class Onboarding extends React.Component<OnboardingProps, StateType> {
   static navigationOptions = {
     header: null,
   }
@@ -69,7 +82,7 @@ class Onboarding extends React.Component<any, any> {
       ])
   }
 
-  onCountryPickerChange = (value: number) => {
+  onCountryPickerChange = (value: CCA2Type) => {
     this.setState({ cca2: value.cca2 })
     setTimeout(() => {
       this.displayAlerts()
