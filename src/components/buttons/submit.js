@@ -2,7 +2,6 @@
 
 import React from 'react'
 import { Text, TouchableOpacity } from 'react-native'
-
 import LinearGradient from 'react-native-linear-gradient'
 import Colors from '../../theme/colors'
 
@@ -10,6 +9,7 @@ import styles from './styles'
 
 type ButtonProps = {|
   label: string,
+  onPress?: Function,
   disabled?: boolean,
 |}
 
@@ -26,6 +26,7 @@ const SubmitButton = (props: ButtonProps) => {
 
 SubmitButton.defaultProps = {
   disabled: false,
+  onPress: () => {},
 }
 
 export default SubmitButton

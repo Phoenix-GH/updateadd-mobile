@@ -84,7 +84,10 @@ class Onboarding extends React.Component<any, any> {
             activeIndex={page}
             setIndex={index => this.setState({ page: index })}
           />
-          <SubmitButton label={buttonTitle} />
+          <SubmitButton
+            label={buttonTitle}
+            onPress={this.onPressNext}
+          />
           <View style={modalButtonStyle}>
             <CountryPicker
               ref={(picker) => { this.picker = picker }}

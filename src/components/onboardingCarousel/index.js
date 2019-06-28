@@ -6,7 +6,6 @@ import {
   Dimensions,
   Image,
 } from 'react-native'
-import PropTypes from 'prop-types'
 import Carousel, { Pagination } from 'react-native-snap-carousel'
 import { css } from '@emotion/native'
 import carouselData from './strings'
@@ -48,13 +47,13 @@ const descriptionStyle = css`
   line-height: 22px;
 `
 
-class OnboardingCarousel extends React.Component<any> {
-  _carousel = null
+type OnboardingCarouselTypes = {|
+  activeIndex?: number,
+  setIndex: Function,
+|}
 
-  static propTypes = {
-    activeIndex: PropTypes.number,
-    setIndex: PropTypes.func.isRequired,
-  }
+class OnboardingCarousel extends React.Component<OnboardingCarouselTypes> {
+  _carousel = null
 
   static defaultProps = {
     activeIndex: 0,
