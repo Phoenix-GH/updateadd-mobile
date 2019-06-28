@@ -69,6 +69,13 @@ class Onboarding extends React.Component<any, any> {
       ])
   }
 
+  onCountryPickerChange = (value: number) => {
+    this.setState({ cca2: value.cca2 })
+    setTimeout(() => {
+      this.displayAlerts()
+    }, 1000)
+  }
+
   render() {
     const { page, cca2 } = this.state
 
@@ -91,12 +98,7 @@ class Onboarding extends React.Component<any, any> {
           <View style={modalButtonStyle}>
             <CountryPicker
               ref={(picker) => { this.picker = picker }}
-              onChange={(value) => {
-                this.setState({ cca2: value.cca2 })
-                setTimeout(() => {
-                  this.displayAlerts()
-                }, 1000)
-              }}
+              onChange={this.onCountryPickerChange}
               cca2={cca2}
               translation="eng"
               closeable
