@@ -28,14 +28,14 @@ const modalButtonStyle = css`
               top: -60;
               left: -60;
               `
-type CCA2Type = {
+type CCA2Type = {|
   cca2: string,
-}
+|}
 
-type StateType = {
+type StateType = {|
   cca2: string,
   page: number,
-}
+|}
 
 type OnboardingProps = {
 

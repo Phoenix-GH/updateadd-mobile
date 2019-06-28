@@ -23,7 +23,11 @@ type OnboardingCarouselTypes = {|
   setIndex: Function,
 |}
 
-class OnboardingCarousel extends React.Component<OnboardingCarouselTypes> {
+type OnboardingCarouselStateType = {|
+  activeIndex: number,
+|}
+
+class OnboardingCarousel extends React.Component<OnboardingCarouselTypes, OnboardingCarouselStateType> {
   _carousel = null
 
   static defaultProps = {
