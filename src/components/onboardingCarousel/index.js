@@ -7,7 +7,7 @@ import {
   Dimensions,
 } from 'react-native'
 import Carousel, { Pagination } from 'react-native-snap-carousel'
-import carouselData from './strings'
+import strings from '../../strings'
 import {
   themeImageStyle,
   carouselCardStyle,
@@ -45,13 +45,13 @@ class OnboardingCarousel extends React.Component<OnboardingCarouselTypes, Onboar
     <View style={carouselCardStyle}>
       <Image
         style={themeImageStyle}
-        source={carouselData[index].image}
+        source={strings.carouselData[index].image}
         resizeMode="center"
       />
-      <Text style={titleStyle}>{carouselData[index].title}</Text>
+      <Text style={titleStyle}>{strings.carouselData[index].title}</Text>
       <View style={descriptionBoxStyle}>
         {
-        carouselData[index].descriptions.map(item => (
+        strings.carouselData[index].descriptions.map(item => (
           <Text key={item.id} style={descriptionStyle}>
             {item.text}
           </Text>
