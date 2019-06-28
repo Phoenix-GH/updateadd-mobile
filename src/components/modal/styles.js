@@ -1,26 +1,36 @@
 // @flow
 
-import { StyleSheet } from 'react-native'
-import Colors from '../../theme/colors'
+import { css } from '@emotion/native'
 
-export default StyleSheet.create({
-  submitButton: {
-    width: '100%',
-    height: 50,
-    lineHeight: 50,
-    marginTop: 5,
-    marginBottom: 30,
-  },
-  linearGradient: {
-    flex: 1,
-    width: '100%',
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderRadius: 4,
-  },
-  submitButtonText: {
-    color: Colors.white,
-    fontSize: 16,
-    fontFamily: 'Gotham-Book',
-  },
-})
+const modalWrapper = css`
+  background-color: rgba(158, 158, 158, 0.85);
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+`
+
+const modal = css`
+  width: 90.4%;
+  height: 33%;
+  align-items: center;
+  padding: 42px 32px;
+  background-color: white;
+  border-radius: 3px;
+  `
+
+
+const title = css`
+  font-family: Gotham;
+  font-size: 24px;
+  letter-spacing: -0.5px;
+  line-height: 32px;
+  text-align: center;
+  margin-bottom: 28px;
+  color: #272727;
+  `
+
+export {
+  modalWrapper,
+  modal,
+  title,
+}

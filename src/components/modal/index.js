@@ -1,24 +1,43 @@
 // @flow
 
 import React from 'react'
-import { Text, Modal } from 'react-native'
+import { Text, Modal, View } from 'react-native'
 import SubmitButton from '../buttons/submit'
 
-import styles from './styles'
+import {
+  modalWrapper,
+  title,
+  modal,
+} from './styles'
 
 type ModalProps = {|
   text: string,
   buttonTitle: string,
+  onClose?: Function
 |}
 
 const CustomModal = (props: ModalProps) => {
-  const { text, buttonTitle } = props
+  const { text, buttonTitle, onClose } = props
   return (
-    <Modal {...props}>
-      <Text style={styles.submitButtonText}>{text}</Text>
-      <SubmitButton label={buttonTitle} />
+    <Modal
+      {...props}
+      transparent
+    >
+      <View style={modalWrapper}>
+        <View style={modal}>
+          <Text style={title}>{text}</Text>
+          <SubmitButton
+            label={buttonTitle}
+            onPress={onClose}
+          />
+        </View>
+      </View>
     </Modal>
   )
+}
+
+CustomModal.defaultProps = {
+  onClose: () => {},
 }
 
 export default CustomModal

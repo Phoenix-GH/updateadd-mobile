@@ -4,7 +4,6 @@ import React from 'react'
 import { AppRegistry } from 'react-native'
 import { Provider } from 'react-redux'
 import CodePush from 'react-native-code-push'
-
 import SentryUtil from './utils'
 import RootContainer from './screens'
 import Store from './store'
