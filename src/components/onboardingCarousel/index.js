@@ -1,5 +1,5 @@
 // @flow
-import React from 'react';
+import React from 'react'
 import {
   Text,
   View,
@@ -7,7 +7,7 @@ import {
   Dimensions,
 } from 'react-native'
 import Carousel, { Pagination } from 'react-native-snap-carousel'
-import strings from '../../strings'
+import strings from '../../constants/strings'
 import {
   themeImageStyle,
   carouselCardStyle,
@@ -16,11 +16,11 @@ import {
   descriptionStyle,
 } from './styles'
 
-const { width } = Dimensions.get('window');
+const { width } = Dimensions.get('window')
 
 type OnboardingCarouselTypes = {|
   activeIndex?: number,
-  setIndex: Function,
+  setIndex: number => void,
 |}
 
 type OnboardingCarouselStateType = {|

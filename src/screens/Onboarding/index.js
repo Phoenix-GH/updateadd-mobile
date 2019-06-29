@@ -12,6 +12,7 @@ import { css } from '@emotion/native'
 import CountryPicker from 'react-native-country-picker-modal'
 import OnboardingCarousel from '../../components/onboardingCarousel'
 import SubmitButton from '../../components/buttons/submit'
+import strings from '../../constants/strings'
 
 const listTheme = StyleSheet.create({
   letterText: {
@@ -29,14 +30,14 @@ const modalButtonStyle = css`
               top: -60;
               left: -60;
               `
-type CCA2Type = {|
+type CountryCodeType = {|
   cca2: string,
 |}
 
 type OnboardingScreenProps = {}
 
 type OnboardingScreenState = {|
-  cca2: string,
+  countryCode: string,
   page: number,
 |}
 
@@ -48,7 +49,7 @@ export class OnboardingScreen extends React.Component<OnboardingScreenProps, Onb
   constructor(props: OnboardingScreenProps) {
     super(props)
     this.state = {
-      cca2: '',
+      countryCode: '',
       page: 0,
     }
   }
@@ -63,35 +64,43 @@ export class OnboardingScreen extends React.Component<OnboardingScreenProps, Onb
   }
 
   displayAlerts = () => {
-    Alert.alert('Welcome!', 'UADD allows you to upadte, add, and manage your contacts. To use UADD, please allow access to your contacts.',
+    const {
+      welcomeAlerts,
+      contactAlerts,
+      continueText,
+      dontAllow,
+      ok,
+    } = strings
+    Alert.alert(welcomeAlerts.title, welcomeAlerts.text,
       [
         {
-          text: 'Continue',
+          text: continueText,
           onPress: () => {
-            Alert.alert('"UADD" Would Like to Access Your Contacts',
-              'UADD requires access to your contacts to update, add, and manage your contacts.',
+            Alert.alert(contactAlerts.title, contactAlerts.text,
+              '',
               [
-                { text: 'Don\'t allow', onPress: () => {}, style: 'cancel' },
-                { text: 'OK', onPress: () => {} },
+                { text: dontAllow, onPress: () => {}, style: 'cancel' },
+                { text: ok, onPress: () => {} },
               ])
           },
         },
       ])
   }
 
-  onCountryPickerChange = (value: CCA2Type) => {
-    this.setState({ cca2: value.cca2 })
+  onCountryPickerChange = (value: CountryCodeType) => {
+    this.setState({ countryCode: value.cca2 })
     setTimeout(() => {
       this.displayAlerts()
     }, 1000)
   }
 
   render() {
-    const { page, cca2 } = this.state
-
-    let buttonTitle = 'Next'
+    const { page, countryCode } = this.state
+    const { onboardingButtonTitles, countryPickerTranslationLanguage } = strings
+    const [nextTitle, selectTile] = onboardingButtonTitles
+    let buttonTitle = nextTitle
     if (page === 3) {
-      buttonTitle = 'Select Your country'
+      buttonTitle = selectTile
     }
 
     return (
@@ -109,8 +118,8 @@ export class OnboardingScreen extends React.Component<OnboardingScreenProps, Onb
             <CountryPicker
               ref={(picker) => { this.picker = picker }}
               onChange={this.onCountryPickerChange}
-              cca2={cca2}
-              translation="eng"
+              cca2={countryCode}
+              translation={countryPickerTranslationLanguage}
               closeable
               style={listTheme}
             />

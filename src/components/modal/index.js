@@ -13,7 +13,7 @@ import {
 type ModalProps = {|
   text: string,
   buttonTitle: string,
-  onClose?: Function
+  onClose?: () => void
 |}
 
 const CustomModal = (props: ModalProps) => {

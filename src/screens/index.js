@@ -15,7 +15,25 @@ export const AppNavigator = createStackNavigator({
   [Roots.Onboarding]: {
     screen: OnboardingScreen,
   },
-});
+  [Roots.Login]: {
+    screen: Login,
+    navigationOptions: {
+      header: null,
+    },
+  },
+  [Roots.SignUp]: {
+    screen: SignUp,
+    navigationOptions: {
+      header: null,
+    },
+  },
+  [Roots.DebugContacts]: {
+    screen: DebugContacts,
+    navigationOptions: {
+      header: null,
+    },
+  },
+})
 
 export const navigationMiddleware = createReactNavigationReduxMiddleware('root', state => state.nav)
 const AppNavigatorWithNavigationState = createReduxContainer(AppNavigator, 'root')

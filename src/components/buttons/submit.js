@@ -9,7 +9,7 @@ import styles from './styles'
 
 type ButtonProps = {|
   label: string,
-  onPress?: Function,
+  onPress?: () => void,
   disabled?: boolean,
 |}
 
