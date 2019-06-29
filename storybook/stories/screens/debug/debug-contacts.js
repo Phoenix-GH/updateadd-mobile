@@ -4,9 +4,9 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react-native'
 
-import { buildContacts } from '../../../src/helpers/contacts'
-import { NonUADDContactsTwoAddressBooks, UADDContactShane, NonUADDEjectedContact } from '../../../__mocks__/contacts'
-import { DebugContactsScreen } from '../../../src/screens/DebugContacts'
+import { buildContacts } from '../../../../src/helpers/contacts'
+import { NonUADDContactsTwoAddressBooks, UADDContactShane, NonUADDEjectedContact } from '../../../../__mocks__/contacts'
+import { DebugContactsScreen } from '../../../../src/screens/DebugContacts'
 
 storiesOf('Screens/Debug/Debug Contacts', module)
   .add(
