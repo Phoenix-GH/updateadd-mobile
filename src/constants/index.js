@@ -41,6 +41,7 @@ const Roots = {
   Login: 'Login',
   SignUp: 'SignUp',
   Onboarding: 'Onboarding',
+  CreateCard: 'CreateCard',
 }
 
 const Images = {

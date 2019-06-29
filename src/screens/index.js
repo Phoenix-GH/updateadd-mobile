@@ -11,6 +11,12 @@ import { Roots } from '../constants'
 
 import OnboardingScreen from './Onboarding'
 
+import Login from './Login'
+import SignUp from './SignUp'
+import DebugContacts from './DebugContacts'
+import CreateCard from './CreateCard'
+
+
 export const AppNavigator = createStackNavigator({
   [Roots.Onboarding]: {
     screen: OnboardingScreen,
@@ -33,7 +39,10 @@ export const AppNavigator = createStackNavigator({
       header: null,
     },
   },
-})
+  [Roots.CreateCard]: {
+    screen: CreateCard,
+  },
+});
 
 export const navigationMiddleware = createReactNavigationReduxMiddleware('root', state => state.nav)
 const AppNavigatorWithNavigationState = createReduxContainer(AppNavigator, 'root')

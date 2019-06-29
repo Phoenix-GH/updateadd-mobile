@@ -12,7 +12,7 @@ import { css } from '@emotion/native'
 import CountryPicker from 'react-native-country-picker-modal'
 import OnboardingCarousel from '../../components/onboardingCarousel'
 import SubmitButton from '../../components/buttons/submit'
-import strings from '../../constants/strings'
+import { Roots, Strings } from '../../constants'
 
 const listTheme = StyleSheet.create({
   letterText: {
@@ -70,7 +70,8 @@ export class OnboardingScreen extends React.Component<OnboardingScreenProps, Onb
       continueText,
       dontAllow,
       ok,
-    } = strings
+    } = Strings
+
     Alert.alert(welcomeAlerts.title, welcomeAlerts.text,
       [
         {
@@ -79,7 +80,7 @@ export class OnboardingScreen extends React.Component<OnboardingScreenProps, Onb
             Alert.alert(contactAlerts.title, contactAlerts.text,
               [
                 { text: dontAllow, onPress: () => {}, style: 'cancel' },
-                { text: ok, onPress: () => {} },
+                { text: ok, onPress: () => this.moveToCreateCard() },
               ])
           },
         },
@@ -93,9 +94,14 @@ export class OnboardingScreen extends React.Component<OnboardingScreenProps, Onb
     }, 1000)
   }
 
+  moveToCreateCard = () => {
+    const { navigation } = this.props
+    navigation.navigate(Roots.CreateCard)
+  }
+
   render() {
     const { page, countryCode } = this.state
-    const { onboardingButtonTitles, countryPickerTranslationLanguage } = strings
+    const { onboardingButtonTitles, countryPickerTranslationLanguage } = Strings
     const [nextTitle, selectTile] = onboardingButtonTitles
     let buttonTitle = nextTitle
     if (page === 3) {
