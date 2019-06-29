@@ -5,10 +5,11 @@ import {
   View,
   StyleSheet,
   Alert,
+  SafeAreaView,
 } from 'react-native'
+import { connect } from 'react-redux'
 import { css } from '@emotion/native'
 import CountryPicker from 'react-native-country-picker-modal'
-import { SafeAreaView } from 'react-navigation'
 import OnboardingCarousel from '../../components/onboardingCarousel'
 import SubmitButton from '../../components/buttons/submit'
 
@@ -39,7 +40,7 @@ type OnboardingScreenState = {|
   page: number,
 |}
 
-export default class OnboardingScreen extends React.Component<OnboardingScreenProps, OnboardingScreenState> {
+export class OnboardingScreen extends React.Component<OnboardingScreenProps, OnboardingScreenState> {
   static navigationOptions = { header: null }
 
   picker: ?CountryPicker
@@ -119,3 +120,5 @@ export default class OnboardingScreen extends React.Component<OnboardingScreenPr
     )
   }
 }
+
+export default connect({}, {})(OnboardingScreen)
