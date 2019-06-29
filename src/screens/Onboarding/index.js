@@ -121,4 +121,4 @@ export class OnboardingScreen extends React.Component<OnboardingScreenProps, Onb
   }
 }
 
-export default connect({}, {})(OnboardingScreen)
+export default connect()(OnboardingScreen)
