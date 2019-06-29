@@ -1,11 +1,11 @@
 // @flow
+
 import React from 'react'
 import {
   View,
   StyleSheet,
   Alert,
 } from 'react-native'
-import { connect } from 'react-redux'
 import { css } from '@emotion/native'
 import CountryPicker from 'react-native-country-picker-modal'
 import { SafeAreaView } from 'react-navigation'
@@ -32,23 +32,19 @@ type CCA2Type = {|
   cca2: string,
 |}
 
-type StateType = {|
+type OnboardingScreenProps = {}
+
+type OnboardingScreenState = {|
   cca2: string,
   page: number,
 |}
 
-type OnboardingProps = {
+export default class OnboardingScreen extends React.Component<OnboardingScreenProps, OnboardingScreenState> {
+  static navigationOptions = { header: null }
 
-}
+  picker: ?CountryPicker
 
-class Onboarding extends React.Component<OnboardingProps, StateType> {
-  static navigationOptions = {
-    header: null,
-  }
-
-  picker = null
-
-  constructor(props) {
+  constructor(props: OnboardingScreenProps) {
     super(props)
     this.state = {
       cca2: '',
@@ -123,5 +119,3 @@ class Onboarding extends React.Component<OnboardingProps, StateType> {
     )
   }
 }
-
-export default connect((): Object => ({}))(Onboarding)
