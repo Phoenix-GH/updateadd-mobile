@@ -77,7 +77,6 @@ export class OnboardingScreen extends React.Component<OnboardingScreenProps, Onb
           text: continueText,
           onPress: () => {
             Alert.alert(contactAlerts.title, contactAlerts.text,
-              '',
               [
                 { text: dontAllow, onPress: () => {}, style: 'cancel' },
                 { text: ok, onPress: () => {} },
