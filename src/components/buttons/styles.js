@@ -9,7 +9,6 @@ export default StyleSheet.create({
     height: 50,
     lineHeight: 50,
     marginTop: 5,
-    marginBottom: 30,
   },
   linearGradient: {
     flex: 1,
