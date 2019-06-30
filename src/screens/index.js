@@ -18,6 +18,9 @@ import CreateCard from './CreateCard'
 
 
 export const AppNavigator = createStackNavigator({
+  [Roots.CreateCard]: {
+    screen: CreateCard,
+  },
   [Roots.Onboarding]: {
     screen: OnboardingScreen,
   },
@@ -38,9 +41,6 @@ export const AppNavigator = createStackNavigator({
     navigationOptions: {
       header: null,
     },
-  },
-  [Roots.CreateCard]: {
-    screen: CreateCard,
   },
 });
 
