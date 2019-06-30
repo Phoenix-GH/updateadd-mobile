@@ -93,4 +93,8 @@ export default {
   continueText: 'Continue',
   dontAllow: 'Don\'t allow',
   ok: 'OK',
+  createCardTitle: 'Create your first card now!',
+  cancel: 'Cancel',
+  createCard: 'CREATE YOUR CARD',
+  done: 'Done',
 }

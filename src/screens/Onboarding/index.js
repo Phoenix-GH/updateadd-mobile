@@ -10,6 +10,7 @@ import {
 import { connect } from 'react-redux'
 import { css } from '@emotion/native'
 import CountryPicker from 'react-native-country-picker-modal'
+import { NavigationScreenProps } from 'react-navigation';
 import OnboardingCarousel from '../../components/onboardingCarousel'
 import SubmitButton from '../../components/buttons/submit'
 import { Roots, Strings } from '../../constants'
@@ -21,20 +22,22 @@ const listTheme = StyleSheet.create({
 })
 
 const containerStyle = css`
-            padding: 20px;
-            align-items: center;
-            flex: 1;
-          `
+  padding: 20px;
+  align-items: center;
+  flex: 1;
+`
 const modalButtonStyle = css`
-              position: absolute;
-              top: -60;
-              left: -60;
-              `
+  position: absolute;
+  top: -60;
+  left: -60;
+`
 type CountryCodeType = {|
   cca2: string,
 |}
 
-type OnboardingScreenProps = {}
+
+type OnboardingScreenProps = NavigationScreenProps & {
+}
 
 type OnboardingScreenState = {|
   countryCode: string,
