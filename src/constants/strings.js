@@ -111,6 +111,16 @@ export default {
   notes: 'Notes',
   cardAppearance: 'Card Appearance',
   selectBackground: 'Select Background',
-  addAccounts: 'Add Social & Instant Message Account',
-  includeNotes: 'Include notes here',
+  placeholders: {
+    addAccounts: 'Add Social & Instant Message Account',
+    notes: 'Include notes here',
+    companyName: 'Business name',
+    jobTitle: 'Job title',
+    firstName: 'First name',
+    lastName: 'Last name',
+    addEmail: 'Add Email',
+    phone: 'Phone',
+    url: 'URL',
+    address: 'Address',
+  },
 }

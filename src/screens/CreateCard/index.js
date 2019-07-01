@@ -91,12 +91,15 @@ export class CreateCardScreen extends React.Component<CreateCardScreenProps, Cre
       isModalVisible: true,
       data: {
         social: {
-          addAccounts: [],
+          addAccounts: null,
         },
         contactInfo: {
           firstName: null,
           lastName: null,
-          phoneNumbers: [],
+          addEmail: null,
+          phone: null,
+          url: null,
+          address: null,
         },
         company: {
           companyName: null,
@@ -144,6 +147,7 @@ export class CreateCardScreen extends React.Component<CreateCardScreenProps, Cre
   renderItem = (item: {}, index?: number, section?: number) => {
     const { data } = this.state
     const items = Object.keys(data[item])
+    const { placeholders } = Strings
     return (
       <View style={listWrapperStyle}>
         {
@@ -157,7 +161,7 @@ export class CreateCardScreen extends React.Component<CreateCardScreenProps, Cre
                     text={state[i]}
                     onChangeText={text => this.onChangeText(i, text)}
                     label={i === 'notes' ? '' : Strings[i]}
-                    placeholder={Strings[i]}
+                    placeholder={placeholders[i]}
                   />
                   {
                     index < items.length - 1 && <View style={separatorStyle} />
@@ -184,7 +188,7 @@ export class CreateCardScreen extends React.Component<CreateCardScreenProps, Cre
                   onOpen={() => {}}
                   onClose={() => {}}
                   label={Strings[i]}
-                  placeholder={Strings[i]}
+                  placeholder={placeholders[i]}
                 />
                 {
                   index < items.length - 1 && <View style={separatorStyle} />
