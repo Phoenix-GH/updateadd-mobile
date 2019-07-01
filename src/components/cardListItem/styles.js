@@ -12,7 +12,6 @@ const itemStyle = css`
 
 const inputStyle = css`
   flex: 1;
-  margin-left: 16px;
 `
 
 const linkStyle = css`
@@ -28,6 +27,7 @@ const labelStyle = css`
   font-size: 14px;
   line-height: 20px;
   letter-spacing: -0.5px;
+  margin-right: 16px;
 `
 
 const openLabelStyle = css`
@@ -64,6 +64,19 @@ const textStyle = css`
   color: #001ee1;
 `
 
+const chevronStyle = css`
+  width: 7.78px;
+  height: 13.2px;
+  margin: 0 30.22px 0 10px;
+`
+
+const fullLabelStyle = css`
+  flex: 1;
+  font-family: Gotham;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.5px;
+`
 export {
   itemStyle,
   inputStyle,
@@ -74,4 +87,6 @@ export {
   openLabelStyle,
   separatorStyle,
   textStyle,
+  chevronStyle,
+  fullLabelStyle,
 }

@@ -25,7 +25,9 @@ const TextInputItem = (props: ItemProps) => {
   } = props
   return (
     <View style={itemStyle}>
-      <Text style={labelStyle}>{label}</Text>
+      {
+        !!label && <Text style={labelStyle}>{label}</Text>
+      }
       <TextInput
         style={inputStyle}
         onChangeText={content => onChangeText(content)}
@@ -39,7 +41,7 @@ const TextInputItem = (props: ItemProps) => {
 TextInputItem.defaultProps = {
   placeholder: '',
   text: null,
-  label: '',
+  label: null,
 }
 
 export default TextInputItem

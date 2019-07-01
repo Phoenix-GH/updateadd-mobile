@@ -15,6 +15,7 @@ import PhotoSelector from '../../components/photoSelector'
 import HeaderButton from '../../components/buttons/headerButton'
 import TextInputItem from '../../components/cardListItem/textInputItem'
 import ListItem from '../../components/cardListItem/listItem'
+import LinkItem from '../../components/cardListItem/linkItem'
 import { Strings } from '../../constants'
 
 const containerStyle = css`
@@ -33,7 +34,6 @@ const headerTextStyle = css`
 
 const listStyle = css`
   width: 100%;
-  padding-horizontal: 15px;
 `
 const sectionHeaderStyle = css`
   font-family: Gotham;
@@ -42,7 +42,9 @@ const sectionHeaderStyle = css`
   letter-spacing: 0.2px;
   color: #272727;
   text-transform: uppercase;
-  margin: 24px 0 13px 0;
+  padding: 24px 15px 13px 15px;
+  width: 100%;
+  background-color: white;
 `
 
 const listWrapperStyle = css`
@@ -53,6 +55,7 @@ const listWrapperStyle = css`
   background-color: white;
   border-bottom: none;
   border-top: none;
+  padding-horizontal: 15px;
 `
 
 const listItemStyle = css`
@@ -83,46 +86,22 @@ export class CreateCardScreen extends React.Component<CreateCardScreenProps, Cre
       isModalVisible: true,
       data: {
         social: {
-          accounts: {
-            value: [],
-            type: 'button',
-          },
+          addAccounts: []
         },
         contactInfo: {
-          firstName: {
-            type: 'text',
-            value: '',
-          },
-          lastName: {
-            type: 'text',
-            value: '',
-          },
-          phoneNumbers: {
-            value: [],
-            type: 'button',
-          },
+          firstName: null,
+          lastName: null,
+          phoneNumbers: [],
         },
         company: {
-          companyName: {
-            type: 'text',
-            value: '',
-          },
-          jobTitle: {
-            type: 'text',
-            value: '',
-          },
+          companyName: null,
+          jobTitle: null,
         },
         notes: {
-          noteText: {
-            type: 'text',
-            value: '',
-          },
+          notes: null,
         },
-        cardAppearnce: {
-          backgroundColor: {
-            type: 'list',
-            value: '',
-          },
+        cardAppearance: {
+          backgroundColor: ''
         },
       },
     }
@@ -145,7 +124,7 @@ export class CreateCardScreen extends React.Component<CreateCardScreenProps, Cre
   }
 
   renderSectionHeader = (title: string) => (
-    <Text style={sectionHeaderStyle}>{title}</Text>
+    <Text style={sectionHeaderStyle}>{Strings[title]}</Text>
   )
 
   renderSeparator = () => (
@@ -158,22 +137,51 @@ export class CreateCardScreen extends React.Component<CreateCardScreenProps, Cre
     return (
       <View style={listWrapperStyle}>
         {
-          items.map((i, index) => (
-            <View key={i} style={listItemStyle}>
-              <ListItem
-                text={i}
-                // onChangeText={(text) => this.onChangeText(i, text)}
-                onOpen={() => {}}
-                onClose={() => {}}
-                label={i}
-                placeholder={i}
-                isFilled
-              />
-              {
-                index < items.length - 1 && <View style={separatorStyle} />
-              }
-            </View>
-          ))
+          items.map((i, index) => {
+            if(i === 'firstName' || i === 'lastName' || i === 'companyName' || i === 'jobTitle' || i === 'notes') {
+              return (
+                <View key={i} style={listItemStyle}>
+                  <TextInputItem
+                    text={this.state[i]}
+                    onChangeText={(text) => this.onChangeText(i, text)}
+                    label={i === 'notes' ? '' : Strings[i]}
+                    placeholder={Strings[i]}
+                  />
+                  {
+                    index < items.length - 1 && <View style={separatorStyle} />
+                  }
+                </View>
+              )
+            } else if(i === 'backgroundColor') {
+              return (
+                <View key={i} style={listItemStyle}>
+                  <LinkItem
+                    onOpen={() => {}}
+                    text={Strings.selectBackground}
+                  />
+                  {
+                    index < items.length - 1 && <View style={separatorStyle} />
+                  }
+                </View>
+              )
+            } else {
+              return (
+                <View key={i} style={listItemStyle}>
+                  <ListItem
+                    text={i}
+                    onOpen={() => {}}
+                    onClose={() => {}}
+                    label={Strings[i]}
+                    placeholder={Strings[i]}
+                    isFilled
+                  />
+                  {
+                    index < items.length - 1 && <View style={separatorStyle} />
+                  }
+                </View>
+              )
+            }
+          })
         }
       </View>
     )
