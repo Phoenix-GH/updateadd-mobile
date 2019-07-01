@@ -5,15 +5,12 @@ import {
   View,
   SafeAreaView,
   SectionList,
-  Text,
 } from 'react-native'
-import { connect } from 'react-redux'
 import { css } from '@emotion/native'
 import { Header } from 'react-native-elements'
 import { NavigationScreenProps } from 'react-navigation'
 import HeaderButton from '../../components/buttons/headerButton'
 import TextInputItem from '../../components/cardListItem/textInputItem'
-import ListItem from '../../components/cardListItem/listItem'
 import LinkItem from '../../components/cardListItem/linkItem'
 import { Strings } from '../../constants'
 
@@ -34,6 +31,7 @@ const headerTextStyle = css`
 const listStyle = css`
   width: 100%;
 `
+
 const sectionHeaderStyle = css`
   background-color: white;
   box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.12);
@@ -64,22 +62,25 @@ const separatorStyle = css`
   background-color: #ebebeb;
 `
 
-type CreateCardScreenProps = NavigationScreenProps & {|
-  items: array,
+type ScreenModalProps = NavigationScreenProps & {|
+  items: [],
 |}
 
-type CreateCardScreenState = {|
+type ScreenModalState = {|
   customLabel: string,
 |}
 
-export class SelectModalScreen extends React.Component<CreateCardScreenProps, CreateCardScreenState> {
+export class SelectModalScreen extends React.Component<ScreenModalProps, ScreenModalState> {
   static navigationOptions = { header: null }
+
   static defaultProps = {
     items: [],
   }
-  constructor(props: CreateCardScreenProps) {
+
+  constructor(props: ScreenModalProps) {
     super(props)
     this.state = {
+      customLabel: '',
     }
   }
 
@@ -97,38 +98,37 @@ export class SelectModalScreen extends React.Component<CreateCardScreenProps, Cr
     this.setState({ customLabel: text })
   }
 
-  renderSectionHeader = (title: string) => (
-    <View style={sectionHeaderStyle}>
-    </View>
+  renderSectionHeader = () => (
+    <View style={sectionHeaderStyle} />
   )
 
   renderSeparator = () => (
     <View style={separatorStyle} />
   )
 
-  renderItem = (item: {}, index?: number, section?: number) => {
+  renderItem = (item: {}) => {
     const { customLabel } = this.state
     return (
       <View style={listWrapperStyle}>
         {
           item === Strings.customLabel
-          ? (
-            <View style={listItemStyle}>
-              <TextInputItem
-                text={customLabel}
-                onChangeText={text => this.onChangeText(text)}
-                label={Strings.customLabel}
-              />
-            </View>
-          )
-          : (
-            <View style={listItemStyle}>
-              <LinkItem
-                onOpen={() => this.onChangeText(item)}
-                text={item}
-              />
-            </View>
-          )
+            ? (
+              <View style={listItemStyle}>
+                <TextInputItem
+                  text={customLabel}
+                  onChangeText={text => this.onChangeText(text)}
+                  label={Strings.customLabel}
+                />
+              </View>
+            )
+            : (
+              <View style={listItemStyle}>
+                <LinkItem
+                  onOpen={() => this.onChangeText(item)}
+                  text={item}
+                />
+              </View>
+            )
         }
       </View>
     )
@@ -143,11 +143,9 @@ export class SelectModalScreen extends React.Component<CreateCardScreenProps, Cr
     const { customLabel } = Strings
     const sections = [
       { title: 'items', data: items },
-      { title: 'Custom Label', data: [customLabel] }
+      { title: 'Custom Label', data: [customLabel] },
     ]
     const {
-      createCardTitle,
-      continueText,
       cancel,
       createCard,
       done,
@@ -177,7 +175,7 @@ export class SelectModalScreen extends React.Component<CreateCardScreenProps, Cr
           />
           <SectionList
             renderSectionHeader={() => this.renderSectionHeader()}
-            renderItem={({ item, index, section }) => this.renderItem(item, index, section)}
+            renderItem={({ item }) => this.renderItem(item)}
             sections={sections}
             keyExtractor={(item, index) => item + index}
             style={listStyle}

@@ -10,6 +10,7 @@ import {
 import { connect } from 'react-redux'
 import { css } from '@emotion/native'
 import { Header } from 'react-native-elements'
+import { NavigationScreenProps } from 'react-navigation'
 import CustomModal from '../../components/modal'
 import PhotoSelector from '../../components/photoSelector'
 import HeaderButton from '../../components/buttons/headerButton'
@@ -70,7 +71,7 @@ const separatorStyle = css`
   background-color: #ebebeb;
 `
 
-type OnboardingScreenProps = NavigationScreenProps & {
+type CreateCardScreenProps = NavigationScreenProps & {
 }
 
 type CreateCardScreenState = {|
@@ -150,11 +151,11 @@ export class CreateCardScreen extends React.Component<CreateCardScreenProps, Cre
     <View style={separatorStyle} />
   )
 
-  onCloseItem = item => {
-
+  onCloseItem = (item: string) => {
+    this.setState({ [item]: null })
   }
 
-  renderItem = (item: {}, index?: number, section?: number) => {
+  renderItem = (item: {}) => {
     const { data } = this.state
     const items = Object.keys(data[item])
     const { placeholders } = Strings
@@ -178,7 +179,8 @@ export class CreateCardScreen extends React.Component<CreateCardScreenProps, Cre
                   }
                 </View>
               )
-            } else if (i === 'backgroundColor') {
+            }
+            if (i === 'backgroundColor') {
               return (
                 <View key={i} style={listItemStyle}>
                   <LinkItem
@@ -262,7 +264,7 @@ export class CreateCardScreen extends React.Component<CreateCardScreenProps, Cre
           <SectionList
             ListHeaderComponent={<PhotoSelector />}
             renderSectionHeader={({ section: { title } }) => this.renderSectionHeader(title)}
-            renderItem={({ item, index, section }) => this.renderItem(item, index, section)}
+            renderItem={({ item }) => this.renderItem(item)}
             sections={sections}
             keyExtractor={(item, index) => item + index}
             style={listStyle}

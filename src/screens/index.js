@@ -29,7 +29,7 @@ const CreateCardStack = createStackNavigator(
   {
     mode: 'modal',
     headerMode: 'none',
-  }
+  },
 )
 
 export const AppNavigator = createStackNavigator({
