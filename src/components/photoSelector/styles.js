@@ -1,11 +1,7 @@
 // @flow
 
-import {
-  Dimensions,
-} from 'react-native'
 import { css } from '@emotion/native'
 
-const { width } = Dimensions.get('window')
 const photoSelector = css`
   background-color: #e2e2e2;
   width: 100%;

@@ -6,6 +6,7 @@ import { Text, View, TextInput } from 'react-native'
 import {
   itemStyle,
   inputStyle,
+  labelStyle,
 } from './styles'
 
 type ItemProps = {|
@@ -16,14 +17,20 @@ type ItemProps = {|
 |}
 
 const TextInputItem = (props: ItemProps) => {
-  const { text, label, placeholder, onChangeText } = props
+  const {
+    text,
+    label,
+    placeholder,
+    onChangeText,
+  } = props
   return (
     <View style={itemStyle}>
-      <Text>{label}</Text>
+      <Text style={labelStyle}>{label}</Text>
       <TextInput
         style={inputStyle}
-        onChangeText={(text) => onChangeText(text)}
+        onChangeText={content => onChangeText(content)}
         value={text}
+        placeholder={placeholder}
       />
     </View>
   )

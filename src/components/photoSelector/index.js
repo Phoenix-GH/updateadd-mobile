@@ -10,7 +10,7 @@ import {
 } from './styles'
 
 type ModalProps = {|
-  onOpen?: () => void
+  onOpen?: () => void,
 |}
 
 const PhotoSelector = (props: ModalProps) => {
@@ -18,7 +18,7 @@ const PhotoSelector = (props: ModalProps) => {
   return (
     <View style={photoSelector}>
       <TouchableOpacity
-        onPress={props.onOpen}
+        onPress={onOpen}
       >
         <Image source={account_circle} style={image} />
       </TouchableOpacity>

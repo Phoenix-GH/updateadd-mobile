@@ -14,6 +14,7 @@ import CustomModal from '../../components/modal'
 import PhotoSelector from '../../components/photoSelector'
 import HeaderButton from '../../components/buttons/headerButton'
 import TextInputItem from '../../components/cardListItem/textInputItem'
+import ListItem from '../../components/cardListItem/listItem'
 import { Strings } from '../../constants'
 
 const containerStyle = css`
@@ -41,6 +42,7 @@ const sectionHeaderStyle = css`
   letter-spacing: 0.2px;
   color: #272727;
   text-transform: uppercase;
+  margin: 24px 0 13px 0;
 `
 
 const listWrapperStyle = css`
@@ -138,45 +140,50 @@ export class CreateCardScreen extends React.Component<CreateCardScreenProps, Cre
 
   }
 
-  onChangeText = (item, text) => {
+  onChangeText = (item: string, text: string) => {
     this.setState({ item: text })
   }
 
-  renderSectionHeader = (title) => {
-    return <Text style={sectionHeaderStyle}>{title}</Text>
-  }
+  renderSectionHeader = (title: string) => (
+    <Text style={sectionHeaderStyle}>{title}</Text>
+  )
 
   renderSeparator = () => (
     <View style={separatorStyle} />
   )
 
-  renderItem = (item: {}, index: number, section: number) => {
+  renderItem = (item: {}, index?: number, section?: number) => {
     const { data } = this.state
     const items = Object.keys(data[item])
-    return <View style={listWrapperStyle}>
-    {
-      items.map((i, index) => (
-        <View key={i} style={listItemStyle}>
-          <TextInputItem
-            text={this.state[i]}
-            onChangeText={(text) => this.onChangeText(i, text)}
-            label={i}
-          />
-          {
-            index < items.length - 1 && <View style={separatorStyle} />
-          }
-        </View>
-      ))
-    }
-    </View>
+    return (
+      <View style={listWrapperStyle}>
+        {
+          items.map((i, index) => (
+            <View key={i} style={listItemStyle}>
+              <ListItem
+                text={i}
+                // onChangeText={(text) => this.onChangeText(i, text)}
+                onOpen={() => {}}
+                onClose={() => {}}
+                label={i}
+                placeholder={i}
+                isFilled
+              />
+              {
+                index < items.length - 1 && <View style={separatorStyle} />
+              }
+            </View>
+          ))
+        }
+      </View>
+    )
   }
 
   render() {
     const { isModalVisible, data } = this.state
-    const sections = Object.keys(data).map(section => {
-      const value = JSON.stringify(Object.values(data[section]))
-      return {title: section, data: [section]}
-    })
+    const sections = Object.keys(data).map(section => (
+      { title: section, data: [section] }
+    ))
     const {
       createCardTitle,
       continueText,
@@ -218,7 +225,7 @@ export class CreateCardScreen extends React.Component<CreateCardScreenProps, Cre
           />
           <SectionList
             ListHeaderComponent={<PhotoSelector />}
-            renderSectionHeader={({ section: {title} }) => this.renderSectionHeader(title)}
+            renderSectionHeader={({ section: { title } }) => this.renderSectionHeader(title)}
             renderItem={({ item, index, section }) => this.renderItem(item, index, section)}
             sections={sections}
             keyExtractor={(item, index) => item + index}
