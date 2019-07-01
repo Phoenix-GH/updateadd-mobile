@@ -16,7 +16,7 @@ import HeaderButton from '../../components/buttons/headerButton'
 import TextInputItem from '../../components/cardListItem/textInputItem'
 import ListItem from '../../components/cardListItem/listItem'
 import LinkItem from '../../components/cardListItem/linkItem'
-import { Strings } from '../../constants'
+import { Roots, Strings } from '../../constants'
 
 const containerStyle = css`
   align-items: center;
@@ -70,7 +70,8 @@ const separatorStyle = css`
   background-color: #ebebeb;
 `
 
-type CreateCardScreenProps = {}
+type OnboardingScreenProps = NavigationScreenProps & {
+}
 
 type CreateCardScreenState = {|
   isModalVisible: boolean,
@@ -136,6 +137,11 @@ export class CreateCardScreen extends React.Component<CreateCardScreenProps, Cre
     this.setState({ item: text })
   }
 
+  openSelect = () => {
+    const { navigation } = this.props
+    navigation.navigate(Roots.SelectModal)
+  }
+
   renderSectionHeader = (title: string) => (
     <Text style={sectionHeaderStyle}>{Strings[title]}</Text>
   )
@@ -143,6 +149,10 @@ export class CreateCardScreen extends React.Component<CreateCardScreenProps, Cre
   renderSeparator = () => (
     <View style={separatorStyle} />
   )
+
+  onCloseItem = item => {
+
+  }
 
   renderItem = (item: {}, index?: number, section?: number) => {
     const { data } = this.state
@@ -172,7 +182,7 @@ export class CreateCardScreen extends React.Component<CreateCardScreenProps, Cre
               return (
                 <View key={i} style={listItemStyle}>
                   <LinkItem
-                    onOpen={() => {}}
+                    onOpen={() => this.openSelect()}
                     text={Strings.selectBackground}
                   />
                   {
@@ -185,8 +195,8 @@ export class CreateCardScreen extends React.Component<CreateCardScreenProps, Cre
               <View key={i} style={listItemStyle}>
                 <ListItem
                   text={i}
-                  onOpen={() => {}}
-                  onClose={() => {}}
+                  onOpen={() => this.openSelect()}
+                  onClose={() => this.onCloseItem(i)}
                   label={Strings[i]}
                   placeholder={placeholders[i]}
                 />

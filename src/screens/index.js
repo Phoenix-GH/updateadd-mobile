@@ -15,11 +15,29 @@ import Login from './Login'
 import SignUp from './SignUp'
 import DebugContacts from './DebugContacts'
 import CreateCard from './CreateCard'
+import SelectModal from './CreateCard/selectModal'
 
+const CreateCardStack = createStackNavigator(
+  {
+    [Roots.CreateCardHome]: {
+      screen: CreateCard,
+    },
+    [Roots.SelectModal]: {
+      screen: SelectModal,
+    },
+  },
+  {
+    mode: 'modal',
+    headerMode: 'none',
+  }
+)
 
 export const AppNavigator = createStackNavigator({
   [Roots.CreateCard]: {
-    screen: CreateCard,
+    screen: CreateCardStack,
+    navigationOptions: {
+      header: null,
+    },
   },
   [Roots.Onboarding]: {
     screen: OnboardingScreen,
@@ -42,7 +60,7 @@ export const AppNavigator = createStackNavigator({
       header: null,
     },
   },
-});
+})
 
 export const navigationMiddleware = createReactNavigationReduxMiddleware('root', state => state.nav)
 const AppNavigatorWithNavigationState = createReduxContainer(AppNavigator, 'root')

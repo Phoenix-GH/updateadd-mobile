@@ -42,6 +42,8 @@ const Roots = {
   SignUp: 'SignUp',
   Onboarding: 'Onboarding',
   CreateCard: 'CreateCard',
+  CreateCardHome: 'CreateCardHome',
+  SelectModal: 'SelectModal',
 }
 
 const Images = {

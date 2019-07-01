@@ -10,7 +10,7 @@ import {
 import { connect } from 'react-redux'
 import { css } from '@emotion/native'
 import CountryPicker from 'react-native-country-picker-modal'
-import { NavigationScreenProps } from 'react-navigation';
+import { NavigationScreenProps } from 'react-navigation'
 import OnboardingCarousel from '../../components/onboardingCarousel'
 import SubmitButton from '../../components/buttons/submit'
 import { Roots, Strings } from '../../constants'

@@ -123,4 +123,30 @@ export default {
     url: 'URL',
     address: 'Address',
   },
+  socialItems: {
+    whatsapp: 'Whatsapp',
+    facebookMessenger: 'Facebook Messenger',
+    flickr: 'Flickr',
+    linkedin: 'Linkedin',
+    myspace: 'Myspace',
+    sinaWeibo: 'Sina Weibo',
+    skype: 'Skype',
+  },
+  addressItems: {
+    home: 'Home',
+    work: 'Work',
+    other: 'Other',
+  },
+  phoneItems: {
+    home: 'Home',
+    work: 'Work',
+    iPhone: 'iPhone',
+    mobile: 'Mobile',
+    main: 'Main',
+    homeFax: 'Home Fax',
+    workFax: 'Work Fax',
+    pager: 'Pager',
+    other: 'Other',
+  },
+  customLabel: 'Add Custom Label'
 }
