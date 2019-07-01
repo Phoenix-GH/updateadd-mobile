@@ -75,6 +75,11 @@ type CreateCardScreenProps = {}
 type CreateCardScreenState = {|
   isModalVisible: boolean,
   data: Object,
+  firstName: string,
+  lastName: string,
+  notes: string,
+  companyName: string,
+  jobTitle: string,
 |}
 
 export class CreateCardScreen extends React.Component<CreateCardScreenProps, CreateCardScreenState> {
@@ -86,7 +91,7 @@ export class CreateCardScreen extends React.Component<CreateCardScreenProps, Cre
       isModalVisible: true,
       data: {
         social: {
-          addAccounts: []
+          addAccounts: [],
         },
         contactInfo: {
           firstName: null,
@@ -101,9 +106,14 @@ export class CreateCardScreen extends React.Component<CreateCardScreenProps, Cre
           notes: null,
         },
         cardAppearance: {
-          backgroundColor: ''
+          backgroundColor: '',
         },
       },
+      firstName: null,
+      lastName: null,
+      notes: null,
+      companyName: null,
+      jobTitle: null,
     }
   }
 
@@ -138,12 +148,14 @@ export class CreateCardScreen extends React.Component<CreateCardScreenProps, Cre
       <View style={listWrapperStyle}>
         {
           items.map((i, index) => {
-            if(i === 'firstName' || i === 'lastName' || i === 'companyName' || i === 'jobTitle' || i === 'notes') {
+            if (i === 'firstName' || i === 'lastName' || i === 'companyName' || i === 'jobTitle' || i === 'notes') {
+              const { state } = this
+
               return (
                 <View key={i} style={listItemStyle}>
                   <TextInputItem
-                    text={this.state[i]}
-                    onChangeText={(text) => this.onChangeText(i, text)}
+                    text={state[i]}
+                    onChangeText={text => this.onChangeText(i, text)}
                     label={i === 'notes' ? '' : Strings[i]}
                     placeholder={Strings[i]}
                   />
@@ -152,7 +164,7 @@ export class CreateCardScreen extends React.Component<CreateCardScreenProps, Cre
                   }
                 </View>
               )
-            } else if(i === 'backgroundColor') {
+            } else if (i === 'backgroundColor') {
               return (
                 <View key={i} style={listItemStyle}>
                   <LinkItem
@@ -164,28 +176,30 @@ export class CreateCardScreen extends React.Component<CreateCardScreenProps, Cre
                   }
                 </View>
               )
-            } else {
-              return (
-                <View key={i} style={listItemStyle}>
-                  <ListItem
-                    text={i}
-                    onOpen={() => {}}
-                    onClose={() => {}}
-                    label={Strings[i]}
-                    placeholder={Strings[i]}
-                    isFilled
-                  />
-                  {
-                    index < items.length - 1 && <View style={separatorStyle} />
-                  }
-                </View>
-              )
             }
+            return (
+              <View key={i} style={listItemStyle}>
+                <ListItem
+                  text={i}
+                  onOpen={() => {}}
+                  onClose={() => {}}
+                  label={Strings[i]}
+                  placeholder={Strings[i]}
+                />
+                {
+                  index < items.length - 1 && <View style={separatorStyle} />
+                }
+              </View>
+            )
           })
         }
       </View>
     )
   }
+
+  renderListFooter = () => (
+    <View />
+  )
 
   render() {
     const { isModalVisible, data } = this.state

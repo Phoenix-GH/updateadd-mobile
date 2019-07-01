@@ -13,7 +13,6 @@ import {
   itemStyle,
   linkStyle,
   chevronStyle,
-  labelStyle,
   fullLabelStyle,
 } from './styles'
 
@@ -31,7 +30,7 @@ const LinkItem = (props: ItemProps) => {
     <View style={itemStyle}>
       <TouchableOpacity
         onPress={onOpen}
-        style={{width: '100%'}}
+        style={{ width: '100%' }}
       >
         <View style={linkStyle}>
           <Text style={fullLabelStyle}>{text}</Text>

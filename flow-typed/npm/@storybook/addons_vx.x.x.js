@@ -1,4 +1,4 @@
-// flow-typed signature: 008c41b075bd54fa226fdaf05c312baf
+// flow-typed signature: 17e67287ab4a33425a8a9b0a8b6fb4c5
 // flow-typed version: <<STUB>>/@storybook/addons_v^5.0.10/flow_v0.97.0
 
 /**
@@ -30,6 +30,10 @@ declare module '@storybook/addons/dist/make-decorator' {
   declare module.exports: any;
 }
 
+declare module '@storybook/addons/dist/make-decorator.test' {
+  declare module.exports: any;
+}
+
 declare module '@storybook/addons/dist/public_api' {
   declare module.exports: any;
 }
@@ -48,6 +52,9 @@ declare module '@storybook/addons/dist/index.js' {
 }
 declare module '@storybook/addons/dist/make-decorator.js' {
   declare module.exports: $Exports<'@storybook/addons/dist/make-decorator'>;
+}
+declare module '@storybook/addons/dist/make-decorator.test.js' {
+  declare module.exports: $Exports<'@storybook/addons/dist/make-decorator.test'>;
 }
 declare module '@storybook/addons/dist/public_api.js' {
   declare module.exports: $Exports<'@storybook/addons/dist/public_api'>;
