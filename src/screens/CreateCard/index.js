@@ -114,11 +114,11 @@ export class CreateCardScreen extends React.Component<CreateCardScreenProps, Cre
           backgroundColor: '',
         },
       },
-      firstName: null,
-      lastName: null,
-      notes: null,
-      companyName: null,
-      jobTitle: null,
+      firstName: '',
+      lastName: '',
+      notes: '',
+      companyName: '',
+      jobTitle: '',
     }
   }
 
@@ -135,7 +135,7 @@ export class CreateCardScreen extends React.Component<CreateCardScreenProps, Cre
   }
 
   onChangeText = (item: string, text: string) => {
-    this.setState({ item: text })
+    this.setState({ [item]: text })
   }
 
   openSelect = () => {

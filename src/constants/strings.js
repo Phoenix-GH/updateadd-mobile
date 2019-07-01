@@ -148,5 +148,5 @@ export default {
     pager: 'Pager',
     other: 'Other',
   },
-  customLabel: 'Add Custom Label'
+  customLabel: 'Add Custom Label',
 }

@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
   Image,
 } from 'react-native'
-import { NavigationScreenProps } from 'react-navigation'
+
 import add_circle from '../../images/add_circle.png'
 import remove_circle from '../../images/remove_circle.png'
 import arrow_right from '../../images/arrow_right.png'

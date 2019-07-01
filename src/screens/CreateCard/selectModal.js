@@ -106,7 +106,7 @@ export class SelectModalScreen extends React.Component<ScreenModalProps, ScreenM
     <View style={separatorStyle} />
   )
 
-  renderItem = (item: {}) => {
+  renderItem = (item: string) => {
     const { customLabel } = this.state
     return (
       <View style={listWrapperStyle}>
