@@ -67,7 +67,7 @@ const textStyle = css`
 const chevronStyle = css`
   width: 7.78px;
   height: 13.2px;
-  margin: 0 30.22px 0 10px;
+  margin: 0 16.22px 0 10px;
 `
 
 const fullLabelStyle = css`

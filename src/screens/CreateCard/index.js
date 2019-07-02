@@ -43,20 +43,23 @@ const sectionHeaderStyle = css`
   letter-spacing: 0.2px;
   color: #272727;
   text-transform: uppercase;
-  padding: 24px 15px 13px 15px;
+  padding: 0 15px 0px 15px;
+  margin: 24px 0 13px 0;
   width: 100%;
   background-color: white;
 `
 
 const listWrapperStyle = css`
+  width: 100%;
+  padding-horizontal: 15px;
+`
+
+const listSectionStyle = css`
   background-color: rgba(158, 158, 158, 0.85);
   box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.12);
   border-radius: 6px;
   width: 100%;
   background-color: white;
-  border-bottom: none;
-  border-top: none;
-  padding-horizontal: 15px;
 `
 
 const listItemStyle = css`
@@ -64,7 +67,7 @@ const listItemStyle = css`
 `
 
 const separatorStyle = css`
-  height: 10px;
+  height: 1px;
   flex: 1;
   flex-direction: row;
   margin-right: 15px;
@@ -169,17 +172,46 @@ export class CreateCardScreen extends React.Component<CreateCardScreenProps, Cre
     const { placeholders } = Strings
     return (
       <View style={listWrapperStyle}>
-        {
-          items.map((i, index) => {
-            if (i === 'firstName' || i === 'lastName' || i === 'companyName' || i === 'jobTitle' || i === 'notes') {
-              const { state } = this
+        <View style={listSectionStyle}>
+          {
+            items.map((i, index) => {
+              if (i === 'firstName' || i === 'lastName' || i === 'companyName' || i === 'jobTitle' || i === 'notes') {
+                const { state } = this
 
+                return (
+                  <View key={i} style={listItemStyle}>
+                    <TextInputItem
+                      text={state[i]}
+                      onChangeText={text => this.onChangeText(i, text)}
+                      label={i === 'notes' ? '' : Strings[i]}
+                      placeholder={placeholders[i]}
+                    />
+                    {
+                      index < items.length - 1 && <View style={separatorStyle} />
+                    }
+                  </View>
+                )
+              }
+              if (i === 'backgroundColor') {
+                return (
+                  <View key={i} style={listItemStyle}>
+                    <LinkItem
+                      onOpen={() => {}}
+                      text={Strings.selectBackground}
+                    />
+                    {
+                      index < items.length - 1 && <View style={separatorStyle} />
+                    }
+                  </View>
+                )
+              }
               return (
                 <View key={i} style={listItemStyle}>
-                  <TextInputItem
-                    text={state[i]}
-                    onChangeText={text => this.onChangeText(i, text)}
-                    label={i === 'notes' ? '' : Strings[i]}
+                  <ListItem
+                    text={i}
+                    onOpen={() => this.openSelect(i)}
+                    onClose={() => this.onCloseItem(i)}
+                    label={Strings[i]}
                     placeholder={placeholders[i]}
                   />
                   {
@@ -187,36 +219,9 @@ export class CreateCardScreen extends React.Component<CreateCardScreenProps, Cre
                   }
                 </View>
               )
-            }
-            if (i === 'backgroundColor') {
-              return (
-                <View key={i} style={listItemStyle}>
-                  <LinkItem
-                    onOpen={() => {}}
-                    text={Strings.selectBackground}
-                  />
-                  {
-                    index < items.length - 1 && <View style={separatorStyle} />
-                  }
-                </View>
-              )
-            }
-            return (
-              <View key={i} style={listItemStyle}>
-                <ListItem
-                  text={i}
-                  onOpen={() => this.openSelect(i)}
-                  onClose={() => this.onCloseItem(i)}
-                  label={Strings[i]}
-                  placeholder={placeholders[i]}
-                />
-                {
-                  index < items.length - 1 && <View style={separatorStyle} />
-                }
-              </View>
-            )
-          })
-        }
+            })
+          }
+        </View>
       </View>
     )
   }

@@ -36,29 +36,30 @@ const listStyle = css`
 const sectionHeaderStyle = css`
   background-color: white;
   box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.12);
+  background-color: rgba(158, 158, 158, 0.85);
   width: 100%;
   height: 1px;
+  margin-top: 27px;
 `
 
-const listWrapperStyle = css`
-  background-color: rgba(158, 158, 158, 0.85);
-  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.12);
-  border-radius: 6px;
-  width: 100%;
-  height: 51px;
+const sectionFooterStyle = css`
   background-color: white;
-  border-bottom: none;
-  border-top: none;
-  padding-horizontal: 15px;
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.12);
+  background-color: rgba(158, 158, 158, 0.85);
+  width: 100%;
+  height: 1px;
+  margin-bottom: 13px;
 `
 
 const listItemStyle = css`
-  height: 51px;
+  width: 100%;
+  height: 50px;
+  background-color: white;
+  padding-horizontal: 18px;
 `
 
 const separatorStyle = css`
-  height: 10px;
-  flex: 1;
+  height: 1px;
   flex-direction: row;
   margin-right: 15px;
   background-color: #ebebeb;
@@ -104,6 +105,10 @@ export class SelectModalScreen extends React.Component<ScreenModalProps, ScreenM
     <View style={sectionHeaderStyle} />
   )
 
+  renderSectionFooter = () => (
+    <View style={sectionFooterStyle} />
+  )
+
   renderSeparator = () => (
     <View style={separatorStyle} />
   )
@@ -112,27 +117,25 @@ export class SelectModalScreen extends React.Component<ScreenModalProps, ScreenM
     const { customLabel } = this.state
     const { labels } = Strings
     return (
-      <View style={listWrapperStyle}>
-        <View style={listItemStyle}>
-          {
-          item === labels.customLabel
-            ? (
-              <TextInputItem
-                text={customLabel}
-                onChangeText={text => this.onChangeText(text)}
-                label={Strings.labels.customLabel}
-              />
-            )
-            : (
-              <LinkItem
-                onOpen={() => this.onChangeText(item)}
-                text={item}
-                checkItem
-                isChecked={item === customLabel}
-              />
-            )
-          }
-        </View>
+      <View style={listItemStyle}>
+        {
+        item === labels.customLabel
+          ? (
+            <TextInputItem
+              text={customLabel}
+              onChangeText={text => this.onChangeText(text)}
+              label={Strings.labels.customLabel}
+            />
+          )
+          : (
+            <LinkItem
+              onOpen={() => this.onChangeText(item)}
+              text={item}
+              checkItem
+              isChecked={item === customLabel}
+            />
+          )
+        }
       </View>
     )
   }
@@ -192,10 +195,12 @@ export class SelectModalScreen extends React.Component<ScreenModalProps, ScreenM
         />
         <SectionList
           renderSectionHeader={() => this.renderSectionHeader()}
+          renderSectionFooter={() => this.renderSectionFooter()}
           renderItem={({ item }) => this.renderItem(item)}
           sections={sections}
           keyExtractor={(item, index) => item + index}
           style={listStyle}
+          ItemSeparatorComponent={() => this.renderSeparator()}
         />
       </View>
     )
