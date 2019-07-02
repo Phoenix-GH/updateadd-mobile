@@ -8,6 +8,7 @@ import {
   Image,
 } from 'react-native'
 import Path from '../../images/Path.png'
+import ic_check from '../../images/ic_check.png'
 
 import {
   itemStyle,
@@ -18,11 +19,15 @@ import {
 
 type ItemProps = {|
   text?: string,
+  isChecked?: boolean,
+  checkItem?: boolean,
   onOpen: () => void,
 |}
 
 const LinkItem = (props: ItemProps) => {
   const {
+    checkItem,
+    isChecked,
     text,
     onOpen,
   } = props
@@ -34,11 +39,26 @@ const LinkItem = (props: ItemProps) => {
       >
         <View style={linkStyle}>
           <Text style={fullLabelStyle}>{text}</Text>
-          <Image
-            style={chevronStyle}
-            source={Path}
-            resizeMode="contain"
-          />
+          {
+            !checkItem
+              ? (
+                <Image
+                  style={chevronStyle}
+                  source={Path}
+                  resizeMode="contain"
+                />
+              )
+              : (
+                isChecked
+                  && (
+                  <Image
+                    style={chevronStyle}
+                    source={ic_check}
+                    resizeMode="contain"
+                  />
+                  )
+              )
+          }
         </View>
       </TouchableOpacity>
     </View>
@@ -47,6 +67,8 @@ const LinkItem = (props: ItemProps) => {
 
 LinkItem.defaultProps = {
   text: null,
+  isChecked: false,
+  checkItem: false,
 }
 
 export default LinkItem

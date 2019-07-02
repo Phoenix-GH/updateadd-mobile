@@ -149,6 +149,12 @@ export default {
       pager: 'Pager',
       other: 'Other',
     },
+    email: {
+      home: 'Home',
+      work: 'Work',
+      iPhone: 'iCloud',
+      other: 'Other',
+    },
     customLabel: 'Add Custom Label',
-  }
+  },
 }

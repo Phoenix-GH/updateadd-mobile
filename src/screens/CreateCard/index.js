@@ -138,9 +138,17 @@ export class CreateCardScreen extends React.Component<CreateCardScreenProps, Cre
     this.setState({ [item]: text })
   }
 
-  openSelect = () => {
+  openSelect = (item: string) => {
     const { navigation } = this.props
-    navigation.navigate(Roots.SelectModal, { mode: 'social' })
+    let mode = 'social'
+    if (item === 'addEmail') {
+      mode = 'email'
+    } else if (item === 'phone') {
+      mode = 'phone'
+    } else if (item === 'address') {
+      mode = 'address'
+    }
+    navigation.navigate(Roots.SelectModal, { mode })
   }
 
   renderSectionHeader = (title: string) => (
@@ -184,7 +192,7 @@ export class CreateCardScreen extends React.Component<CreateCardScreenProps, Cre
               return (
                 <View key={i} style={listItemStyle}>
                   <LinkItem
-                    onOpen={() => this.openSelect()}
+                    onOpen={() => {}}
                     text={Strings.selectBackground}
                   />
                   {
@@ -197,7 +205,7 @@ export class CreateCardScreen extends React.Component<CreateCardScreenProps, Cre
               <View key={i} style={listItemStyle}>
                 <ListItem
                   text={i}
-                  onOpen={() => this.openSelect()}
+                  onOpen={() => this.openSelect(i)}
                   onClose={() => this.onCloseItem(i)}
                   label={Strings[i]}
                   placeholder={placeholders[i]}

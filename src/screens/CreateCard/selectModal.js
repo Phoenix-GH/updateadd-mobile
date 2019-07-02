@@ -114,7 +114,7 @@ export class SelectModalScreen extends React.Component<ScreenModalProps, ScreenM
     return (
       <View style={listWrapperStyle}>
         <View style={listItemStyle}>
-        {
+          {
           item === labels.customLabel
             ? (
               <TextInputItem
@@ -127,9 +127,11 @@ export class SelectModalScreen extends React.Component<ScreenModalProps, ScreenM
               <LinkItem
                 onOpen={() => this.onChangeText(item)}
                 text={item}
+                checkItem
+                isChecked={item === customLabel}
               />
             )
-        }
+          }
         </View>
       </View>
     )
@@ -140,10 +142,22 @@ export class SelectModalScreen extends React.Component<ScreenModalProps, ScreenM
   )
 
   render() {
-    const {navigation: {state: {params: { mode }}}} = this.props
+    const {
+      navigation: {
+        state: {
+          params: {
+            mode,
+          },
+        },
+      },
+    } = this.props
     const data = Strings.labels[mode]
     const items = Object.values(data)
-    const {labels: { customLabel }} = Strings
+    const {
+      labels: {
+        customLabel,
+      },
+    } = Strings
 
     const sections = [
       { title: 'items', data: items },
