@@ -15,7 +15,17 @@ const image = css`
   height: 115.83px;
 `
 
+const cameraImage = css`
+  width: 38px;
+  height: 38px;
+  border-radius: 19px;
+  position: absolute;
+  right: -6.67px;
+  top: -2.58px; 
+`
+
 export {
   photoSelector,
   image,
+  cameraImage,
 }
