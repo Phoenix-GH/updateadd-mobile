@@ -3,7 +3,6 @@
 import React from 'react'
 import {
   View,
-  SafeAreaView,
   SectionList,
 } from 'react-native'
 import { css } from '@emotion/native'
@@ -15,12 +14,13 @@ import LinkItem from '../../components/cardListItem/linkItem'
 import { Strings } from '../../constants'
 
 const containerStyle = css`
-  align-items: center;
   flex: 1;
 `
+
 const headerBarStyle = css`
   background-color: white;
 `
+
 const headerTextStyle = css`
   color: #272727;
   font-size: 14px;
@@ -29,6 +29,7 @@ const headerTextStyle = css`
 `
 
 const listStyle = css`
+  flex: 1;
   width: 100%;
 `
 
@@ -44,6 +45,7 @@ const listWrapperStyle = css`
   box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.12);
   border-radius: 6px;
   width: 100%;
+  height: 51px;
   background-color: white;
   border-bottom: none;
   border-top: none;
@@ -63,7 +65,7 @@ const separatorStyle = css`
 `
 
 type ScreenModalProps = NavigationScreenProps & {|
-  items: [],
+  mode: string
 |}
 
 type ScreenModalState = {|
@@ -74,7 +76,7 @@ export class SelectModalScreen extends React.Component<ScreenModalProps, ScreenM
   static navigationOptions = { header: null }
 
   static defaultProps = {
-    items: [],
+    mode: 'social',
   }
 
   constructor(props: ScreenModalProps) {
@@ -108,28 +110,27 @@ export class SelectModalScreen extends React.Component<ScreenModalProps, ScreenM
 
   renderItem = (item: string) => {
     const { customLabel } = this.state
+    const { labels } = Strings
     return (
       <View style={listWrapperStyle}>
+        <View style={listItemStyle}>
         {
-          item === Strings.customLabel
+          item === labels.customLabel
             ? (
-              <View style={listItemStyle}>
-                <TextInputItem
-                  text={customLabel}
-                  onChangeText={text => this.onChangeText(text)}
-                  label={Strings.customLabel}
-                />
-              </View>
+              <TextInputItem
+                text={customLabel}
+                onChangeText={text => this.onChangeText(text)}
+                label={Strings.labels.customLabel}
+              />
             )
             : (
-              <View style={listItemStyle}>
-                <LinkItem
-                  onOpen={() => this.onChangeText(item)}
-                  text={item}
-                />
-              </View>
+              <LinkItem
+                onOpen={() => this.onChangeText(item)}
+                text={item}
+              />
             )
         }
+        </View>
       </View>
     )
   }
@@ -139,49 +140,50 @@ export class SelectModalScreen extends React.Component<ScreenModalProps, ScreenM
   )
 
   render() {
-    const { items } = this.props
-    const { customLabel } = Strings
+    const {navigation: {state: {params: { mode }}}} = this.props
+    const data = Strings.labels[mode]
+    const items = Object.values(data)
+    const {labels: { customLabel }} = Strings
+
     const sections = [
       { title: 'items', data: items },
       { title: 'Custom Label', data: [customLabel] },
     ]
     const {
       cancel,
-      createCard,
       done,
     } = Strings
+
     return (
-      <SafeAreaView style={{ flex: 1 }}>
-        <View style={containerStyle}>
-          <Header
-            leftComponent={
-              (
-                <HeaderButton
-                  label={cancel}
-                  onPress={this.onCancelPress}
-                />
+      <View style={containerStyle}>
+        <Header
+          leftComponent={
+            (
+              <HeaderButton
+                label={cancel}
+                onPress={this.onCancelPress}
+              />
+            )
+          }
+          centerComponent={{ text: mode, style: headerTextStyle }}
+          rightComponent={
+            (
+              <HeaderButton
+                label={done}
+                onPress={this.onDonePress}
+              />
               )
             }
-            centerComponent={{ text: createCard, style: headerTextStyle }}
-            rightComponent={
-              (
-                <HeaderButton
-                  label={done}
-                  onPress={this.onDonePress}
-                />
-                )
-              }
-            containerStyle={headerBarStyle}
-          />
-          <SectionList
-            renderSectionHeader={() => this.renderSectionHeader()}
-            renderItem={({ item }) => this.renderItem(item)}
-            sections={sections}
-            keyExtractor={(item, index) => item + index}
-            style={listStyle}
-          />
-        </View>
-      </SafeAreaView>
+          containerStyle={headerBarStyle}
+        />
+        <SectionList
+          renderSectionHeader={() => this.renderSectionHeader()}
+          renderItem={({ item }) => this.renderItem(item)}
+          sections={sections}
+          keyExtractor={(item, index) => item + index}
+          style={listStyle}
+        />
+      </View>
     )
   }
 }

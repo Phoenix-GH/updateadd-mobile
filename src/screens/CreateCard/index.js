@@ -140,7 +140,7 @@ export class CreateCardScreen extends React.Component<CreateCardScreenProps, Cre
 
   openSelect = () => {
     const { navigation } = this.props
-    navigation.navigate(Roots.SelectModal)
+    navigation.navigate(Roots.SelectModal, { mode: 'social' })
   }
 
   renderSectionHeader = (title: string) => (
