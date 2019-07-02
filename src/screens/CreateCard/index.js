@@ -6,11 +6,13 @@ import {
   SafeAreaView,
   SectionList,
   Text,
+  Image,
 } from 'react-native'
 import { connect } from 'react-redux'
 import { css } from '@emotion/native'
 import { Header } from 'react-native-elements'
 import { NavigationScreenProps } from 'react-navigation'
+import RadialGradient from 'react-native-radial-gradient'
 import CustomModal from '../../components/modal'
 import PhotoSelector from '../../components/photoSelector'
 import HeaderButton from '../../components/buttons/headerButton'
@@ -18,6 +20,8 @@ import TextInputItem from '../../components/cardListItem/textInputItem'
 import ListItem from '../../components/cardListItem/listItem'
 import LinkItem from '../../components/cardListItem/linkItem'
 import { Roots, Strings } from '../../constants'
+import Colors from '../../theme/colors'
+import account_circle from '../../images/account_circle.png'
 
 const containerStyle = css`
   align-items: center;
@@ -32,7 +36,6 @@ const headerTextStyle = css`
   font-family: 'Gotham';
   text-transform: uppercase;
 `
-
 const listStyle = css`
   width: 100%;
 `
@@ -48,12 +51,10 @@ const sectionHeaderStyle = css`
   width: 100%;
   background-color: white;
 `
-
 const listWrapperStyle = css`
   width: 100%;
   padding-horizontal: 15px;
 `
-
 const listSectionStyle = css`
   background-color: rgba(158, 158, 158, 0.85);
   box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.12);
@@ -61,17 +62,55 @@ const listSectionStyle = css`
   width: 100%;
   background-color: white;
 `
-
 const listItemStyle = css`
   height: 51px;
 `
-
 const separatorStyle = css`
   height: 1px;
   flex: 1;
   flex-direction: row;
   margin-right: 15px;
   background-color: #ebebeb;
+`
+const gradientWrapper = css`
+  margin-vertical: 21px;
+  width: 100%;
+  height: 195.89px;
+  background-color: transparent;
+  border-radius: 10px;
+  overflow: hidden; 
+`
+const gradientStyle = css`
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  padding: 42.61px 47.14px 35.28px 33px;
+  flex-direction: row;
+  align-items: center;
+`
+const userInfoStyle = css`
+  flex-direction: column;
+  margin-left: 15.86px;
+`
+const footerAvatarStyle = css`
+  width: 72px;
+  height: 72px;
+  border-radius: 36px;
+`
+const footerUserNameStyle = css`
+  font-family: 'Open Sans';
+  font-size: 17.136px;
+  line-height: 21px;
+  letter-spacing: -0.612px;
+  color: white;
+`
+const footerJobTitleStyle = css`
+  font-family: 'Open Sans';
+  font-size: 12.852px;
+  line-height: 17px;
+  text-transform: uppercase;
+  letter-spacing: -0.612px;
+  color: white;
 `
 
 type CreateCardScreenProps = NavigationScreenProps & {
@@ -227,7 +266,22 @@ export class CreateCardScreen extends React.Component<CreateCardScreenProps, Cre
   }
 
   renderListFooter = () => (
-    <View />
+    <View style={listWrapperStyle}>
+      <View style={gradientWrapper}>
+        <RadialGradient
+          style={gradientStyle}
+          colors={[Colors.radialGradientStart, Colors.radialGradientCenter, Colors.radialGradientEnd]}
+          stops={[0, 0, 1]}
+          radius={195.89}
+        >
+          <Image source={account_circle} style={footerAvatarStyle} />
+          <View style={userInfoStyle}>
+            <Text style={footerUserNameStyle}>{Strings.userNamePlaceholder}</Text>
+            <Text style={footerJobTitleStyle}>{Strings.jobPlaceholder}</Text>
+          </View>
+        </RadialGradient>
+      </View>
+    </View>
   )
 
   render() {
@@ -281,6 +335,7 @@ export class CreateCardScreen extends React.Component<CreateCardScreenProps, Cre
             sections={sections}
             keyExtractor={(item, index) => item + index}
             style={listStyle}
+            ListFooterComponent={() => this.renderListFooter()}
           />
         </View>
       </SafeAreaView>

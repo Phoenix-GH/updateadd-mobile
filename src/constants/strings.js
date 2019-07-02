@@ -157,4 +157,6 @@ export default {
     },
     customLabel: 'Add Custom Label',
   },
+  userNamePlaceholder: 'First and Last Name',
+  jobPlaceholder: 'Job Title & Company',
 }
