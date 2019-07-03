@@ -7,7 +7,8 @@ import { modelMapper, ModelResponseTypes } from '../models'
 
 const BASE_URL = Config.API_URL
 
-const LOGIN_USER_URL = `${BASE_URL}/auth/login/`
+const LOGIN_USER_URL = `${BASE_URL}accounts/login/`
+const SIGNUP_USER_URL = `${BASE_URL}accounts/signup/`
 
 class ApiService {
   axios: axios.Axios
@@ -41,6 +42,8 @@ class ApiService {
   getNextPage = (url: string, responseType: typeof ModelResponseTypes) => this.axios.get<string, any>(url, { apiResponseType: responseType })
 
   loginUser = (data: { email: string, password: string }) => this.axios.post<string, any>(LOGIN_USER_URL, data)
+
+  signUpUser = (data: UserSignUpPayload) => this.axios.post<string, any>(SIGNUP_USER_URL, data)
 }
 
 export default new ApiService()

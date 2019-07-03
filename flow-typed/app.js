@@ -45,6 +45,18 @@ type StoreState = {|
   contacts: ContactStoreState,
 |}
 
+// API Payloads
+type UserSignUpPayload = {|
+  email: string,
+  password: string,
+  phone: string,
+|}
+
+type UserLoginPayload = {|
+  email: string,
+  password: string,
+|}
+
 // General Types
 declare var __DEV__ : string;
 

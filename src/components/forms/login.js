@@ -30,13 +30,12 @@ export default function LoginForm() {
   const formal: Formal = useFormal({}, {
     schema,
     onSubmit: (values) => {
-      const payload: UserSignUpPayload = {
+      const payload: UserLoginPayload = {
         email: values.email,
         password: values.password,
-        phone: values.phone,
       }
 
-      ApiService.signUpUser(payload)
+      ApiService.loginUser(payload)
         .then(response => console.log(response))
         .catch((error) => {
           const { data } = error.response
