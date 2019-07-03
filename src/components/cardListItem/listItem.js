@@ -6,6 +6,7 @@ import {
   View,
   TouchableOpacity,
   Image,
+  TextInput,
 } from 'react-native'
 
 import add_circle from '../../images/add_circle.png'
@@ -19,8 +20,8 @@ import {
   openLabelStyle,
   separatorStyle,
   arrowStyle,
-  textStyle,
   buttonStyle,
+  inputStyle,
 } from './styles'
 
 type ItemProps = {|
@@ -28,6 +29,7 @@ type ItemProps = {|
   label?: string,
   placeholder?: string,
   isFilled?: boolean,
+  onChangeText: (string) => void,
   onOpen: () => void,
   onClose: () => void,
 |}
@@ -40,6 +42,7 @@ const ListItem = (props: ItemProps) => {
     onOpen,
     isFilled,
     onClose,
+    onChangeText,
   } = props
   return (
     <View style={itemStyle}>
@@ -61,26 +64,30 @@ const ListItem = (props: ItemProps) => {
             </TouchableOpacity>
           )
           : (
-            <TouchableOpacity
-              onPress={onClose}
-              style={buttonStyle}
-            >
-              <View style={linkStyle}>
+            <View style={linkStyle}>
+              <TouchableOpacity
+                onPress={onClose}
+              >
                 <Image
                   style={iconStyle}
                   source={remove_circle}
                   resizeMode="contain"
                 />
-                <Text style={openLabelStyle}>{label}</Text>
-                <Image
-                  style={arrowStyle}
-                  source={arrow_right}
-                  resizeMode="contain"
-                />
-                <View style={separatorStyle} />
-                <Text style={textStyle}>{text}</Text>
-              </View>
-            </TouchableOpacity>
+              </TouchableOpacity>
+              <Text style={openLabelStyle}>{label}</Text>
+              <Image
+                style={arrowStyle}
+                source={arrow_right}
+                resizeMode="contain"
+              />
+              <View style={separatorStyle} />
+              <TextInput
+                style={inputStyle}
+                onChangeText={content => onChangeText(content)}
+                value={text}
+                placeholder={placeholder}
+              />
+            </View>
           )
       }
     </View>
@@ -89,7 +96,7 @@ const ListItem = (props: ItemProps) => {
 
 ListItem.defaultProps = {
   placeholder: '',
-  text: null,
+  text: undefined,
   label: '',
   isFilled: false,
 }

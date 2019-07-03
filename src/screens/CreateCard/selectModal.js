@@ -87,6 +87,8 @@ export class SelectModalScreen extends React.Component<ScreenModalProps, ScreenM
 
   onDonePress = () => {
     const { navigation } = this.props
+    const { customLabel } = this.state
+    navigation.state.params.onDone(customLabel)
     navigation.goBack()
   }
 
@@ -184,11 +186,11 @@ export class SelectModalScreen extends React.Component<ScreenModalProps, ScreenM
         />
         <SectionList
           contentContainerStyle={contentContainerStyle}
-          SectionSeparatorComponent={() => this.renderSectionSeparator()}
           renderItem={({ item }) => this.renderItem(item)}
           sections={sections}
           keyExtractor={(item, index) => item + index}
           style={listStyle}
+          SectionSeparatorComponent={() => this.renderSectionSeparator()}
           ItemSeparatorComponent={() => this.renderSeparator()}
         />
       </View>

@@ -118,12 +118,12 @@ type CreateCardScreenProps = NavigationScreenProps & {
 
 type CreateCardScreenState = {|
   isModalVisible: boolean,
-  data: Object,
-  firstName: string,
-  lastName: string,
-  notes: string,
-  companyName: string,
-  jobTitle: string,
+  data: {},
+|}
+
+type SectionType = {|
+  title: string,
+  data: [],
 |}
 
 export class CreateCardScreen extends React.Component<CreateCardScreenProps, CreateCardScreenState> {
@@ -135,15 +135,15 @@ export class CreateCardScreen extends React.Component<CreateCardScreenProps, Cre
       isModalVisible: true,
       data: {
         social: {
-          addAccounts: null,
+          social: [],
         },
         contactInfo: {
           firstName: null,
           lastName: null,
-          addEmail: null,
-          phone: null,
-          url: null,
-          address: null,
+          email: [],
+          phone: [],
+          url: [],
+          address: [],
         },
         company: {
           companyName: null,
@@ -156,11 +156,6 @@ export class CreateCardScreen extends React.Component<CreateCardScreenProps, Cre
           backgroundColor: '',
         },
       },
-      firstName: '',
-      lastName: '',
-      notes: '',
-      companyName: '',
-      jobTitle: '',
     }
   }
 
@@ -176,21 +171,26 @@ export class CreateCardScreen extends React.Component<CreateCardScreenProps, Cre
 
   }
 
-  onChangeText = (item: string, text: string) => {
-    this.setState({ [item]: text })
+  onChangeText = (item: string, section: SectionType, text: string) => {
+    const { data } = this.state
+    data[section.title][item] = text
+    this.setState({ data })
   }
 
-  openSelect = (item: string) => {
-    const { navigation } = this.props
-    let mode = 'social'
-    if (item === 'addEmail') {
-      mode = 'email'
-    } else if (item === 'phone') {
-      mode = 'phone'
-    } else if (item === 'address') {
-      mode = 'address'
+  onReturn = (mode: string, section: SectionType, result: string) => {
+    const { data } = this.state
+    const items = data[section.title][mode];
+    const newValue = {
+      [result]: '',
     }
-    navigation.navigate(Roots.SelectModal, { mode })
+    items.push(newValue)
+    data[section.title][mode] = items
+    this.setState({ data })
+  }
+
+  openSelect = (item: string, section: SectionType) => {
+    const { navigation } = this.props
+    navigation.navigate(Roots.SelectModal, { mode: item, onDone: result => this.onReturn(item, section, result) })
   }
 
   renderSectionHeader = (title: string) => (
@@ -205,7 +205,7 @@ export class CreateCardScreen extends React.Component<CreateCardScreenProps, Cre
     this.setState({ [item]: null })
   }
 
-  renderItem = (item: {}) => {
+  renderItem = (item: string, section: SectionType) => {
     const { data } = this.state
     const items = Object.keys(data[item])
     const { placeholders } = Strings
@@ -220,8 +220,8 @@ export class CreateCardScreen extends React.Component<CreateCardScreenProps, Cre
                 return (
                   <View key={i} style={listItemStyle}>
                     <TextInputItem
-                      text={state[i]}
-                      onChangeText={text => this.onChangeText(i, text)}
+                      text={state[section.title]}
+                      onChangeText={text => this.onChangeText(i, section, text)}
                       label={i === 'notes' ? '' : Strings[i]}
                       placeholder={placeholders[i]}
                     />
@@ -245,18 +245,40 @@ export class CreateCardScreen extends React.Component<CreateCardScreenProps, Cre
                 )
               }
               return (
-                <View key={i} style={listItemStyle}>
-                  <ListItem
-                    text={i}
-                    onOpen={() => this.openSelect(i)}
-                    onClose={() => this.onCloseItem(i)}
-                    label={Strings[i]}
-                    placeholder={placeholders[i]}
-                  />
+                <React.Fragment>
+                  <View key={i} style={listItemStyle}>
+                    <ListItem
+                      text={i}
+                      onOpen={() => this.openSelect(i, section)}
+                      onClose={() => this.onCloseItem(i)}
+                      onChangeText={text => this.onChangeText(i, section, text)}
+                      label={Strings[i]}
+                      placeholder={placeholders[i]}
+                    />
+                    {
+                      index < items.length - 1 && <View style={separatorStyle} />
+                    }
+                  </View>
                   {
-                    index < items.length - 1 && <View style={separatorStyle} />
+                    data[section.title][i].length > 0 && data[section.title][i].map((row) => {
+                      const key = Object.keys(row)[0]
+                      return (
+                        <View key={row} style={listItemStyle}>
+                          <ListItem
+                            onOpen={() => this.openSelect(i, section)}
+                            onClose={() => this.onCloseItem(i)}
+                            onChangeText={() => {}}
+                            label={key}
+                            isFilled
+                          />
+                          {
+                            index < items.length - 1 && <View style={separatorStyle} />
+                          }
+                        </View>
+                      )
+                    })
                   }
-                </View>
+                </React.Fragment>
               )
             })
           }
@@ -331,7 +353,7 @@ export class CreateCardScreen extends React.Component<CreateCardScreenProps, Cre
           <SectionList
             ListHeaderComponent={<PhotoSelector />}
             renderSectionHeader={({ section: { title } }) => this.renderSectionHeader(title)}
-            renderItem={({ item }) => this.renderItem(item)}
+            renderItem={({ item, section }) => this.renderItem(item, section)}
             sections={sections}
             keyExtractor={(item, index) => item + index}
             style={listStyle}
