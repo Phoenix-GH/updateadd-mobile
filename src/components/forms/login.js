@@ -11,6 +11,9 @@ import SubmitButton from '../buttons/submit'
 
 import { Strings } from '../../constants'
 
+import { parseErrorString } from '../../helpers'
+import ApiService from '../../helpers/ApiServices'
+
 import styles from './styles'
 
 const FieldNames = {
@@ -23,15 +26,24 @@ const schema = yup.object().shape({
   [FieldNames.password]: yup.string().required(),
 })
 
-type FormProps = {|
-  onSubmit: () => void,
-|}
-
-export default function LoginForm(props: FormProps) {
-  const { onSubmit } = props
+export default function LoginForm() {
   const formal: Formal = useFormal({}, {
     schema,
-    onSubmit,
+    onSubmit: (values) => {
+      const payload: UserSignUpPayload = {
+        email: values.email,
+        password: values.password,
+        phone: values.phone,
+      }
+
+      ApiService.signUpUser(payload)
+        .then(response => console.log(response))
+        .catch((error) => {
+          const { data } = error.response
+          const errors = parseErrorString(data.error)
+          formal.setErrors(errors)
+        })
+    },
   })
 
   const emailError: boolean = !!formal.errors.email

@@ -21,16 +21,11 @@ export default class LoginScreen extends React.Component<*> {
     navigation.navigate(Roots.SignUp)
   }
 
-  onSubmit = () => {
-    const { navigation } = this.props
-    navigation.navigate(Roots.DebugContacts)
-  }
-
   render() {
     return (
       <View style={styles.screenWrapper}>
         <Text style={styles.screenTitle}>{Strings.login}</Text>
-        <LoginForm onSubmit={this.onSubmit} />
+        <LoginForm />
         <Anchor label={Strings.forgotPassword} onPress={this.handleForgotPassword} />
         <View style={styles.fixToBottom}>
           <Anchor label={Strings.signUpPrompt} onPress={this.handleSignUp} />

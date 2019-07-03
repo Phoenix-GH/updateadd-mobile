@@ -13,28 +13,23 @@ import { Strings, Images, Roots } from '../../constants'
 import styles from '../styles'
 
 export default class SignUpScreen extends React.Component<*> {
-  handleLogin = () => {
+  backToLogin = () => {
     const { navigation } = this.props
     navigation.navigate(Roots.Login)
-  }
-
-  onSubmit = () => {
-    const { navigation } = this.props
-    navigation.navigate(Roots.DebugContacts)
   }
 
   render() {
     return (
       <ScrollView alwaysBounceVertical={false}>
         <View style={styles.close}>
-          <TouchableOpacity onPress={this.handleLogin}>
+          <TouchableOpacity onPress={this.backToLogin}>
             <Image style={{ width: 24, height: 24 }} source={Images.close} />
           </TouchableOpacity>
         </View>
         <View style={styles.screenWrapper}>
           <Text style={styles.screenTitle}>{Strings.signUp}</Text>
-          <SignUpForm onSubmit={this.onSubmit} />
-          <Anchor label={Strings.loginPrompt} onPress={this.handleLogin} />
+          <SignUpForm />
+          <Anchor label={Strings.loginPrompt} onPress={this.backToLogin} />
         </View>
       </ScrollView>
     )
