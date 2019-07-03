@@ -20,6 +20,7 @@ import {
   separatorStyle,
   arrowStyle,
   textStyle,
+  buttonStyle,
 } from './styles'
 
 type ItemProps = {|
@@ -47,6 +48,7 @@ const ListItem = (props: ItemProps) => {
           ? (
             <TouchableOpacity
               onPress={onOpen}
+              style={buttonStyle}
             >
               <View style={linkStyle}>
                 <Image
@@ -61,6 +63,7 @@ const ListItem = (props: ItemProps) => {
           : (
             <TouchableOpacity
               onPress={onClose}
+              style={buttonStyle}
             >
               <View style={linkStyle}>
                 <Image

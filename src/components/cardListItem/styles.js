@@ -12,6 +12,7 @@ const itemStyle = css`
 
 const inputStyle = css`
   flex: 1;
+  color: #001ee1;
 `
 
 const linkStyle = css`
@@ -77,6 +78,11 @@ const fullLabelStyle = css`
   line-height: 20px;
   letter-spacing: -0.5px;
 `
+
+const buttonStyle = css`
+  width: 100%;
+  height: 100%;
+`
 export {
   itemStyle,
   inputStyle,
@@ -89,4 +95,5 @@ export {
   textStyle,
   chevronStyle,
   fullLabelStyle,
+  buttonStyle,
 }
