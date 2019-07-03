@@ -33,22 +33,15 @@ const listStyle = css`
   width: 100%;
 `
 
-const sectionHeaderStyle = css`
-  background-color: white;
+const contentContainerStyle = css`
   box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.12);
-  background-color: rgba(158, 158, 158, 0.85);
   width: 100%;
-  height: 1px;
-  margin-top: 27px;
 `
 
-const sectionFooterStyle = css`
-  background-color: white;
+const sectionSeparatorStyle = css`
   box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.12);
-  background-color: rgba(158, 158, 158, 0.85);
   width: 100%;
-  height: 1px;
-  margin-bottom: 13px;
+  height: 20px;
 `
 
 const listItemStyle = css`
@@ -101,16 +94,12 @@ export class SelectModalScreen extends React.Component<ScreenModalProps, ScreenM
     this.setState({ customLabel: text })
   }
 
-  renderSectionHeader = () => (
-    <View style={sectionHeaderStyle} />
-  )
-
-  renderSectionFooter = () => (
-    <View style={sectionFooterStyle} />
-  )
-
   renderSeparator = () => (
     <View style={separatorStyle} />
+  )
+
+  renderSectionSeparator = () => (
+    <View style={sectionSeparatorStyle} />
   )
 
   renderItem = (item: string) => {
@@ -194,8 +183,8 @@ export class SelectModalScreen extends React.Component<ScreenModalProps, ScreenM
           containerStyle={headerBarStyle}
         />
         <SectionList
-          renderSectionHeader={() => this.renderSectionHeader()}
-          renderSectionFooter={() => this.renderSectionFooter()}
+          contentContainerStyle={contentContainerStyle}
+          SectionSeparatorComponent={() => this.renderSectionSeparator()}
           renderItem={({ item }) => this.renderItem(item)}
           sections={sections}
           keyExtractor={(item, index) => item + index}
