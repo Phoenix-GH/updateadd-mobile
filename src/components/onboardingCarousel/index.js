@@ -67,7 +67,7 @@ class OnboardingCarousel extends React.Component<OnboardingCarouselTypes, Onboar
     return (
       <View style={{ flex: 1 }}>
         <Carousel
-          ref={(c) => { this._carousel = c; }}
+          ref={(c) => { this._carousel = c }}
           sliderWidth={width}
           itemWidth={width}
           data={['one', 'two', 'three', 'four']}
