@@ -166,6 +166,9 @@ android {
 }
 
 dependencies {
+    implementation project(':react-native-radial-gradient')
+    implementation project(':react-native-device-info')
+    implementation project(':react-native-contacts')
     implementation project(':react-native-linear-gradient')
     implementation project(':appcenter-analytics')
     implementation project(':appcenter')

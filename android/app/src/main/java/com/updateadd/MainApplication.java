@@ -3,6 +3,9 @@ package com.updateadd;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.surajit.rnrg.RNRadialGradientPackage;
+import com.learnium.RNDeviceInfo.RNDeviceInfo;
+import com.rt2zz.reactnativecontacts.ReactNativeContacts;
 import com.BV.LinearGradient.LinearGradientPackage;
 import com.microsoft.appcenter.reactnative.analytics.AppCenterReactNativeAnalyticsPackage;
 import com.microsoft.appcenter.reactnative.appcenter.AppCenterReactNativePackage;
@@ -38,6 +41,9 @@ public class MainApplication extends Application implements ReactApplication {
         protected List<ReactPackage> getPackages() {
             return Arrays.<ReactPackage>asList(
                     new MainReactPackage(),
+            new RNRadialGradientPackage(),
+            new RNDeviceInfo(),
+            new ReactNativeContacts(),
             new RNDeviceInfo(),
             new ReactNativeContacts(),
             new LinearGradientPackage(),

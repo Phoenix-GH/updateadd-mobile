@@ -152,7 +152,7 @@
   },
   "rnpm": {
     "assets": [
-      "assets/fonts/"
+      "./assets/fonts"
     ]
   }
 }
