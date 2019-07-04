@@ -13,7 +13,6 @@ export default class User extends BaseModel {
   constructor(data?: UserDataType = {
     id: null,
     email: null,
-    phone: null,
   }) {
     super(data)
     if (data) {
