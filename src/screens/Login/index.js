@@ -22,10 +22,12 @@ export default class LoginScreen extends React.Component<*> {
   }
 
   render() {
+    const { navigation } = this.props
+
     return (
       <View style={styles.screenWrapper}>
         <Text style={styles.screenTitle}>{Strings.login}</Text>
-        <LoginForm />
+        <LoginForm navigation={navigation} />
         <Anchor label={Strings.forgotPassword} onPress={this.goToForgotPassword} />
         <View style={styles.fixToBottom}>
           <Anchor label={Strings.signUpPrompt} onPress={this.goToSignUp} />

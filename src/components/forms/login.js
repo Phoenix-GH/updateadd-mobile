@@ -9,7 +9,7 @@ import * as yup from 'yup'
 import Field from '../field'
 import SubmitButton from '../buttons/submit'
 
-import { Strings } from '../../constants'
+import { Strings, Roots } from '../../constants'
 
 import ApiService from '../../helpers/ApiServices'
 
@@ -25,7 +25,11 @@ const schema = yup.object().shape({
   [FieldNames.password]: yup.string().required(Strings.errors.passwordValid),
 })
 
-export default function LoginForm() {
+type LoginFormProps = {|
+  navigation: NavigationScreenProp<*>,
+|}
+
+export default function LoginForm(props: LoginFormProps) {
   const formal: Formal = useFormal({}, {
     schema,
     onSubmit: (values) => {
@@ -35,7 +39,9 @@ export default function LoginForm() {
       }
 
       ApiService.loginUser(payload)
-        .then(response => console.log(response))
+        .then(() => {
+          props.navigation.navigate(Roots.DebugContacts)
+        })
         .catch((error) => {
           const { data } = error.response
           formal.setErrors({ email: data.error })

@@ -11,7 +11,7 @@ import Field from '../field'
 import CheckBoxField from '../checkbox'
 import SubmitButton from '../buttons/submit'
 
-import { Strings } from '../../constants'
+import { Strings, Roots } from '../../constants'
 
 import { parseErrorString } from '../../helpers'
 import ApiService from '../../helpers/ApiServices'
@@ -34,7 +34,11 @@ const schema = yup.object().shape({
   [FieldNames.consent]: yup.boolean().required().oneOf([true]),
 })
 
-export default function SignUpForm() {
+type SignUpFormProps = {|
+  navigation: NavigationScreenProp<*>,
+|}
+
+export default function SignUpForm(props: SignUpFormProps) {
   const formal: Formal = useFormal({}, {
     schema,
     onSubmit: (values) => {
@@ -45,7 +49,9 @@ export default function SignUpForm() {
       }
 
       ApiService.signUpUser(payload)
-        .then(response => console.log(response))
+        .then(() => {
+          props.navigation.navigate(Roots.DebugContacts)
+        })
         .catch((error) => {
           const { data } = error.response
           const errors = parseErrorString(data.error)

@@ -19,6 +19,8 @@ export default class SignUpScreen extends React.Component<*> {
   }
 
   render() {
+    const { navigation } = this.props
+
     return (
       <ScrollView alwaysBounceVertical={false}>
         <View style={styles.close}>
@@ -28,7 +30,7 @@ export default class SignUpScreen extends React.Component<*> {
         </View>
         <View style={styles.screenWrapper}>
           <Text style={styles.screenTitle}>{Strings.signUp}</Text>
-          <SignUpForm />
+          <SignUpForm navigation={navigation} />
           <Anchor label={Strings.loginPrompt} onPress={this.backToLogin} />
         </View>
       </ScrollView>
