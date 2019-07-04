@@ -11,12 +11,12 @@ import { Strings, Roots } from '../../constants'
 import styles from '../styles'
 
 export default class LoginScreen extends React.Component<*> {
-  handleForgotPassword = () => {
+  goToForgotPassword = () => {
     // TODO: UADD-87
     console.log('Forgot Password')
   }
 
-  handleSignUp = () => {
+  goToSignUp = () => {
     const { navigation } = this.props
     navigation.navigate(Roots.SignUp)
   }
@@ -26,9 +26,9 @@ export default class LoginScreen extends React.Component<*> {
       <View style={styles.screenWrapper}>
         <Text style={styles.screenTitle}>{Strings.login}</Text>
         <LoginForm />
-        <Anchor label={Strings.forgotPassword} onPress={this.handleForgotPassword} />
+        <Anchor label={Strings.forgotPassword} onPress={this.goToForgotPassword} />
         <View style={styles.fixToBottom}>
-          <Anchor label={Strings.signUpPrompt} onPress={this.handleSignUp} />
+          <Anchor label={Strings.signUpPrompt} onPress={this.goToSignUp} />
         </View>
       </View>
     )
