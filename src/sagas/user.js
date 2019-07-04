@@ -10,7 +10,7 @@ import Actions from '../constants'
 import ApiService from '../helpers/ApiServices'
 import { authDispatchers } from '../store/user'
 
-function* loginUser(action: { type: string, payload: { email: string, password: string } }): Saga<*> {
+function* loginUser(action: { type: string, payload: UserLoginPayload }): Saga<*> {
   // Set mode to pending
   yield put(authDispatchers.setPending.dispatch(true))
   try {
