@@ -27,9 +27,9 @@ const FieldNames = {
 }
 
 const schema = yup.object().shape({
-  [FieldNames.email]: yup.string().required(),
-  [FieldNames.phone]: yup.string().required(),
-  [FieldNames.password]: yup.string().min(8).required(),
+  [FieldNames.email]: yup.string().required(Strings.errors.email),
+  [FieldNames.phone]: yup.string().required(Strings.errors.phoneNumber),
+  [FieldNames.password]: yup.string().min(8).required(Strings.errors.password),
   [FieldNames.confirmPassword]: yup.string().oneOf([yup.ref('password'), null], Strings.errors.confirmPassword).required(),
   [FieldNames.consent]: yup.boolean().required().oneOf([true]),
 })
@@ -69,7 +69,7 @@ export default function SignUpForm() {
         autoCapitalize="none"
         label={Strings.email}
         error={emailError}
-        errorText={Strings.errors.email}
+        errorText={formal.errors.email}
       />
 
       <Field
@@ -79,7 +79,7 @@ export default function SignUpForm() {
         autoCapitalize="none"
         label={Strings.phoneNumber}
         error={phoneNumberError}
-        errorText={Strings.errors.phoneNumber}
+        errorText={formal.errors.phone}
       />
 
       <Field
@@ -90,7 +90,7 @@ export default function SignUpForm() {
         autoCapitalize="none"
         label={Strings.password}
         error={passwordError}
-        errorText={Strings.errors.password}
+        errorText={formal.errors.password}
       />
 
       <Field
@@ -101,7 +101,7 @@ export default function SignUpForm() {
         autoCapitalize="none"
         label={Strings.confirmPassword}
         error={confirmPasswordError}
-        errorText={Strings.errors.confirmPassword}
+        errorText={formal.errors.confirmPassword}
       />
 
       <CheckBoxField

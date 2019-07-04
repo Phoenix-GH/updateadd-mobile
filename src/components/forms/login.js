@@ -11,7 +11,6 @@ import SubmitButton from '../buttons/submit'
 
 import { Strings } from '../../constants'
 
-import { parseErrorString } from '../../helpers'
 import ApiService from '../../helpers/ApiServices'
 
 import styles from './styles'
@@ -22,8 +21,8 @@ const FieldNames = {
 }
 
 const schema = yup.object().shape({
-  [FieldNames.email]: yup.string().required(),
-  [FieldNames.password]: yup.string().required(),
+  [FieldNames.email]: yup.string().required(Strings.errors.email),
+  [FieldNames.password]: yup.string().required(Strings.errors.passwordValid),
 })
 
 export default function LoginForm() {
@@ -39,8 +38,7 @@ export default function LoginForm() {
         .then(response => console.log(response))
         .catch((error) => {
           const { data } = error.response
-          const errors = parseErrorString(data.error)
-          formal.setErrors(errors)
+          formal.setErrors({ email: data.error })
         })
     },
   })
@@ -57,7 +55,7 @@ export default function LoginForm() {
         autoCapitalize="none"
         label={Strings.email}
         error={emailError}
-        errorText={Strings.errors.email}
+        errorText={formal.errors.email}
       />
 
       <Field
@@ -68,7 +66,7 @@ export default function LoginForm() {
         autoCapitalize="none"
         label={Strings.password}
         error={passwordError}
-        errorText={Strings.errors.passwordValid}
+        errorText={formal.errors.password}
       />
 
       <SubmitButton label={Strings.login} {...formal.getSubmitButtonProps()} disabled={false} />
