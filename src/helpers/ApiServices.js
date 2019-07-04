@@ -41,7 +41,7 @@ class ApiService {
   // General pagination endpoint
   getNextPage = (url: string, responseType: typeof ModelResponseTypes) => this.axios.get<string, any>(url, { apiResponseType: responseType })
 
-  loginUser = (data: { email: string, password: string }) => this.axios.post<string, any>(LOGIN_USER_URL, data)
+  loginUser = (data: UserLoginPayload) => this.axios.post<string, any>(LOGIN_USER_URL, data)
 
   signUpUser = (data: UserSignUpPayload) => this.axios.post<string, any>(SIGNUP_USER_URL, data)
 }
