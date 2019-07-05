@@ -34,6 +34,14 @@ export const authDispatchers = {
       loginError: null,
     }),
   ),
+  resetLogin: dispatchReducer<UserStoreState, *>(
+    C.LOGIN_USER_RESET,
+    (state): UserStoreState => ({
+      ...state,
+      loginPending: false,
+      loginError: null,
+    }),
+  ),
   storeUser: dispatchReducer<UserStoreState, ?UserType>(
     C.LOGIN_STORE_USER,
     (state, user): UserStoreState => ({
@@ -61,6 +69,14 @@ export const authDispatchers = {
     (state, error): UserStoreState => ({
       ...state,
       signUpError: error,
+    }),
+  ),
+  resetSignUp: dispatchReducer<UserStoreState, *>(
+    C.SIGNUP_USER_RESET,
+    (state): UserStoreState => ({
+      ...state,
+      signUpPending: false,
+      signUpError: null,
     }),
   ),
 }

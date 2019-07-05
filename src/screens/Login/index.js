@@ -21,7 +21,7 @@ type StateToPropType = {|
 
 type DispatchToPropType = {|
   loginUser: (payload: UserLoginPayload) => void,
-  setLoginError: (error: ?ErrorResponseType) => void,
+  resetLogin: () => void,
 |}
 
 type LoginScreenProps = {|
@@ -31,8 +31,8 @@ type LoginScreenProps = {|
 
 export class LoginScreen extends React.Component<LoginScreenProps> {
   componentDidMount() {
-    const { setLoginError } = this.props
-    setLoginError(null)
+    const { resetLogin } = this.props
+    resetLogin()
   }
 
   goToForgotPassword = () => {
@@ -72,7 +72,7 @@ const mapStateToProps = (state: StoreState): StateToPropType => ({
 
 const mapDispatchToProps = (dispatch: NavigationDispatch): DispatchToPropType => ({
   loginUser: payload => dispatch(authDispatchers.loginUser.dispatch(payload)),
-  setLoginError: error => dispatch(authDispatchers.setLoginError.dispatch(error)),
+  resetLogin: () => dispatch(authDispatchers.resetLogin.dispatch()),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(LoginScreen)
