@@ -5,7 +5,7 @@ import Config from 'react-native-config'
 
 import { modelMapper, ModelResponseTypes } from '../models'
 
-const BASE_URL = Config.API_URL
+const BASE_URL = Config.API_URL || 'https://uadd-backend-dev.herokuapp.com/api/v1/'
 
 const LOGIN_USER_URL = `${BASE_URL}accounts/login/`
 const SIGNUP_USER_URL = `${BASE_URL}accounts/signup/`
