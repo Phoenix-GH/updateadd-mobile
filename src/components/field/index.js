@@ -8,7 +8,7 @@ import styles from './styles'
 type FieldProps = {|
   label: string,
   error: ?boolean,
-  errorText: string,
+  errorText: ?string,
 |}
 
 const Field = (props: FieldProps) => {

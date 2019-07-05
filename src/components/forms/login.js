@@ -19,22 +19,36 @@ const FieldNames = {
 }
 
 const schema = yup.object().shape({
-  [FieldNames.email]: yup.string().required(),
-  [FieldNames.password]: yup.string().required(),
+  [FieldNames.email]: yup.string().required(Strings.errors.email),
+  [FieldNames.password]: yup.string().required(Strings.errors.passwordValid),
 })
 
-type FormProps = {|
-  onSubmit: () => void,
+type LoginFormProps = {|
+  error: ?ErrorResponseType,
+  loginUser: (values: UserLoginPayload) => void,
 |}
 
-export default function LoginForm(props: FormProps) {
-  const { onSubmit } = props
+export default function LoginForm(props: LoginFormProps) {
+  const { error } = props
+
   const formal: Formal = useFormal({}, {
     schema,
-    onSubmit,
+    onSubmit: (values) => {
+      const payload: UserLoginPayload = {
+        email: values.email,
+        password: values.password,
+      }
+      props.loginUser(payload)
+    },
   })
 
-  const emailError: boolean = !!formal.errors.email
+  const errors = {}
+  if (error) {
+    const { data } = error.response
+    errors.email = data.error
+  }
+
+  const emailError: boolean = !!formal.errors.email || !!errors.email
   const passwordError: boolean = !!formal.errors.password
 
   return (
@@ -46,7 +60,7 @@ export default function LoginForm(props: FormProps) {
         autoCapitalize="none"
         label={Strings.email}
         error={emailError}
-        errorText={Strings.errors.email}
+        errorText={errors.email ? errors.email : formal.errors.email}
       />
 
       <Field
@@ -57,7 +71,7 @@ export default function LoginForm(props: FormProps) {
         autoCapitalize="none"
         label={Strings.password}
         error={passwordError}
-        errorText={Strings.errors.passwordValid}
+        errorText={formal.errors.password}
       />
 
       <SubmitButton label={Strings.login} {...formal.getSubmitButtonProps()} disabled={false} />
