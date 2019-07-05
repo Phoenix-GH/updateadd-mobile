@@ -47,7 +47,7 @@ export class LoginScreen extends React.Component<LoginScreenProps> {
 
   render() {
     const {
-      error, navigation, loginUser, setLoginError,
+      error, navigation, loginUser,
     } = this.props
 
     return (
