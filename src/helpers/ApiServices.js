@@ -29,9 +29,7 @@ class ApiService {
     }
     this.axios = axios.create(data)
     this.axios.interceptors.response.use((response) => {
-      // $FlowFixMe
       if (response.config.apiResponseType) {
-        // $FlowFixMe
         response.data = modelMapper(response.config.apiResponseType, response.data)
       }
       return response
