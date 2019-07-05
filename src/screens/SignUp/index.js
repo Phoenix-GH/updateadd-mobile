@@ -44,7 +44,7 @@ export class SignUpScreen extends React.Component<SignUpScreenProps> {
 
   render() {
     const {
-      error, navigation, signUpUser,
+      error, signUpUser,
     } = this.props
 
     return (
