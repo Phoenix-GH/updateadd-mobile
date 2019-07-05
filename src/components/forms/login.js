@@ -26,10 +26,15 @@ const schema = yup.object().shape({
 })
 
 type LoginFormProps = {|
+  error: ?ErrorResponseType,
   navigation: NavigationScreenProp<*>,
+  loginUser: (values: UserLoginPayload) => void,
+  setLoginError: (error: ?ErrorResponseType) => void,
 |}
 
 export default function LoginForm(props: LoginFormProps) {
+  const { error } = props
+
   const formal: Formal = useFormal({}, {
     schema,
     onSubmit: (values) => {
@@ -37,19 +42,18 @@ export default function LoginForm(props: LoginFormProps) {
         email: values.email,
         password: values.password,
       }
-
-      ApiService.loginUser(payload)
-        .then(() => {
-          props.navigation.navigate(Roots.DebugContacts)
-        })
-        .catch((error) => {
-          const { data } = error.response
-          formal.setErrors({ email: data.error })
-        })
+      props.setLoginError(null)
+      props.loginUser(payload)
     },
   })
 
-  const emailError: boolean = !!formal.errors.email
+  const errors = {}
+  if (error) {
+    const { data } = error.response
+    errors.email = data.error
+  }
+
+  const emailError: boolean = !!formal.errors.email || !!errors.email
   const passwordError: boolean = !!formal.errors.password
 
   return (
@@ -61,7 +65,7 @@ export default function LoginForm(props: LoginFormProps) {
         autoCapitalize="none"
         label={Strings.email}
         error={emailError}
-        errorText={formal.errors.email}
+        errorText={errors.email ? errors.email : formal.errors.email}
       />
 
       <Field

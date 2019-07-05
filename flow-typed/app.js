@@ -20,14 +20,24 @@ type ConfigType = {|
 // Store States
 type NavStoreState = Object
 
-type UserType = {
-  name: string
-}
+type UserType = {|
+  country: ?string,
+  language: ?string,
+  email: ?string,
+  first_name: ?string,
+  last_name: ?string,
+  phone: ?string,
+  token: ?string,
+  first_name_first: boolean,
+  sort_by_family_name: boolean,
+|}
 
 export type UserStoreState = {|
   user: ?UserType,
-  pending: boolean,
-  error: ?ErrorType,
+  loginPending: boolean,
+  loginError: ?ErrorResponseType,
+  signUpPending: boolean,
+  signUpError: ?ErrorResponseType,
 |}
 
 export type SystemContactsSyncStatus = 'IDLE' | 'READING' | 'ERROR'
@@ -63,6 +73,21 @@ declare var __DEV__ : string;
 type ErrorType = {
   message: string,
 }
+
+type ErrorResponseType = {|
+  response: {
+    data: {
+      error: string,
+    },
+  },
+|}
+
+type SuccessResponseType = {|
+  status: number,
+  data: {
+    data: any,
+  },
+|}
 
 type SystemContactType = {|
   recordID: string,

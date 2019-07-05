@@ -11,10 +11,9 @@ import Field from '../field'
 import CheckBoxField from '../checkbox'
 import SubmitButton from '../buttons/submit'
 
-import { Strings, Roots } from '../../constants'
+import { Strings } from '../../constants'
 
 import { parseErrorString } from '../../helpers'
-import ApiService from '../../helpers/ApiServices'
 
 import styles from './styles'
 
@@ -35,10 +34,15 @@ const schema = yup.object().shape({
 })
 
 type SignUpFormProps = {|
+  error: ?ErrorResponseType,
   navigation: NavigationScreenProp<*>,
+  signUpUser: (values: UserSignUpPayload) => void,
+  setSignUpError: (error: ?ErrorResponseType) => void,
 |}
 
 export default function SignUpForm(props: SignUpFormProps) {
+  const { error } = props
+
   const formal: Formal = useFormal({}, {
     schema,
     onSubmit: (values) => {
@@ -47,21 +51,19 @@ export default function SignUpForm(props: SignUpFormProps) {
         password: values.password,
         phone: values.phone,
       }
-
-      ApiService.signUpUser(payload)
-        .then(() => {
-          props.navigation.navigate(Roots.DebugContacts)
-        })
-        .catch((error) => {
-          const { data } = error.response
-          const errors = parseErrorString(data.error)
-          formal.setErrors(errors)
-        })
+      props.setSignUpError(null)
+      props.signUpUser(payload)
     },
   })
 
-  const emailError: boolean = !!formal.errors.email
-  const phoneNumberError: boolean = !!formal.errors.phone
+  let errors = {}
+  if (error) {
+    const { data } = error.response
+    errors = parseErrorString(data.error)
+  }
+
+  const emailError: boolean = !!formal.errors.email || !!errors.email
+  const phoneNumberError: boolean = !!formal.errors.phone || !!errors.phone
   const passwordError: boolean = !!formal.errors.password
   const confirmPasswordError: boolean = !!formal.errors.confirmPassword
   const consentError: boolean = !!formal.errors.consent
@@ -75,7 +77,7 @@ export default function SignUpForm(props: SignUpFormProps) {
         autoCapitalize="none"
         label={Strings.email}
         error={emailError}
-        errorText={formal.errors.email}
+        errorText={errors.email ? errors.email : formal.errors.email}
       />
 
       <Field
@@ -85,7 +87,7 @@ export default function SignUpForm(props: SignUpFormProps) {
         autoCapitalize="none"
         label={Strings.phoneNumber}
         error={phoneNumberError}
-        errorText={formal.errors.phone}
+        errorText={errors.phone ? errors.phone : formal.errors.phone}
       />
 
       <Field

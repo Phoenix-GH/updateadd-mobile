@@ -4,9 +4,18 @@ const getUserStore = (store: StoreState): UserStoreState => store.user
 
 const getUser = (store: StoreState): ?UserType => getUserStore(store).user
 
-const getPending = (store: StoreState): boolean => getUserStore(store).pending
+const getLoginError = (store: StoreState): ?ErrorResponseType => getUserStore(store).loginError
+
+const getSignUpError = (store: StoreState): ?ErrorResponseType => getUserStore(store).signUpError
+
+const getLoginPending = (store: StoreState): boolean => getUserStore(store).loginPending
+
+const getSignUpPending = (store: StoreState): boolean => getUserStore(store).signUpPending
 
 export default {
   getUser,
-  getPending,
+  getLoginError,
+  getSignUpError,
+  getLoginPending,
+  getSignUpPending,
 }
