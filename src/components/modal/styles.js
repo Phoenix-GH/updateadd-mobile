@@ -27,6 +27,8 @@ const title = css`
   text-align: center;
   margin-bottom: 28px;
   color: #272727;
+  max-width: 275px;
+  font-weight: bold;
   `
 
 export {
