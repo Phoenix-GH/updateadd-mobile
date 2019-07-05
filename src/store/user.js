@@ -30,6 +30,8 @@ export const authDispatchers = {
     C.LOGIN_USER,
     (state): UserStoreState => ({
       ...state,
+      loginPending: false,
+      loginError: null,
     }),
   ),
   storeUser: dispatchReducer<UserStoreState, ?UserType>(
@@ -44,6 +46,7 @@ export const authDispatchers = {
     (state): UserStoreState => ({
       ...state,
       signUpPending: false,
+      signUpError: null,
     }),
   ),
   setSignUpPending: dispatchReducer<UserStoreState, boolean>(

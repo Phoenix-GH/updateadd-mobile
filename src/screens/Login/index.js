@@ -30,6 +30,11 @@ type LoginScreenProps = {|
 |} & NavigationScreenProps
 
 export class LoginScreen extends React.Component<LoginScreenProps> {
+  componentDidMount() {
+    const { setLoginError } = this.props
+    setLoginError(null)
+  }
+
   goToForgotPassword = () => {
     // TODO: UADD-87
     console.log('Forgot Password')
@@ -51,7 +56,6 @@ export class LoginScreen extends React.Component<LoginScreenProps> {
         <LoginForm
           navigation={navigation}
           loginUser={loginUser}
-          setLoginError={setLoginError}
           error={error}
         />
         <Anchor label={Strings.forgotPassword} onPress={this.goToForgotPassword} />

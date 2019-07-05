@@ -27,7 +27,6 @@ type LoginFormProps = {|
   error: ?ErrorResponseType,
   navigation: NavigationScreenProp<*>,
   loginUser: (values: UserLoginPayload) => void,
-  setLoginError: (error: ?ErrorResponseType) => void,
 |}
 
 export default function LoginForm(props: LoginFormProps) {
@@ -40,7 +39,6 @@ export default function LoginForm(props: LoginFormProps) {
         email: values.email,
         password: values.password,
       }
-      props.setLoginError(null)
       props.loginUser(payload)
     },
   })

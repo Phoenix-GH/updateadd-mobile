@@ -37,7 +37,6 @@ type SignUpFormProps = {|
   error: ?ErrorResponseType,
   navigation: NavigationScreenProp<*>,
   signUpUser: (values: UserSignUpPayload) => void,
-  setSignUpError: (error: ?ErrorResponseType) => void,
 |}
 
 export default function SignUpForm(props: SignUpFormProps) {
@@ -51,7 +50,6 @@ export default function SignUpForm(props: SignUpFormProps) {
         password: values.password,
         phone: values.phone,
       }
-      props.setSignUpError(null)
       props.signUpUser(payload)
     },
   })

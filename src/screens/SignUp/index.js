@@ -32,6 +32,11 @@ type SignUpScreenProps = {|
 |} & NavigationScreenProps
 
 export class SignUpScreen extends React.Component<SignUpScreenProps> {
+  componentDidMount() {
+    const { setSignUpError } = this.props
+    setSignUpError(null)
+  }
+
   backToLogin = () => {
     const { navigation } = this.props
     navigation.navigate(Roots.Login)
@@ -54,7 +59,6 @@ export class SignUpScreen extends React.Component<SignUpScreenProps> {
           <SignUpForm
             navigation={navigation}
             signUpUser={signUpUser}
-            setSignUpError={setSignUpError}
             error={error}
           />
           <Anchor label={Strings.loginPrompt} onPress={this.backToLogin} />
