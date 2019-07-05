@@ -68,7 +68,7 @@ export default function SignUpForm(props: SignUpFormProps) {
   return (
     <View style={styles.formContainer}>
       <Field
-        {...formal.getFieldProps(FieldNames.email)}
+        onChangeText={(value: string) => formal.change(FieldNames.email, value)}
         textContentType="emailAddress"
         placeholder={Strings.emailAddress}
         autoCapitalize="none"
@@ -78,7 +78,7 @@ export default function SignUpForm(props: SignUpFormProps) {
       />
 
       <Field
-        {...formal.getFieldProps(FieldNames.phone)}
+        onChangeText={(value: string) => formal.change(FieldNames.phone, value)}
         textContentType="telephoneNumber"
         placeholder={Strings.phoneNumber}
         autoCapitalize="none"
@@ -88,7 +88,7 @@ export default function SignUpForm(props: SignUpFormProps) {
       />
 
       <Field
-        {...formal.getFieldProps(FieldNames.password)}
+        onChangeText={(value: string) => formal.change(FieldNames.password, value)}
         secureTextEntry
         textContentType="password"
         placeholder={Strings.password}
@@ -99,7 +99,7 @@ export default function SignUpForm(props: SignUpFormProps) {
       />
 
       <Field
-        {...formal.getFieldProps(FieldNames.confirmPassword)}
+        onChangeText={(value: string) => formal.change(FieldNames.confirmPassword, value)}
         secureTextEntry
         textContentType="password"
         placeholder={Strings.confirmPassword}
