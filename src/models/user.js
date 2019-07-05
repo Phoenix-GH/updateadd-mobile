@@ -117,7 +117,7 @@ export default class User extends BaseModel {
   }
 
   set firstNameFirst(value: boolean) {
-    this._firstNameFirst = value || ''
+    this._firstNameFirst = value
   }
 
   get firstNameFirst(): boolean {
@@ -125,7 +125,7 @@ export default class User extends BaseModel {
   }
 
   set sortByFamilyName(value: boolean) {
-    this._sortByFamilyName = value || ''
+    this._sortByFamilyName = value
   }
 
   get sortByFamilyName(): boolean {

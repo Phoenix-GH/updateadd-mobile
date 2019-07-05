@@ -13,9 +13,9 @@ describe('login saga', () => {
     const email = 'shane@clearsumm.it'
     const password = 'password'
     const step = stepper(loginUser(authDispatchers.loginUser.dispatch({ email, password })))
-    expect(step()).toEqual(put(authDispatchers.setPending.dispatch(true)))
+    expect(step()).toEqual(put(authDispatchers.setLoginPending.dispatch(true)))
     expect(step()).toEqual(call(ApiService.loginUser, { email, password }))
     step()
-    expect(JSON.stringify(step())).toEqual(JSON.stringify(put(authDispatchers.setPending.dispatch(false))))
+    expect(JSON.stringify(step())).toEqual(JSON.stringify(put(authDispatchers.setLoginPending.dispatch(false))))
   })
 })

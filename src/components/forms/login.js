@@ -9,9 +9,7 @@ import * as yup from 'yup'
 import Field from '../field'
 import SubmitButton from '../buttons/submit'
 
-import { Strings, Roots } from '../../constants'
-
-import ApiService from '../../helpers/ApiServices'
+import { Strings } from '../../constants'
 
 import styles from './styles'
 
