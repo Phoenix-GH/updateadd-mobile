@@ -54,7 +54,6 @@ export class LoginScreen extends React.Component<LoginScreenProps> {
       <View style={styles.screenWrapper}>
         <Text style={styles.screenTitle}>{Strings.login}</Text>
         <LoginForm
-          navigation={navigation}
           loginUser={loginUser}
           error={error}
         />

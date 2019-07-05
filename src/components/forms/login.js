@@ -25,7 +25,6 @@ const schema = yup.object().shape({
 
 type LoginFormProps = {|
   error: ?ErrorResponseType,
-  navigation: NavigationScreenProp<*>,
   loginUser: (values: UserLoginPayload) => void,
 |}
 

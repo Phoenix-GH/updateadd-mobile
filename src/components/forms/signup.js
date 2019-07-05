@@ -35,7 +35,6 @@ const schema = yup.object().shape({
 
 type SignUpFormProps = {|
   error: ?ErrorResponseType,
-  navigation: NavigationScreenProp<*>,
   signUpUser: (values: UserSignUpPayload) => void,
 |}
 

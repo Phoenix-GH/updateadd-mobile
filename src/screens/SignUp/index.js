@@ -57,7 +57,6 @@ export class SignUpScreen extends React.Component<SignUpScreenProps> {
         <View style={styles.screenWrapper}>
           <Text style={styles.screenTitle}>{Strings.signUp}</Text>
           <SignUpForm
-            navigation={navigation}
             signUpUser={signUpUser}
             error={error}
           />
