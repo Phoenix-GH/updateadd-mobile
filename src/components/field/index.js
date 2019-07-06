@@ -5,11 +5,11 @@ import { View, Text, TextInput } from 'react-native'
 
 import styles from './styles'
 
-type FieldProps = {|
+type FieldProps = {
   label: string,
   error: ?boolean,
   errorText: ?string,
-|}
+}
 
 const Field = (props: FieldProps) => {
   const { label, error, errorText } = props

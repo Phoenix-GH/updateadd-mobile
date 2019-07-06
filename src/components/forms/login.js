@@ -54,7 +54,7 @@ export default function LoginForm(props: LoginFormProps) {
   return (
     <View style={styles.formContainer}>
       <Field
-        {...formal.getFieldProps(FieldNames.email)}
+        onChangeText={(value: string) => formal.change(FieldNames.email, value)}
         textContentType="emailAddress"
         placeholder={Strings.emailAddress}
         autoCapitalize="none"
@@ -64,7 +64,7 @@ export default function LoginForm(props: LoginFormProps) {
       />
 
       <Field
-        {...formal.getFieldProps(FieldNames.password)}
+        onChangeText={(value: string) => formal.change(FieldNames.password, value)}
         secureTextEntry
         textContentType="password"
         placeholder={Strings.password}
