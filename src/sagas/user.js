@@ -17,7 +17,7 @@ function* loginUser(action: { type: string, payload: UserLoginPayload }): Saga<*
   try {
     const response: SuccessResponseType = yield call(ApiService.loginUser, action.payload)
     yield put(authDispatchers.storeUser.dispatch(response.data.data))
-    yield put(NavigationActions.navigate({ routeName: Roots.DebugContacts }))
+    yield put(NavigationActions.navigate({ routeName: Roots.CreateCard }))
   } catch (e) {
     yield put(authDispatchers.setLoginError.dispatch(e))
   }
@@ -30,7 +30,7 @@ function* signUpUser(action: { type: string, payload: UserSignUpPayload }): Saga
   try {
     const response: SuccessResponseType = yield call(ApiService.signUpUser, action.payload)
     yield put(authDispatchers.storeUser.dispatch(response.data.data))
-    yield put(NavigationActions.navigate({ routeName: Roots.DebugContacts }))
+    yield put(NavigationActions.navigate({ routeName: Roots.CreateCard }))
   } catch (e) {
     yield put(authDispatchers.setSignUpError.dispatch(e))
   }

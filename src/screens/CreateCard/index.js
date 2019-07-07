@@ -218,7 +218,7 @@ export class CreateCardScreen extends React.Component<CreateCardScreenProps, Cre
                 const { state } = this
 
                 return (
-                  <View key={i} style={listItemStyle}>
+                  <View key={i + index} style={listItemStyle}>
                     <TextInputItem
                       text={state[section.title]}
                       onChangeText={text => this.onChangeText(i, section, text)}
@@ -233,7 +233,7 @@ export class CreateCardScreen extends React.Component<CreateCardScreenProps, Cre
               }
               if (i === 'backgroundColor') {
                 return (
-                  <View key={i} style={listItemStyle}>
+                  <View key={i + index} style={listItemStyle}>
                     <LinkItem
                       onOpen={() => {}}
                       text={Strings.selectBackground}
@@ -246,7 +246,7 @@ export class CreateCardScreen extends React.Component<CreateCardScreenProps, Cre
               }
               return (
                 <React.Fragment>
-                  <View key={i} style={listItemStyle}>
+                  <View key={i + index} style={listItemStyle}>
                     <ListItem
                       text={i}
                       onOpen={() => this.openSelect(i, section)}
