@@ -99,7 +99,7 @@ export class OnboardingScreen extends React.Component<OnboardingScreenProps, Onb
 
   moveToLogin = () => {
     const { navigation } = this.props
-    navigation.navigate(Roots.CreateCard)
+    navigation.navigate(Roots.Login)
   }
 
   render() {
