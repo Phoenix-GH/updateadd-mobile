@@ -155,6 +155,9 @@ export default {
       iPhone: 'iCloud',
       other: 'Other',
     },
+    url: {
+      url: 'URL',
+    },
     customLabel: 'Add Custom Label',
   },
   userNamePlaceholder: 'First and Last Name',
