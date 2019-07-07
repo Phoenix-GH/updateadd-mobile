@@ -83,7 +83,7 @@ export class OnboardingScreen extends React.Component<OnboardingScreenProps, Onb
             Alert.alert(contactAlerts.title, contactAlerts.text,
               [
                 { text: dontAllow, onPress: () => {}, style: 'cancel' },
-                { text: ok, onPress: () => this.moveToCreateCard() },
+                { text: ok, onPress: () => this.moveToLogin() },
               ])
           },
         },
@@ -97,7 +97,7 @@ export class OnboardingScreen extends React.Component<OnboardingScreenProps, Onb
     }, 1000)
   }
 
-  moveToCreateCard = () => {
+  moveToLogin = () => {
     const { navigation } = this.props
     navigation.navigate(Roots.CreateCard)
   }
