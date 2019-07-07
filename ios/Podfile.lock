@@ -1,9 +1,9 @@
 PODS:
-  - AppCenter/Analytics (2.0.1):
+  - AppCenter/Analytics (2.1.0):
     - AppCenter/Core
-  - AppCenter/Core (2.0.1)
-  - AppCenterReactNativeShared (2.0.0):
-    - AppCenter/Core (= 2.0.1)
+  - AppCenter/Core (2.1.0)
+  - AppCenterReactNativeShared (2.1.0):
+    - AppCenter/Core (= 2.1.0)
   - boost-for-react-native (1.63.0)
   - DoubleConversion (1.1.6)
   - Folly (2018.10.22.00):
@@ -11,72 +11,72 @@ PODS:
     - DoubleConversion
     - glog
   - glog (0.3.5)
-  - React (0.59.8):
-    - React/Core (= 0.59.8)
+  - React (0.59.9):
+    - React/Core (= 0.59.9)
   - react-native-contacts (4.0.2):
     - React
-  - React/ART (0.59.8):
+  - React/ART (0.59.9):
     - React/Core
-  - React/Core (0.59.8):
-    - yoga (= 0.59.8.React)
-  - React/CxxBridge (0.59.8):
+  - React/Core (0.59.9):
+    - yoga (= 0.59.9.React)
+  - React/CxxBridge (0.59.9):
     - Folly (= 2018.10.22.00)
     - React/Core
     - React/cxxreact
     - React/jsiexecutor
-  - React/cxxreact (0.59.8):
+  - React/cxxreact (0.59.9):
     - boost-for-react-native (= 1.63.0)
     - DoubleConversion
     - Folly (= 2018.10.22.00)
     - glog
     - React/jsinspector
-  - React/DevSupport (0.59.8):
+  - React/DevSupport (0.59.9):
     - React/Core
     - React/RCTWebSocket
-  - React/fishhook (0.59.8)
-  - React/jsi (0.59.8):
+  - React/fishhook (0.59.9)
+  - React/jsi (0.59.9):
     - DoubleConversion
     - Folly (= 2018.10.22.00)
     - glog
-  - React/jsiexecutor (0.59.8):
+  - React/jsiexecutor (0.59.9):
     - DoubleConversion
     - Folly (= 2018.10.22.00)
     - glog
     - React/cxxreact
     - React/jsi
-  - React/jsinspector (0.59.8)
-  - React/RCTActionSheet (0.59.8):
+  - React/jsinspector (0.59.9)
+  - React/RCTActionSheet (0.59.9):
     - React/Core
-  - React/RCTAnimation (0.59.8):
+  - React/RCTAnimation (0.59.9):
     - React/Core
-  - React/RCTBlob (0.59.8):
+  - React/RCTBlob (0.59.9):
     - React/Core
-  - React/RCTGeolocation (0.59.8):
+  - React/RCTGeolocation (0.59.9):
     - React/Core
-  - React/RCTImage (0.59.8):
+  - React/RCTImage (0.59.9):
     - React/Core
     - React/RCTNetwork
-  - React/RCTLinkingIOS (0.59.8):
+  - React/RCTLinkingIOS (0.59.9):
     - React/Core
-  - React/RCTNetwork (0.59.8):
+  - React/RCTNetwork (0.59.9):
     - React/Core
-  - React/RCTSettings (0.59.8):
+  - React/RCTSettings (0.59.9):
     - React/Core
-  - React/RCTText (0.59.8):
+  - React/RCTText (0.59.9):
     - React/Core
-  - React/RCTVibration (0.59.8):
+  - React/RCTVibration (0.59.9):
     - React/Core
-  - React/RCTWebSocket (0.59.8):
+  - React/RCTWebSocket (0.59.9):
     - React/Core
     - React/fishhook
     - React/RCTBlob
-  - RNDeviceInfo (2.1.2):
+  - RNDeviceInfo (2.2.2):
     - React
-  - yoga (0.59.8.React)
+  - yoga (0.59.9.React)
 
 DEPENDENCIES:
-  - AppCenter/Analytics (~> 2.0.1)
-  - AppCenterReactNativeShared (~> 2.0.0)
+  - AppCenter/Analytics (~> 2.1.0)
+  - AppCenterReactNativeShared (~> 2.1.0)
   - DoubleConversion (from `../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
   - Folly (from `../node_modules/react-native/third-party-podspecs/Folly.podspec`)
   - glog (from `../node_modules/react-native/third-party-podspecs/glog.podspec`)
@@ -121,20 +121,17 @@ EXTERNAL SOURCES:
     :podspec: "../node_modules/react-native/ReactCommon/yoga/yoga.podspec"
 
 SPEC CHECKSUMS:
-  AppCenter: 6a5ff2fd007b53431259fdd74f91eb3d0dfea3d1
-  AppCenterReactNativeShared: a55d6899b99ca2c4904cffd82b2d687626afe251
+  AppCenter: 21decaa4488024e8355e650e44ccabb69ca60d47
+  AppCenterReactNativeShared: 6e856a993f022a2a7afaa1bc21834d4dded708b2
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
   DoubleConversion: bb338842f62ab1d708ceb63ec3d999f0f3d98ecd
   Folly: de497beb10f102453a1afa9edbf8cf8a251890de
   glog: aefd1eb5dda2ab95ba0938556f34b98e2da3a60d
-  React: 76e6aa2b87d05eb6cccb6926d72685c9a07df152
-<<<<<<< HEAD
-  react-native-contacts: 348958bb7da4399040b1eb45bfb7f6af08e61412
-  RNDeviceInfo: 75dac2d7cd6b638b512cc9266ce48a39661fed0e
-=======
->>>>>>> #UADD-7 upgraded pod version #time 20m
-  yoga: 92b2102c3d373d1a790db4ab761d2b0ffc634f64
+  React: a86b92f00edbe1873a63e4a212c29b7a7ad5224f
+  react-native-contacts: 645e3af2963243f335ad101a8b5e8d75566c47c1
+  RNDeviceInfo: a88be26a64ada7cbc2bc0ebbd1662d340304874e
+  yoga: 03ff42a6f223fb88deeaed60249020d80c3091ee
 
-PODFILE CHECKSUM: 6dcd06db9959c5fedad66e2ebcb3150dadbe7a8c
+PODFILE CHECKSUM: 20dd5db2029960481f3bdd86394ac2736b8c65c7
 
 COCOAPODS: 1.7.2

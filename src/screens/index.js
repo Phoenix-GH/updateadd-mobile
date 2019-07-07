@@ -33,12 +33,6 @@ const CreateCardStack = createStackNavigator(
 )
 
 export const AppNavigator = createStackNavigator({
-  [Roots.CreateCard]: {
-    screen: CreateCardStack,
-    navigationOptions: {
-      header: null,
-    },
-  },
   [Roots.Onboarding]: {
     screen: OnboardingScreen,
   },
@@ -60,9 +54,15 @@ export const AppNavigator = createStackNavigator({
       header: null,
     },
   },
+  [Roots.CreateCard]: {
+    screen: CreateCardStack,
+    navigationOptions: {
+      header: null,
+    },
+  },
 })
 
-export const navigationMiddleware = createReactNavigationReduxMiddleware('root', state => state.nav)
+export const navigationMiddleware = createReactNavigationReduxMiddleware(state => state.nav)
 const AppNavigatorWithNavigationState = createReduxContainer(AppNavigator, 'root')
 
 type RootProps = {

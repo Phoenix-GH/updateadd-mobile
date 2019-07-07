@@ -28,8 +28,8 @@ def shared_pods
   pod 'glog', :podspec => "#{rn_path}/third-party-podspecs/glog.podspec"
   pod 'Folly', :podspec => "#{rn_path}/third-party-podspecs/Folly.podspec"
   
-  pod 'AppCenterReactNativeShared', '~> 2.0.0'
-  pod 'AppCenter/Analytics', '~> 2.0.1'
+  pod 'AppCenterReactNativeShared', '~> 2.1.0'
+  pod 'AppCenter/Analytics', '~> 2.1.0'
   pod 'react-native-contacts', :path => '../node_modules/react-native-contacts'
   pod 'RNDeviceInfo', :path => '../node_modules/react-native-device-info'
 end
