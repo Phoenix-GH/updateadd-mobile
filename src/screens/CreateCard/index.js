@@ -201,8 +201,12 @@ export class CreateCardScreen extends React.Component<CreateCardScreenProps, Cre
     <View style={separatorStyle} />
   )
 
-  onCloseItem = (item: string) => {
-    this.setState({ [item]: null })
+  onCloseItem = (item: string, section: SectionType, key: string) => {
+    const { data } = this.state
+    const selectedSection = data[section.title]
+    selectedSection[item].splice(key, 1)
+    data[section.title] = selectedSection
+    this.setState({ data })
   }
 
   renderItem = (item: string, section: SectionType) => {
@@ -210,7 +214,7 @@ export class CreateCardScreen extends React.Component<CreateCardScreenProps, Cre
     const { data } = state
     const items = Object.keys(data[item])
     const { placeholders } = Strings
-    
+
     return (
       <View style={listWrapperStyle}>
         <View style={listSectionStyle}>
@@ -250,7 +254,7 @@ export class CreateCardScreen extends React.Component<CreateCardScreenProps, Cre
                     <ListItem
                       text={i}
                       onOpen={() => this.openSelect(i, section)}
-                      onClose={() => this.onCloseItem(i)}
+                      onClose={() => {}}
                       onChangeText={text => this.onChangeText(i, section, text)}
                       label={Strings[i]}
                       placeholder={placeholders[i]}
@@ -266,7 +270,7 @@ export class CreateCardScreen extends React.Component<CreateCardScreenProps, Cre
                         <View key={key} style={listItemStyle}>
                           <ListItem
                             onOpen={() => this.openSelect(i, section)}
-                            onClose={() => this.onCloseItem(i)}
+                            onClose={() => this.onCloseItem(i, section, key)}
                             onChangeText={() => {}}
                             label={key}
                             isFilled
