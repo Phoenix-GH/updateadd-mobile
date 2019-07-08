@@ -206,19 +206,19 @@ export class CreateCardScreen extends React.Component<CreateCardScreenProps, Cre
   }
 
   renderItem = (item: string, section: SectionType) => {
-    const { data } = this.state
+    const { state } = this
+    const { data } = state
     const items = Object.keys(data[item])
     const { placeholders } = Strings
+    
     return (
       <View style={listWrapperStyle}>
         <View style={listSectionStyle}>
           {
             items.map((i, index) => {
               if (i === 'firstName' || i === 'lastName' || i === 'companyName' || i === 'jobTitle' || i === 'notes') {
-                const { state } = this
-
                 return (
-                  <View key={i + index} style={listItemStyle}>
+                  <View key={i} style={listItemStyle}>
                     <TextInputItem
                       text={state[section.title]}
                       onChangeText={text => this.onChangeText(i, section, text)}
@@ -233,7 +233,7 @@ export class CreateCardScreen extends React.Component<CreateCardScreenProps, Cre
               }
               if (i === 'backgroundColor') {
                 return (
-                  <View key={i + index} style={listItemStyle}>
+                  <View key={i} style={listItemStyle}>
                     <LinkItem
                       onOpen={() => {}}
                       text={Strings.selectBackground}
@@ -245,8 +245,8 @@ export class CreateCardScreen extends React.Component<CreateCardScreenProps, Cre
                 )
               }
               return (
-                <React.Fragment>
-                  <View key={i + index} style={listItemStyle}>
+                <React.Fragment key={i}>
+                  <View style={listItemStyle}>
                     <ListItem
                       text={i}
                       onOpen={() => this.openSelect(i, section)}
@@ -263,7 +263,7 @@ export class CreateCardScreen extends React.Component<CreateCardScreenProps, Cre
                     data[section.title][i].length > 0 && data[section.title][i].map((row) => {
                       const key = Object.keys(row)[0]
                       return (
-                        <View key={row} style={listItemStyle}>
+                        <View key={key} style={listItemStyle}>
                           <ListItem
                             onOpen={() => this.openSelect(i, section)}
                             onClose={() => this.onCloseItem(i)}
